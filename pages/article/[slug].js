@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import DefaultLayout from '../../Layouts/DefaultLayout';
-import AsideArticle from '../../Components/DefaultLayout/AsideArticle';
-import Hero from '../../styles/Article.module.css';
+// import AsideArticle from '../../Components/DefaultLayout/AsideArticle';
 import Router, {useRouter} from 'next/router'
 import Parser from 'html-react-parser'
 import moment from 'moment';
