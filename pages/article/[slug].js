@@ -6,9 +6,6 @@ import Router, {useRouter} from 'next/router'
 import Parser from 'html-react-parser'
 import moment from 'moment';
 
-export const config = { amp: 'hybrid' }
-
-
 export default function Index({initPost}) {
 
     const router = useRouter()

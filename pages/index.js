@@ -14,7 +14,6 @@ import styles from '../styles/Home.module.css'
 import TestSlider from '../Components/DefaultLayout/Home/testSlider';
 import DefaultLayout from '../Layouts/DefaultLayout'
 import '../styles/Home.module.css'
-export const config = { amp: 'hybrid' }
 
 function Home(props) {
 
