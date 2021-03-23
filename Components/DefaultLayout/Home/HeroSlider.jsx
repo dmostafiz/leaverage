@@ -21,7 +21,7 @@ function HeroSlider() {
             {sliders.map((slider, index) => (
             <div key={index} className="swiper-slide slide-center">
 
-              <img data-aos="zoom-out-up" data-aos-delay="800" src={slider.imageLink} className="hero-image" alt="Hero Image" />
+              <img data-aos="zoom-out-up" data-aos-delay="100" src={slider.imageLink} className="hero-image" alt="Hero Image" />
             
               {/* <Image
                 layout="fill"
@@ -59,7 +59,5 @@ function HeroSlider() {
     
 
 }
-
-
 
 export default HeroSlider

@@ -95,9 +95,9 @@ export default function Header({classes}) {
 
             {user.isAuth && 
                 <li className="nav-">
-                    <a href="/account" className="btn ml-lg-auto primary-button">
-
-                        {user.username}</a>
+                    <a href="/account" className="btn custbtn ml-lg-auto primary-button">
+                        {user.username}
+                    </a>
                 </li>
                 }
             </ul>
