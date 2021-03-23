@@ -1,0 +1,83 @@
+import React, {useEffect} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
+import Footer from '../Components/DefaultLayout/Footer';
+import { useRouter } from 'next/router'
+import Head from 'next/head'
+import loadJs from 'loadjs'
+import nookies from 'nookies'
+import Header from '../Components/AccountLayout/Header';
+import {makeAuthentication} from '../state/auth/actions'
+
+export default function AccountLayout({children, user}){
+    const router = useRouter()
+    const dispatch = useDispatch()
+
+    useEffect(() =>{
+      
+      console.log(user)
+
+      dispatch(makeAuthentication(user)) 
+ 
+      if(user.isAuth)
+      { 
+        loadJs('/account/lib/jquery/jquery.min.js')
+        loadJs('/account/lib/bootstrap/js/bootstrap.bundle.min.js')
+        loadJs('/account/lib/ionicons/ionicons.js')
+        loadJs('/account/lib/chart.js/Chart.bundle.min.js')
+        loadJs('/account/lib/peity/jquery.peity.min.js')
+        
+        loadJs('/account/js/azia.js')
+        loadJs('/account/js/chart.flot.sampledata.js')
+        loadJs('/account/js/dashboard.sampledata.js')
+
+        loadJs('/account/lib/select2/js/select2.min.js')
+      }
+
+      if(!user.isAuth) window.location.replace("/sign-in")
+      // if(user.status == 'success' && user.type == 'user') window.location.replace("/account")
+      
+    },[])
+
+    return (
+      <>
+     
+      <Head>
+
+        <link href="/account/lib/fontawesome-free/css/all.min.css" rel="stylesheet" />
+        <link href="/account/lib/ionicons/css/ionicons.min.css" rel="stylesheet" />
+        <link href="/account/lib/typicons.font/typicons.css" rel="stylesheet" />
+        <link href="/account/lib/flag-icon-css/css/flag-icon.min.css" rel="stylesheet" />
+        <link href="/account/lib/select2/css/select2.min.css" rel="stylesheet"></link>
+        <link href="/account/css/azia.css" rel="stylesheet" />
+        <link href="/account/lib/quill/quill.snow.css" rel="stylesheet" />
+        <link href="/account/lib/quill/quill.bubble.css" rel="stylesheet" />
+
+        <script src="/account/lib/jquery/jquery.min.js"></script>
+        {/* <script src="/account/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/account/lib/ionicons/ionicons.js"></script>
+
+        <script src="/account/lib/chart.js/Chart.bundle.min.js"></script>
+        <script src="/account/lib/peity/jquery.peity.min.js"></script>
+
+        <script src="/account/js/azia.js"></script>
+        <script src="/account/js/chart.flot.sampledata.js"></script>
+        <script src="/account/js/dashboard.sampledata.js"></script> */}
+      </Head>
+
+      {/* <Header/> */}
+      {user.isAuth && <> 
+        <Header/>
+        {children}
+
+        <div className="az-footer ht-40 ">
+                <div className="container ht-100p pd-t-0-f">
+                <span>© 2019 Azia Responsive Bootstrap 4 Dashboard Template</span>
+                </div>{/* container */}
+            </div>{/* az-footer */}
+      </> }
+      {/* <Footer/> */}
+
+      </>
+  )
+  
+}
