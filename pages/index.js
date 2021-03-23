@@ -23,7 +23,6 @@ function Home(props) {
 
   return (
       <DefaultLayout>
-
         <HeroSlider /> 
         <Articles/>
         <Services/>  
