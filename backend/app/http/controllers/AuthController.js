@@ -99,7 +99,7 @@ exports.register = async (req, res) => {
 
 
     } catch (error) {
-        res.status(400).json({status:'error', msg: "Something went wrong. Please try again later."})
+        res.status(400).json({status:'error', msg: error.message})
     }
 
 }
