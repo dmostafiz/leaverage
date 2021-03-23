@@ -30,13 +30,13 @@ function Home(props) {
         <Articles/>
         <Services/>  
         <Testimonials/>
-        {/* <AboutImage/> */}
-        {/* <AboutVideo/> */}
-        {/* <Contact/> */}
         <Subscribe/>
       </DefaultLayout>  
   )
 }
+{/* <AboutImage/> */}
+{/* <AboutVideo/> */}
+{/* <Contact/> */}
 
 export const getStaticProps = async () => {
   const sliders = [
