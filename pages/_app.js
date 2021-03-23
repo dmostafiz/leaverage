@@ -1,5 +1,6 @@
 import axios from 'axios';
 import '../styles/globals.css'
+import '../styles/nprogress.css'
 import {Provider} from 'react-redux'
 import { createWrapper } from 'next-redux-wrapper'     
 import store from '../state/store'
@@ -18,21 +19,21 @@ function MyApp({ Component, pageProps }) {
 
 
   Router.events.on('routeChangeStart', () => {
-    toast.loading('Loading...',{
-      id: 'push',
-    });
+    // toast.loading('Loading...',{
+    //   id: 'push',
+    // });
     NProgress.start()
   })
 
   Router.events.on('routeChangeComplete', () => {
     // const toastId = toast.loading('Loading...');
-    toast.dismiss('push')
+    // toast.dismiss('push')
     NProgress.done()
   })
 
 
   Router.events.on('routeChangeError', () => {
-    toast.dismiss('push')
+    // toast.dismiss('push')
     NProgress.done()
   })
 

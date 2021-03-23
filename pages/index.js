@@ -10,10 +10,8 @@ import Services from '../Components/DefaultLayout/Services'
 import Subscribe from '../Components/DefaultLayout/Subscribe'
 import Testimonials from '../Components/DefaultLayout/Testimonials'
 import {getInitialSliders} from '../state/slider/actions'
-import styles from '../styles/Home.module.css'
 import TestSlider from '../Components/DefaultLayout/Home/testSlider';
 import DefaultLayout from '../Layouts/DefaultLayout'
-import '../styles/Home.module.css'
 
 function Home(props) {
 
