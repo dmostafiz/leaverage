@@ -7,6 +7,7 @@ import loadJs from 'loadjs'
 import nookies from 'nookies'
 import Header from '../Components/AccountLayout/Header';
 import {makeAuthentication} from '../state/auth/actions'
+import JSLoader from '../helpers/JSLoader';
 
 export default function AccountLayout({children, user}){
     const router = useRouter()
@@ -20,17 +21,17 @@ export default function AccountLayout({children, user}){
  
       if(user.isAuth)
       { 
-        // loadJs('/account/lib/jquery/jquery.min.js')
-        loadJs('/account/lib/bootstrap/js/bootstrap.bundle.min.js')
-        loadJs('/account/lib/ionicons/ionicons.js')
-        loadJs('/account/lib/chart.js/Chart.bundle.min.js')
-        loadJs('/account/lib/peity/jquery.peity.min.js')
+        JSLoader('/account/lib/jquery/jquery.min.js')
+        JSLoader('/account/lib/bootstrap/js/bootstrap.bundle.min.js')
+        JSLoader('/account/lib/ionicons/ionicons.js')
+        JSLoader('/account/lib/chart.js/Chart.bundle.min.js')
+        JSLoader('/account/lib/peity/jquery.peity.min.js')
         
-        loadJs('/account/js/azia.js')
-        loadJs('/account/js/chart.flot.sampledata.js')
-        loadJs('/account/js/dashboard.sampledata.js')
+        JSLoader('/account/js/azia.js')
+        JSLoader('/account/js/chart.flot.sampledata.js')
+        JSLoader('/account/js/dashboard.sampledata.js')
 
-        loadJs('/account/lib/select2/js/select2.min.js')
+        JSLoader('/account/lib/select2/js/select2.min.js')
       }
 
       if(!user.isAuth) window.location.replace("/sign-in")
@@ -52,7 +53,7 @@ export default function AccountLayout({children, user}){
         <link href="/account/lib/quill/quill.snow.css" rel="stylesheet" />
         <link href="/account/lib/quill/quill.bubble.css" rel="stylesheet" />
 
-        <script src="/account/lib/jquery/jquery.min.js"></script>
+        {/* <script src="/account/lib/jquery/jquery.min.js"></script> */}
         {/* <script src="/account/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/account/lib/ionicons/ionicons.js"></script>
 

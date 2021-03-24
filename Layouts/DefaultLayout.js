@@ -7,34 +7,51 @@ import Footer from '../Components/DefaultLayout/Footer';
 import Head from 'next/head'
 import loadJs from 'loadjs'
 import cookie from 'js-cookie'
+import JSLoader from '../helpers/JSLoader';
 
 export default function DefaultLayout({children, classes}){
   const dispatch = useDispatch()
-  const [loadingSite, setLoadingSite] = useState(true)
+  const [loadingSite, setLoadingSite] = useState(false)
 
+
+    // const scriptArr = [
+    //   "/assets/js/vendor/jquery.min.js",
+    //   "/assets/js/vendor/jquery.easing.min.js",
+    //   "/assets/js/vendor/jquery.inview.min.js",
+    //   "/assets/js/vendor/popper.min.js",
+    //   "/assets/js/vendor/bootstrap.min.js",
+    //   "/assets/js/vendor/ponyfill.min.js",
+    //   "/assets/js/vendor/slider.min.js",
+    //   "/assets/js/vendor/animation.min.js",
+    //   "/assets/js/vendor/progress-radial.min.js",
+    //   "/assets/js/vendor/bricklayer.min.js",
+    //   "/assets/js/vendor/gallery.min.js",
+    //   "/assets/js/vendor/shuffle.min.js",
+    //   "/assets/js/vendor/cookie-notice.min.js",
+    //   "/assets/js/vendor/particles.min.js",
+    //   "/assets/js/main.js",
+    // ]
 
     function loadScripts(){
-      // loadJs("/assets/js/vendor/jquery.min.js")
-      loadJs("/assets/js/vendor/jquery.easing.min.js")
-      loadJs("/assets/js/vendor/jquery.inview.min.js")
-      loadJs("/assets/js/vendor/popper.min.js")
-      loadJs("/assets/js/vendor/bootstrap.min.js")
-      loadJs("/assets/js/vendor/ponyfill.min.js")
-      loadJs("/assets/js/vendor/slider.min.js")
-      loadJs("/assets/js/vendor/animation.min.js")
-      loadJs("/assets/js/vendor/progress-radial.min.js")
-      loadJs("/assets/js/vendor/bricklayer.min.js")
-      loadJs("/assets/js/vendor/gallery.min.js")
-      loadJs("/assets/js/vendor/shuffle.min.js")
-      loadJs("/assets/js/vendor/cookie-notice.min.js")
-      loadJs("/assets/js/vendor/particles.min.js")
-      loadJs("/assets/js/main.js")
-
-      setLoadingSite(false)
+      JSLoader("/assets/js/vendor/jquery.min.js")
+      JSLoader("/assets/js/vendor/jquery.easing.min.js")
+      JSLoader("/assets/js/vendor/jquery.inview.min.js")
+      JSLoader("/assets/js/vendor/popper.min.js")
+      JSLoader("/assets/js/vendor/bootstrap.min.js")
+      JSLoader("/assets/js/vendor/ponyfill.min.js")
+      JSLoader("/assets/js/vendor/slider.min.js")
+      JSLoader("/assets/js/vendor/animation.min.js")
+      JSLoader("/assets/js/vendor/progress-radial.min.js")
+      JSLoader("/assets/js/vendor/bricklayer.min.js")
+      JSLoader("/assets/js/vendor/gallery.min.js")
+      JSLoader("/assets/js/vendor/shuffle.min.js")
+      JSLoader("/assets/js/vendor/cookie-notice.min.js")
+      JSLoader("/assets/js/vendor/particles.min.js")
+      JSLoader("/assets/js/main.js")
     }
 
 
-    useEffect(async () =>{
+    useEffect(async () => {
 
       
       const authCoockie = cookie.get('login')
@@ -45,10 +62,33 @@ export default function DefaultLayout({children, classes}){
         
         dispatch(makeAuthentication(data))
       }
-      
+
       loadScripts()
+
+
+      // scriptArr.map(src => {
+
+      //   let script = document.querySelector(`script[src="${src}"]`)
+
+      //   console.log('Loaded Script: '.script)   
+
+      //   if (script) {
+      //       script.remove();
+      //   }
+
+      //   script = document.createElement("script");
+      //   script.src = src;
+      //   script.async = true;
+      //   // script.setAttribute("data-status", "loading");
+      //   // Add script to document body
+      //   document.body.appendChild(script);
+
+
+      // })
+
+
       
-    },[loadJs])
+    },[])
 
     return (
       <>
@@ -65,8 +105,8 @@ export default function DefaultLayout({children, classes}){
           <link rel="stylesheet" href="/assets/css/default.css"/>
           <link rel="stylesheet" href="/assets/css/theme-custom.css"/>
           
-          <script src="/assets/js/vendor/jquery.min.js"></script>
-          {/* <script src="/assets/js/vendor/jquery.easing.min.js"></script>
+          {/* <script src="/assets/js/vendor/jquery.min.js"></script>
+          <script src="/assets/js/vendor/jquery.easing.min.js"></script>
           <script src="/assets/js/vendor/jquery.inview.min.js"></script>
           <script src="/assets/js/vendor/popper.min.js"></script>
           <script src="/assets/js/vendor/bootstrap.min.js"></script>
