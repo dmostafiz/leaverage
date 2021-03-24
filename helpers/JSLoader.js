@@ -1,6 +1,7 @@
 const JSLoader = (src) => {
     let script = document.querySelector(`script[src="${src}"]`)
-
+    
+    script.remove();
     // console.log('Loaded Script: '.script)   
 
     script = document.createElement("script");
@@ -11,7 +12,6 @@ const JSLoader = (src) => {
     document.body.appendChild(script);
 
    
-    script.remove();
    
 }
 
