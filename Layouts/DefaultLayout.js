@@ -60,7 +60,7 @@ export default function DefaultLayout({children, classes}){
       if(authCoockie)
       {
         const dcd = JSON.parse(authCoockie)
-        const data = await getAuthUserByToken(`${process.env.API}/api/authorize`, dcd.token) 
+        const data = await getAuthUserByToken(`${process.env.API}/authorize`, dcd.token) 
         
         dispatch(makeAuthentication(data))
       }
