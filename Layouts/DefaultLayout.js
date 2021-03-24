@@ -54,10 +54,9 @@ export default function DefaultLayout({children, classes}){
 
     useEffect(async () => {
 
-      loadScripts()
       
       const authCoockie = cookie.get('login')
-
+      
       if(authCoockie)
       {
         const dcd = JSON.parse(authCoockie)
@@ -65,7 +64,8 @@ export default function DefaultLayout({children, classes}){
         
         dispatch(makeAuthentication(data))
       }
-
+      
+      loadScripts()
       
 
 
