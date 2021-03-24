@@ -56,10 +56,11 @@ export default function DefaultLayout({children, classes}){
 
       
       const authCoockie = cookie.get('login')
+
       if(authCoockie)
       {
         const dcd = JSON.parse(authCoockie)
-        const data = await getAuthUserByToken('http://localhost:3333/api/authorize', dcd.token) 
+        const data = await getAuthUserByToken(`${process.env.API}/api/authorize`, dcd.token) 
         
         dispatch(makeAuthentication(data))
       }
