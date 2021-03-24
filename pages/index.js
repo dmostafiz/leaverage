@@ -1,16 +1,16 @@
 import {useEffect} from 'react'
 import {useDispatch} from 'react-redux'
-// import Head from 'next/head'
-// import AboutImage from '../Components/DefaultLayout/About-Image'
-// import AboutVideo from '../Components/DefaultLayout/About-Video'
+import Head from 'next/head'
+import AboutImage from '../Components/DefaultLayout/About-Image'
+import AboutVideo from '../Components/DefaultLayout/About-Video'
 import Articles from '../Components/DefaultLayout/Articles'
-// import Contact from '../Components/DefaultLayout/Contact'
+import Contact from '../Components/DefaultLayout/Contact'
 import HeroSlider from '../Components/DefaultLayout/Home/HeroSlider'
 import Services from '../Components/DefaultLayout/Services'
 import Subscribe from '../Components/DefaultLayout/Subscribe'
 import Testimonials from '../Components/DefaultLayout/Testimonials'
 import {getInitialSliders} from '../state/slider/actions'
-// import TestSlider from '../Components/DefaultLayout/Home/testSlider';
+import TestSlider from '../Components/DefaultLayout/Home/testSlider';
 import DefaultLayout from '../Layouts/DefaultLayout'
 
 function Home(props) {
@@ -28,9 +28,9 @@ function Home(props) {
         <Services/>  
         <Testimonials/>
         <Subscribe/>
-        {/* <AboutImage/> */}
-        {/* <AboutVideo/> */}
-        {/* <Contact/> */}
+        {/* <AboutImage/>
+        <AboutVideo/>
+        <Contact/> */}
       </DefaultLayout>  
   )
 }
