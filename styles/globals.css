@@ -217,6 +217,7 @@ header .navbar-sticky {
     right: 10% !important;
     bottom: 0 !important;
     width: auto !important; */
+    right: 0% !important;
     height: 91% !important;
 }
 
