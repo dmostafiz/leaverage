@@ -10,7 +10,7 @@ export default function BlogArticles({posts}) {
       <main className="col-12  p-0">
         <div className="bricklayer items columns-4">
        
-            {posts?.map((post, index) => <div className="card p-0 text-center item">
+            {posts?.map((post, index) => <div key={index} className="card p-0 text-center item">
             <div className="image-over">
               <img src={post.imageUrl} alt="Lorem ipsum" />
             </div>

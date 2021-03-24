@@ -9,6 +9,7 @@ import loadJs from 'loadjs'
 import cookie from 'js-cookie'
 import JSLoader from '../helpers/JSLoader';
 
+
 export default function DefaultLayout({children, classes}){
   const dispatch = useDispatch()
   const [loadingSite, setLoadingSite] = useState(false)
@@ -33,8 +34,6 @@ export default function DefaultLayout({children, classes}){
     // ]
 
     function loadScripts(){
-      loadJs("/assets/js/vendor/jquery.min.js")
-
       JSLoader("/assets/js/vendor/jquery.min.js")
       JSLoader("/assets/js/vendor/jquery.easing.min.js")
       JSLoader("/assets/js/vendor/jquery.inview.min.js")

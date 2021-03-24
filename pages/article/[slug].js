@@ -64,8 +64,8 @@ export default function Index({initPost}) {
                             
                             <div className="tag-list-article mb-5">
                                 <ul>
-                                    {post.tags.map(tag =>
-                                        <li><span>#{tag}</span></li>
+                                    {post.tags.map((tag, index) =>
+                                        <li key={index}><span>#{tag}</span></li>
                                     )}
                                 </ul>
                             </div>
@@ -109,8 +109,8 @@ export default function Index({initPost}) {
                             <div className="mb-5 post-holder">
                                 <span className="posted-on">Posted on</span>
                                 <ul>
-                                  {post.categories.map(cat =>
-                                        <li className="post-meta-item">
+                                  {post.categories.map((cat, index) =>
+                                        <li key={index} className="post-meta-item">
                                             <a href="#" rel="bookmark">{cat.name} </a>
                                         </li>
                                     )}

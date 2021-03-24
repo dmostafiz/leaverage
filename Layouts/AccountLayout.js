@@ -9,6 +9,7 @@ import Header from '../Components/AccountLayout/Header';
 import {makeAuthentication} from '../state/auth/actions'
 import JSLoader from '../helpers/JSLoader';
 
+
 export default function AccountLayout({children, user}){
     const router = useRouter()
     const dispatch = useDispatch()
@@ -21,7 +22,6 @@ export default function AccountLayout({children, user}){
  
       if(user.isAuth)
       { 
-        loadJs('/account/lib/jquery/jquery.min.js')
         JSLoader('/account/lib/jquery/jquery.min.js')
         JSLoader('/account/lib/bootstrap/js/bootstrap.bundle.min.js')
         JSLoader('/account/lib/ionicons/ionicons.js')
