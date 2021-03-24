@@ -20,17 +20,17 @@ export default function AccountLayout({children, user}){
  
       if(user.isAuth)
       { 
-        loadJs('/account/lib/jquery/jquery.min.js')
-        loadJs('/account/lib/bootstrap/js/bootstrap.bundle.min.js')
-        loadJs('/account/lib/ionicons/ionicons.js')
-        loadJs('/account/lib/chart.js/Chart.bundle.min.js')
-        loadJs('/account/lib/peity/jquery.peity.min.js')
+        // loadJs('/account/lib/jquery/jquery.min.js')
+        // loadJs('/account/lib/bootstrap/js/bootstrap.bundle.min.js')
+        // loadJs('/account/lib/ionicons/ionicons.js')
+        // loadJs('/account/lib/chart.js/Chart.bundle.min.js')
+        // loadJs('/account/lib/peity/jquery.peity.min.js')
         
-        loadJs('/account/js/azia.js')
-        loadJs('/account/js/chart.flot.sampledata.js')
-        loadJs('/account/js/dashboard.sampledata.js')
+        // loadJs('/account/js/azia.js')
+        // loadJs('/account/js/chart.flot.sampledata.js')
+        // loadJs('/account/js/dashboard.sampledata.js')
 
-        loadJs('/account/lib/select2/js/select2.min.js')
+        // loadJs('/account/lib/select2/js/select2.min.js')
       }
 
       if(!user.isAuth) window.location.replace("/sign-in")
@@ -53,7 +53,7 @@ export default function AccountLayout({children, user}){
         <link href="/account/lib/quill/quill.bubble.css" rel="stylesheet" />
 
         <script src="/account/lib/jquery/jquery.min.js"></script>
-        {/* <script src="/account/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/account/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/account/lib/ionicons/ionicons.js"></script>
 
         <script src="/account/lib/chart.js/Chart.bundle.min.js"></script>
@@ -61,7 +61,7 @@ export default function AccountLayout({children, user}){
 
         <script src="/account/js/azia.js"></script>
         <script src="/account/js/chart.flot.sampledata.js"></script>
-        <script src="/account/js/dashboard.sampledata.js"></script> */}
+        <script src="/account/js/dashboard.sampledata.js"></script>
       </Head>
 
       {/* <Header/> */}
