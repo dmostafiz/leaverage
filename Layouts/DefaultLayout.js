@@ -14,7 +14,7 @@ export default function DefaultLayout({children, classes}){
 
 
     function loadScripts(){
-      loadJs("/assets/js/vendor/jquery.min.js")
+      // loadJs("/assets/js/vendor/jquery.min.js")
       loadJs("/assets/js/vendor/jquery.easing.min.js")
       loadJs("/assets/js/vendor/jquery.inview.min.js")
       loadJs("/assets/js/vendor/popper.min.js")
@@ -65,8 +65,8 @@ export default function DefaultLayout({children, classes}){
           <link rel="stylesheet" href="/assets/css/default.css"/>
           <link rel="stylesheet" href="/assets/css/theme-custom.css"/>
           
-          {/* <script src="/assets/js/vendor/jquery.min.js"></script>
-          <script src="/assets/js/vendor/jquery.easing.min.js"></script>
+          <script src="/assets/js/vendor/jquery.min.js"></script>
+          {/* <script src="/assets/js/vendor/jquery.easing.min.js"></script>
           <script src="/assets/js/vendor/jquery.inview.min.js"></script>
           <script src="/assets/js/vendor/popper.min.js"></script>
           <script src="/assets/js/vendor/bootstrap.min.js"></script>

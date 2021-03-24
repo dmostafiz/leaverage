@@ -20,7 +20,7 @@ export default function AccountLayout({children, user}){
  
       if(user.isAuth)
       { 
-        loadJs('/account/lib/jquery/jquery.min.js')
+        // loadJs('/account/lib/jquery/jquery.min.js')
         loadJs('/account/lib/bootstrap/js/bootstrap.bundle.min.js')
         loadJs('/account/lib/ionicons/ionicons.js')
         loadJs('/account/lib/chart.js/Chart.bundle.min.js')
@@ -52,8 +52,8 @@ export default function AccountLayout({children, user}){
         <link href="/account/lib/quill/quill.snow.css" rel="stylesheet" />
         <link href="/account/lib/quill/quill.bubble.css" rel="stylesheet" />
 
-        {/* <script src="/account/lib/jquery/jquery.min.js"></script>
-        <script src="/account/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/account/lib/jquery/jquery.min.js"></script>
+        {/* <script src="/account/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/account/lib/ionicons/ionicons.js"></script>
 
         <script src="/account/lib/chart.js/Chart.bundle.min.js"></script>
