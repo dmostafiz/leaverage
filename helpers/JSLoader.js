@@ -11,10 +11,8 @@ const JSLoader = (src) => {
     script.async = true;
     // script.setAttribute("data-status", "loading");
     // Add script to document body
-    document.body.appendChild(script);
-
-   
-   
+    return document.body.appendChild(script);
+    
 }
 
 export default JSLoader
