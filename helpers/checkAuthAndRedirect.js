@@ -1,6 +1,6 @@
 import nookies from 'nookies';
 
-const cAndRedirect = async (url, ctx) => {
+const checkAuthAndRedirect = async (url, ctx) => {
 
   console.log('checkAuth step 1')
 
@@ -35,7 +35,6 @@ const cAndRedirect = async (url, ctx) => {
 
   console.log('checkAuth step 6')
   const data = await response.json()
-  
   console.log('checkAuth step 7: ', data)
 
   if(!data.isAuth && !ctx.req){
