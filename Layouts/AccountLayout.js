@@ -36,7 +36,7 @@ export default function AccountLayout({children, user}){
       if(!user.isAuth) window.location.replace("/sign-in")
       // if(user.status == 'success' && user.type == 'user') window.location.replace("/account")
       
-    },[])
+    },[loadJs])
 
     return (
       <>

@@ -48,7 +48,7 @@ export default function DefaultLayout({children, classes}){
       
       loadScripts()
       
-    },[])
+    },[loadJs])
 
     return (
       <>
