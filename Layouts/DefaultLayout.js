@@ -15,19 +15,19 @@ export default function DefaultLayout({children, classes}){
 
     function loadScripts(){
       // loadJs("/assets/js/vendor/jquery.min.js")
-      loadJs("/assets/js/vendor/jquery.easing.min.js")
-      loadJs("/assets/js/vendor/jquery.inview.min.js")
-      loadJs("/assets/js/vendor/popper.min.js")
-      loadJs("/assets/js/vendor/bootstrap.min.js")
-      loadJs("/assets/js/vendor/ponyfill.min.js")
-      loadJs("/assets/js/vendor/slider.min.js")
-      loadJs("/assets/js/vendor/animation.min.js")
-      loadJs("/assets/js/vendor/progress-radial.min.js")
-      loadJs("/assets/js/vendor/bricklayer.min.js")
-      loadJs("/assets/js/vendor/gallery.min.js")
-      loadJs("/assets/js/vendor/shuffle.min.js")
-      loadJs("/assets/js/vendor/cookie-notice.min.js")
-      loadJs("/assets/js/vendor/particles.min.js")
+      // loadJs("/assets/js/vendor/jquery.easing.min.js")
+      // loadJs("/assets/js/vendor/jquery.inview.min.js")
+      // loadJs("/assets/js/vendor/popper.min.js")
+      // loadJs("/assets/js/vendor/bootstrap.min.js")
+      // loadJs("/assets/js/vendor/ponyfill.min.js")
+      // loadJs("/assets/js/vendor/slider.min.js")
+      // loadJs("/assets/js/vendor/animation.min.js")
+      // loadJs("/assets/js/vendor/progress-radial.min.js")
+      // loadJs("/assets/js/vendor/bricklayer.min.js")
+      // loadJs("/assets/js/vendor/gallery.min.js")
+      // loadJs("/assets/js/vendor/shuffle.min.js")
+      // loadJs("/assets/js/vendor/cookie-notice.min.js")
+      // loadJs("/assets/js/vendor/particles.min.js")
       loadJs("/assets/js/main.js")
 
       setLoadingSite(false)
@@ -66,7 +66,7 @@ export default function DefaultLayout({children, classes}){
           <link rel="stylesheet" href="/assets/css/theme-custom.css"/>
           
           <script src="/assets/js/vendor/jquery.min.js"></script>
-          {/* <script src="/assets/js/vendor/jquery.easing.min.js"></script>
+          <script src="/assets/js/vendor/jquery.easing.min.js"></script>
           <script src="/assets/js/vendor/jquery.inview.min.js"></script>
           <script src="/assets/js/vendor/popper.min.js"></script>
           <script src="/assets/js/vendor/bootstrap.min.js"></script>
@@ -79,7 +79,7 @@ export default function DefaultLayout({children, classes}){
           <script src="/assets/js/vendor/shuffle.min.js"></script>
           <script src="/assets/js/vendor/cookie-notice.min.js"></script>
           <script src="/assets/js/vendor/particles.min.js"></script>
-          <script src="/assets/js/main.js"></script> */}
+          <script src="/assets/js/main.js"></script>
 
       </Head>
 
