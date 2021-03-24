@@ -37,7 +37,7 @@ const Signin = () => {
 
         if(password && email != '')
         {
-           const response = await fetch(`${process.env.API}/api/login`, {
+           const response = await fetch(`${process.env.API}/login`, {
              method: 'POST',
              headers: {
               "Content-Type": "application/json"
