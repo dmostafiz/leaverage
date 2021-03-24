@@ -12,7 +12,7 @@ const checkAuthAndRedirect = async (url, ctx) => {
     ctx.res.writeHead(302, { 
       Location: '/sign-in'
     })
-    ctx.res.end()
+    return ctx.res.end()
   }
 
   
