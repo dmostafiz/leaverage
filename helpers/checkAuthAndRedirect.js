@@ -11,14 +11,12 @@ const checkAuthAndRedirect = async (url, ctx) => {
     ctx.res.writeHead(302, { 
       Location: '/sign-in'
     })
-    ctx.res.end()
-    return 
+    return ctx.res.end() 
   }
   
   else if(!ctx.req && !nookies.get(ctx).login){
     console.log('checkAuth step 3')
-    window.location.replace('/sign-in')
-    return 
+    return window.location.href = '/account' 
   }
   console.log('checkAuth step 4')
   const authInfo =  JSON.parse(nookies.get(ctx).login)
@@ -38,16 +36,15 @@ const checkAuthAndRedirect = async (url, ctx) => {
   console.log('checkAuth step 7: ', data)
 
   if(!data.isAuth && !ctx.req){
-    window.location.replace('/sign-in')
-    return 
+    return window.location.href = '/account'
   }
   
   if(!data.isAuth && ctx.req){
        ctx.res.writeHead(302, { 
          Location: '/sign-in'
        })
-       ctx.res.end()
-       return 
+       return ctx.res.end()
+        
   }
 
   return data
