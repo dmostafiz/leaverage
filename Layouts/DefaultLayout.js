@@ -33,6 +33,8 @@ export default function DefaultLayout({children, classes}){
     // ]
 
     function loadScripts(){
+      loadJs("/assets/js/vendor/jquery.min.js")
+
       JSLoader("/assets/js/vendor/jquery.min.js")
       JSLoader("/assets/js/vendor/jquery.easing.min.js")
       JSLoader("/assets/js/vendor/jquery.inview.min.js")

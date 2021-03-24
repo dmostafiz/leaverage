@@ -21,6 +21,7 @@ export default function AccountLayout({children, user}){
  
       if(user.isAuth)
       { 
+        loadJs('/account/lib/jquery/jquery.min.js')
         JSLoader('/account/lib/jquery/jquery.min.js')
         JSLoader('/account/lib/bootstrap/js/bootstrap.bundle.min.js')
         JSLoader('/account/lib/ionicons/ionicons.js')
