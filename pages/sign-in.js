@@ -5,6 +5,7 @@ import {useDispatch} from 'react-redux'
 import Cookies from 'js-cookie'
 import Link from 'next/link'
 import AuthLayout from '../Layouts/AuthLayout';
+// import fetch from 'isomorphic-fetch'
 
 const Signin = () => {
 
@@ -36,7 +37,7 @@ const Signin = () => {
 
         if(password && email != '')
         {
-           const response = await fetch(`http://localhost:3333/api/login`, {
+           const response = await fetch(`${process.env.API}/api/login`, {
              method: 'POST',
              headers: {
               "Content-Type": "application/json"
@@ -76,9 +77,8 @@ const Signin = () => {
             dispatch(makeAuthentication(data.user)) 
     
             setLoading(false)
-            
 
-            window.location.href = '/account'
+            return window.location.href = '/account'
             //  router.prefetch('/dashboard')
         }
         else
