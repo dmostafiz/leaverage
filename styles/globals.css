@@ -212,6 +212,14 @@ header .navbar-sticky {
 
 }
 
+.hero-image {
+    /* position: absolute !important;
+    right: 10% !important;
+    bottom: 0 !important;
+    width: auto !important; */
+    height: 91% !important;
+}
+
 
 @media screen and (min-width:576)
 {
