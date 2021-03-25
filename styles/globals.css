@@ -132,12 +132,12 @@ section{
   width:100%;
 }
 
-.tag-list-article > ul{
+/* .tag-list-article > ul{
   margin-left: -19px;
-}
+} */
 
 .tag-list-article > ul >li {
-  display: inline;
+  display: inline-block;
   margin-right: 5px;
 }
 
@@ -182,14 +182,6 @@ span.tag-remover:hover{
 }
 
 
-element.style {
-}
-header .navbar-sticky.visible {
-    -webkit-transform: translate3d(0,0,0)!important;
-    -ms-transform: translate3d(0,0,0)!important;
-    -moz-transform: translate3d(0,0,0)!important;
-    transform: translate3d(0,0,0)!important;
-}
 header .navbar-expand {
   position: fixed;
   /* top: 0;
