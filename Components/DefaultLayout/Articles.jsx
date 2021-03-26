@@ -1,3 +1,4 @@
+import moment from 'moment'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import JSLoader from '../../helpers/JSLoader'
@@ -32,13 +33,13 @@ import JSLoader from '../../helpers/JSLoader'
               </div>
               <div className="card-caption col-12 p-0">
                 <div className="card-body">
-                  <a href="#">
-                    <h4 className="m-0 text-xl font-medium">{post.title}</h4>
-                  </a>
+                  <Link href={`article/${post.slug}`}>
+                    <a><h4 className="m-0 text-xl font-medium">{post.title}</h4></a>
+                  </Link>
                 </div>
                 <div className="card-footer d-lg-flex align-items-center justify-content-center">
-                  <a href="#" className="d-lg-flex align-items-center"><i className="icon-user" />John Doe</a>
-                  <a href="#" className="d-lg-flex align-items-center"><i className="icon-clock" />3 Days Ago</a>
+                  <a href="#" className="d-lg-flex align-items-center"><i className="icon-user" />{post.author?.profile?.first_name}</a>
+                  <a href="#" className="d-lg-flex align-items-center"><i className="icon-clock" />{moment(post.createdAt).format('Do MMMM')}</a>
                 </div>
               </div>
             </div>
