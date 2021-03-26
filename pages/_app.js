@@ -1,5 +1,6 @@
 import axios from 'axios';
 import '../styles/globals.css'
+import 'tailwindcss/tailwind.css'
 import '../styles/nprogress.css'
 import {Provider} from 'react-redux'
 import { createWrapper } from 'next-redux-wrapper'     
