@@ -43,7 +43,7 @@ export default function Index({initPost}) {
                     <div className="row ">
                         {/* Main */}
                         <div className="col-md-12 text-center pt-5">
-                            <h3 className="mt-0 ml-0 mb-4">{post?.title}</h3>
+                            <h3 className="text-3xl font-medium mt-0 ml-0 mb-4">{post?.title}</h3>
 
                             <span className="text-muted">
                                 {moment(post.createdAt).format('dddd, MMMM Do YYYY')} (about {moment(post.createdAt).fromNow()})
@@ -74,6 +74,11 @@ export default function Index({initPost}) {
                     </div>
                     {/* <div className="" style={{ borderBottom:"2px solid #e7e7e7" }}></div> */}
 
+                   {post.imageUrl && <div className="max-w-5xl mx-auto text-center mb-4">
+                        <img width="100%" src={post.imageUrl} />
+                    </div>}
+                    
+
 
                     <div className="row">
                         {/* Main */}
@@ -83,9 +88,7 @@ export default function Index({initPost}) {
                         <div className="row">
                             <div className="col-12 align-self-center">
                  
-                             <div className="text-center mb-4 shadow">
-                                <img width="100%" src={post.imageUrl} />
-                            </div>
+                     
                             {/* <div dangerouslySetInnerHTML={{ __html:post?.body}}></div> */}
 
 

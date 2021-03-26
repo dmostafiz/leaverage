@@ -19,6 +19,7 @@ router.get('/category/get', CategoryController.get)
 router.post('/post/save', Authorization, PostController.save)
 router.get('/post/get', PostController.get)
 router.get('/post/get/:slug', PostController.getSingle)
+router.get('/post/get/top/:limit', PostController.getTopByLimit)
 
 module.exports = router
 

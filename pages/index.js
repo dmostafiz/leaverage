@@ -17,14 +17,22 @@ function Home(props) {
 
   const dispatch = useDispatch()
 
+
   useEffect(() => {
+
+    console.log(props.topArticles)
+
+
+
+
+
     dispatch(getInitialSliders(props.sliders))
   }, [])
 
   return (
       <DefaultLayout>
         <HeroSlider /> 
-        <Articles/>
+        <Articles posts={props.topArticles}/>
         <Services/>  
         <Testimonials/>
         <Subscribe/>
@@ -35,7 +43,7 @@ function Home(props) {
   )
 }
 
-export const getStaticProps = async () => {
+Home.getInitialProps = async () => {
   const sliders = [
           {
               title: 'Let\'s Build Something.',
@@ -54,11 +62,14 @@ export const getStaticProps = async () => {
           }, 
       ]
 
-  return {
-    props:{
-      sliders
-    }
-  }    
+      const data = await fetch(`${process.env.API}/post/get/top/6`)
+
+      console.log(data)
+
+      const topArticles = await data.json()
+
+
+  return {sliders, topArticles}    
 
 }
 

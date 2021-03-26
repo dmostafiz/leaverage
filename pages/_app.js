@@ -9,7 +9,7 @@ import NProgress from 'nprogress'
 import Router from 'next/router'
 import {SWRConfig} from 'swr'
 import toast, { Toaster } from 'react-hot-toast';
-import $ from 'jquery'; 
+import jQuery from 'jquery'; 
 // import jQuery from 'jquery'; 
 import { useEffect } from 'react';
 // import 'tailwindcss/tailwind.css'
@@ -41,8 +41,8 @@ function MyApp({ Component, pageProps }) {
   })
 
   useEffect(() => {
-      window.jQuery = $
-      window.$ = $
+      window.jQuery = jQuery
+      window.$ = jQuery
   }, [])
 
   const Layout = Component.layout || EmptyLayout
