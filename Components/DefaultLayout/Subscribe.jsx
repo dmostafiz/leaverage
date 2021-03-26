@@ -6,7 +6,7 @@ export default function Subscribe() {
   <div className="container smaller">
     <div className="row text-center intro">
       <div className="col-12">
-        <h2 className="text-3xl font-medium mb-2">Newsletter</h2>
+        <h2 className="text-4xl font-bold tracking-wide mb-2">Newsletter</h2>
         <p className="text-max-800">Subscribe to our newsletter and follow our content closely. Receive news based on what has to do with you. We promise not to send promotions you don't like.</p>
       </div>
     </div>

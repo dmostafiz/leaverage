@@ -13,7 +13,7 @@ import JSLoader from '../../helpers/JSLoader'
     <div className="container">
       <div className="row intro">
         <div className="col-12 col-md-9 align-self-center text-center text-md-left">
-          <h2 className="text-3xl">Top Articles</h2>
+          <h2 className="text-4xl font-bold tracking-wide">Top Articles</h2>
           <p>Every week we publish exclusive content on various topics.</p>
         </div>
         <div className="col-12 col-md-3 align-self-end">
@@ -34,7 +34,7 @@ import JSLoader from '../../helpers/JSLoader'
               <div className="card-caption col-12 p-0">
                 <div className="card-body">
                   <Link href={`article/${post.slug}`}>
-                    <a><h4 className="m-0 text-xl font-medium">{post.title}</h4></a>
+                    <a><h4 className="m-0 text-2xl font-semibold">{post.title}</h4></a>
                   </Link>
                 </div>
                 <div className="card-footer d-lg-flex align-items-center justify-content-center">
