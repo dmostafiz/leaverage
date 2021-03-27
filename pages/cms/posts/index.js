@@ -42,7 +42,7 @@ const Index = ({ user }) => {
             </div>
           </div>{/* az-dashboard-one-title */}
 
-          <div className="az-dashboard-nav">
+          <div className="az-dashboard-nav hidden lg:flex">
             <NavLeft />
             <NavRight />
           </div>
@@ -61,10 +61,7 @@ const Index = ({ user }) => {
           <div className="az-content-label mg-b-5">Posts Table</div>
           <p className="mg-b-20">Using the most basic table markup.</p>
 
-          <div className="">
-
-
-
+          <div className="table-responsive">
 
             <table className="table mg-b-0">
               <thead>

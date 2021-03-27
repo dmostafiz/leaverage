@@ -38,7 +38,7 @@ export default function MyProjects({user}) {
             <a href="#" className="btn btn-purple">Have any idea?</a>
           </div>
         </div>{/* az-dashboard-one-title */}
-        <div className="az-dashboard-nav">
+        <div className="az-dashboard-nav  hidden lg:flex">
           <nav className="nav">
             <a className="nav-link active" data-toggle="tab" href="#">Overview</a>
             <a className="nav-link" data-toggle="tab" href="#">Audiences</a>

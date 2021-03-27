@@ -40,11 +40,9 @@ const Index = ({user}) => {
                         <a href="#" className="btn btn-purple">Create new post</a>
                     </div>
                     </div>{/* az-dashboard-one-title */}
-                    <div className="az-dashboard-nav">
-
-                    <NavLeft/>
-                    <NavRight/>
-
+                    <div className="az-dashboard-nav hidden lg:flex">
+                        <NavLeft/>
+                        <NavRight/>
                     </div>
                 </div>{/* az-content-body */}
                 

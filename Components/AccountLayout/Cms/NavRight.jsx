@@ -14,7 +14,7 @@ const NavRight = () => {
             <a className="nav-link"><i className="far fa-envelope" />Reviews</a>
         </Link>
 
-        <div className="dropdown-menu tx-13" x-placement="top-start" >
+        {/* <div className="dropdown-menu tx-13" x-placement="top-start" >
             <Link href="/cms/concepts">
                 <a className="dropdown-item">Concepts</a>
             </Link>
@@ -27,7 +27,7 @@ const NavRight = () => {
         </div>
         <a className="nav-link" href="#" data-toggle="dropdown">
             <i className="fas fa-ellipsis-h" />
-        </a>
+        </a> */}
    
     </nav>
     );

@@ -62,14 +62,17 @@ Home.getInitialProps = async () => {
           }, 
       ]
 
-      const data = await fetch(`${process.env.API}/post/get/top/6`)
+      // const data = await fetch(`${process.env.API}/post/get/top/6`)
 
-      console.log(data)
+      // console.log(data)
 
-      const topArticles = await data.json()
+      // const topArticles = await data.json()
 
 
-  return {sliders, topArticles}    
+  return {
+    sliders, 
+    // topArticles
+  }    
 
 }
 

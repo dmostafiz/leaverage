@@ -53,7 +53,7 @@ const Index = ({ user }) => {
                             </div>
 
                         </div>{/* az-dashboard-one-title */}
-                        <div className="az-dashboard-nav">
+                        <div className="az-dashboard-nav hidden lg:flex">
                             <NavLeft />
                             <NavRight />
                         </div>

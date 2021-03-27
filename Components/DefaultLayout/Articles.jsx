@@ -3,8 +3,21 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import JSLoader from '../../helpers/JSLoader'
 
- const Articles = ({posts}) => {
+ const Articles = () => {
 
+  const[posts, setPosts] = useState([])
+
+  useEffect(async () => {
+
+    const data = await fetch(`${process.env.API}/post/get/top/4`)
+
+    console.log(data)
+
+    const topArticles = await data.json()
+
+    setPosts(topArticles)
+
+  }, [])
 
     return (
 <section id="news" className="section-4 carousel showcase news">
@@ -22,13 +35,11 @@ import JSLoader from '../../helpers/JSLoader'
          </Link>
         </div>
       </div>
-      <div className="swiper-container mid-slider items">
-        <div className="swiper-wrapper">
-
-
-        {posts ? posts.map((post, index) => <div key={index} className="card bg-dark-900 p-0 text-center item swiper-slide slide-center item">
+      <div className="bricklayer items columns-4">
+        
+        {posts ? posts.map((post, index) =><div key={index} className="card p-0 text-center item">
             <div className="image-over">
-              <img src={post.imageUrl} alt="Lorem ipsum" />
+              <img src={post.imageUrl ? post.imageUrl : 'https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'} alt="Lorem ipsum" />
             </div>
 
             
@@ -53,7 +64,7 @@ import JSLoader from '../../helpers/JSLoader'
   
 
 
-        </div>
+        
         <div className="swiper-pagination" />
       </div>
     </div>

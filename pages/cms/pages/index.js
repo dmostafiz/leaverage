@@ -49,7 +49,7 @@ const Index = ({user}) => {
                         <a href="#" className="btn btn-purple">Create new page</a>
                     </div>
                     </div>{/* az-dashboard-one-title */}
-                    <div className="az-dashboard-nav">
+                    <div className="az-dashboard-nav hidden lg:flex">
                     <NavLeft/>
                     <NavRight/>
                     </div>

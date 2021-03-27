@@ -18,7 +18,7 @@ const NavLeft = () => {
                 <a className={`nav-link ${IsActive(['/cms/pages'],'active')}`}>Pages</a>
             </Link>
 
-            <div className="dropdown-menu tx-13" x-placement="top-start" >
+            {/* <div className="dropdown-menu tx-13" x-placement="top-start" >
                 <Link href="/cms/posts">
                     <a className="dropdown-item">Posts</a>
                 </Link>
@@ -31,7 +31,7 @@ const NavLeft = () => {
             </div>
             <a className="nav-link" href="#" data-toggle="dropdown">
                 More
-        </a>
+        </a> */}
         </nav>
     );
 }
