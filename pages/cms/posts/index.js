@@ -5,46 +5,47 @@ import NavLeft from '../../../Components/AccountLayout/Cms/NavLeft';
 import NavRight from '../../../Components/AccountLayout/Cms/NavRight';
 import Link from 'next/link';
 
-const Index = ({user}) => {
-    return (
-        <AccountLayout user={user}>
-             <div className="az-content az-content-dashboard">
-              <div className="container">
-                <div className="az-content-body">
-                    <div className="az-dashboard-one-title">
-                    <div>
-                        <h2 className="az-dashboard-title">Posts</h2>
-                        <p className="az-dashboard-text">It seems you havn't started any project yet'.</p>
-                    </div>
-                    <div className="az-content-header-right">
-                        <div className="media">
-                        <div className="media-body">
-                            <label>Start Date</label>
-                            <h6>Oct 10, 2018</h6>
-                        </div>{/* media-body */}
-                        </div>{/* media */}
-                        <div className="media">
-                        <div className="media-body">
-                            <label>End Date</label>
-                            <h6>Oct 23, 2018</h6>
-                        </div>{/* media-body */}
-                        </div>{/* media */}
-                        <div className="media">
-                        <div className="media-body">
-                            <label>Event Category</label>
-                            <h6>All Categories</h6>
-                        </div>{/* media-body */}
-                        </div>{/* media */}
-                        <Link href="/cms/posts/create">
-                            <a className="btn btn-purple">Create new post</a>
-                        </Link>
-                    </div>
-                    </div>{/* az-dashboard-one-title */}
-                    
-                    <div className="az-dashboard-nav">
-                      <NavLeft/>
-                      <NavRight/>
-                    </div>
+const Index = ({ user }) => {
+  return (
+    <AccountLayout user={user}>
+      <div className="az-content az-content-dashboard">
+        <div className="container flex-column">
+
+        <div className="az-content-body">
+          <div className="az-dashboard-one-title">
+            <div>
+              <h2 className="az-dashboard-title">Posts</h2>
+              <p className="az-dashboard-text">It seems you havn't started any project yet'.</p>
+            </div>
+            <div className="az-content-header-right">
+              <div className="media">
+                <div className="media-body">
+                  <label>Start Date</label>
+                  <h6>Oct 10, 2018</h6>
+                </div>{/* media-body */}
+              </div>{/* media */}
+              <div className="media">
+                <div className="media-body">
+                  <label>End Date</label>
+                  <h6>Oct 23, 2018</h6>
+                </div>{/* media-body */}
+              </div>{/* media */}
+              <div className="media">
+                <div className="media-body">
+                  <label>Event Category</label>
+                  <h6>All Categories</h6>
+                </div>{/* media-body */}
+              </div>{/* media */}
+              <Link href="/cms/posts/create">
+                <a className="btn btn-purple">Create new post</a>
+              </Link>
+            </div>
+          </div>{/* az-dashboard-one-title */}
+
+          <div className="az-dashboard-nav">
+            <NavLeft />
+            <NavRight />
+          </div>
 
           <div className="az-content-breadcrumb">
             <span>Dashboard</span>
@@ -52,12 +53,13 @@ const Index = ({user}) => {
             <span>All posts</span>
           </div>
           {/* <h2 className="az-content-title">All posts</h2> */}
-          <br/> 
+          <br />
+
+        </div>
+        <div className="az-content-body">
+
           <div className="az-content-label mg-b-5">Posts Table</div>
           <p className="mg-b-20">Using the most basic table markup.</p>
-
-
-          
 
           <div className="table-responsive">
             <table className="table mg-b-0">
@@ -83,7 +85,7 @@ const Index = ({user}) => {
                     </div>
                   </td>
                   <td>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. making it look like readable English. 
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. making it look like readable English.
                   </td>
                   <td>System Architect</td>
                   <td>22 Apr, 2015</td>
@@ -100,7 +102,7 @@ const Index = ({user}) => {
                     </div>
                   </td>
                   <td>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. as opposed to using 'Content here, content here', making it look like readable English. 
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. as opposed to using 'Content here, content here', making it look like readable English.
                   </td>
                   <td>Accountant</td>
                   <td>22 Apr, 2015</td>
@@ -117,7 +119,7 @@ const Index = ({user}) => {
                     </div>
                   </td>
                   <td>
-                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. 
+                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
                   </td>
                   <td>Junior Technical Author</td>
                   <td>22 Apr, 2015</td>
@@ -134,7 +136,7 @@ const Index = ({user}) => {
                     </div>
                   </td>
                   <td>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters. 
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
                   </td>
                   <td>Senior Javascript Developer</td>
                   <td>22 Apr, 2015</td>
@@ -142,7 +144,7 @@ const Index = ({user}) => {
                 </tr>
                 <tr>
                   <th scope="row">5</th>
-                 
+
                   <td>
                     One of the most popular saight in the middle east
                     <div>
@@ -152,7 +154,7 @@ const Index = ({user}) => {
                     </div>
                   </td>
                   <td>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                   </td>
                   <td>Accountant</td>
                   <td>22 Apr, 2015</td>
@@ -170,7 +172,7 @@ const Index = ({user}) => {
                     </div>
                   </td>
                   <td>
-                    It is a long established fact tha. As opposed to using 'Content here, content here', making it look like readable English. 
+                    It is a long established fact tha. As opposed to using 'Content here, content here', making it look like readable English.
                   </td>
                   <td>Junior Technical Author</td>
                   <td>22 Apr, 2015</td>
@@ -187,7 +189,7 @@ const Index = ({user}) => {
                     </div>
                   </td>
                   <td>
-                   The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. 
+                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
                   </td>
                   <td>Senior Javascript Developer</td>
                   <td>22 Apr, 2015</td>
@@ -204,7 +206,7 @@ const Index = ({user}) => {
                     </div>
                   </td>
                   <td>
-                    As opposed to using 'Content here, content here', making it look like readable English. 
+                    As opposed to using 'Content here, content here', making it look like readable English.
                   </td>
                   <td>Accountant</td>
                   <td>22 Apr, 2015</td>
@@ -214,8 +216,6 @@ const Index = ({user}) => {
             </table>
 
 
-
-
           </div>
           {/* <!-- table-responsive --> */}
 
@@ -223,17 +223,16 @@ const Index = ({user}) => {
 
 
 
-                
-                </div>
-            </div>{/* az-content */}
+        </div>
+      </div>{/* az-content */}
 
-        </AccountLayout>
-    );
+    </AccountLayout>
+  );
 }
 
 Index.getInitialProps = async (ctx) => {
-    const user = await checkAuthAndRedirect(`${process.env.API}/authorize`, ctx)
-    return { user }
+  const user = await checkAuthAndRedirect(`${process.env.API}/authorize`, ctx)
+  return { user }
 }
 
 export default Index;

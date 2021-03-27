@@ -213,11 +213,9 @@ header .navbar-sticky {
     height: 91% !important;
 }
 
-
-@media screen and (min-width:576)
-{
-  .content-img{
-     width: 100px !important; 
-  }
-
+.az-footer {
+  display: block !important;
+}
+.az-content{
+  height: 100vh !important;
 }

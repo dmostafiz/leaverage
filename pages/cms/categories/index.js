@@ -42,9 +42,11 @@ const Index = ({ user }) => {
     return (
         <AccountLayout user={user}>
             <div className="az-content az-content-dashboard">
-                <div className="container">
-                    <div className="az-content-body">
-                        <div className="az-dashboard-one-title">
+                <div className="container flex-column">
+
+                    <div className="az-content-body mb-3">
+
+                       <div className="az-dashboard-one-title">
                             <div>
                                 <h2 className="az-dashboard-title">Categories</h2>
                                 <p className="az-dashboard-text">It seems you havn't started any project yet'.</p>
@@ -61,7 +63,11 @@ const Index = ({ user }) => {
                             <span>Categories</span>
                         </div>
 
-                        <br />
+                    </div>
+
+
+                    <div className="az-content-body">
+
                         <div className="row">
 
                             <div className="col-md-4">

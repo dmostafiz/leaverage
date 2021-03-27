@@ -71,11 +71,11 @@ export default function AccountLayout({children, user}){
         <Header/>
         {children}
 
-        <div className="az-footer ht-40 ">
-                <div className="container ht-100p pd-t-0-f">
-                <span>© 2019 Azia Responsive Bootstrap 4 Dashboard Template</span>
-                </div>{/* container */}
-            </div>{/* az-footer */}
+        <div className="az-footer ht-40 mt-5">
+            <div className="container ht-100p pd-t-0-f">
+            <span>© 2019 DMostafiz </span>
+            </div>{/* container */}
+        </div>{/* az-footer */}
       </> }
       {/* <Footer/> */}
 

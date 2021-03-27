@@ -26,26 +26,31 @@ import JSLoader from '../../helpers/JSLoader'
         <div className="swiper-wrapper">
 
 
-        {posts ? posts.map((post, index) => <div key={index} className="swiper-slide slide-center item">
-            <div className="row card p-0 text-center">
-              <div className="image-over">
-                <img src={post.imageUrl} alt="Lorem ipsum" />
+        {posts ? posts.map((post, index) => <div key={index} className="card bg-dark-900 p-0 text-center item swiper-slide slide-center item">
+            <div className="image-over">
+              <img src={post.imageUrl} alt="Lorem ipsum" />
+            </div>
+
+            
+            <div className="card-caption col-12 p-0">
+              <div className="card-body">
+                <Link href={`/article/${post.slug}`}>
+                <a><h4 className="text-xl font-medium">{post.title}</h4></a>
+                </Link>
               </div>
-              <div className="card-caption col-12 p-0">
-                <div className="card-body">
-                  <Link href={`article/${post.slug}`}>
-                    <a><h4 className="m-0 text-2xl font-semibold">{post.title}</h4></a>
-                  </Link>
-                </div>
-                <div className="card-footer d-lg-flex align-items-center justify-content-center">
-                  <a href="#" className="d-lg-flex align-items-center"><i className="icon-user" />{post.author?.profile?.first_name}</a>
-                  <a href="#" className="d-lg-flex align-items-center"><i className="icon-clock" />{moment(post.createdAt).format('Do MMMM')}</a>
-                </div>
+              <div className="card-footer d-lg-flex align-items-center justify-content-center">
+                <a href="#" className="d-lg-flex align-items-center"><i className="icon-user" />
+                  {`${post.author?.profile.first_name}`}
+                </a>
+                <a href="#" className="d-lg-flex align-items-center">
+                <i className="icon-clock"> </i>
+                {/* {moment(post.createdAt).fromNow()} */}
+                {moment(post.createdAt).format('Do MMMM')}
+                </a>
               </div>
             </div>
           </div>) : <h1>Loading...</h1>}  
   
-
 
 
         </div>

@@ -236,7 +236,7 @@ const Create = ({ user }) => {
     return (
         <AccountLayout user={user}>
             <div className="az-content az-content-dashboard">
-                <div className="container">
+                <div className="container d-flex flex-column">
                     <div className="az-content-body">
                         <div className="az-dashboard-one-title">
 
@@ -251,8 +251,10 @@ const Create = ({ user }) => {
                             </div>
 
                         </div>
+                    </div>
+                    <div className="az-content-body">    
 
-                        <br />
+                        {/* <br /> */}
 
                         <div className="az-content-label mg-b-5">Create new post</div>
                         <p className="mg-b-20">Using the most basic table markup.</p>

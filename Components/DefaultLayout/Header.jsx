@@ -49,12 +49,18 @@ export default function Header({classes}) {
                         </Link>
                     </li>
 
-                    {!user.isAuth &&
-                    <li className="nav-item">
-                        <a href="/sign-in" className={`nav-link ${classes}`}>Sign in</a>
-                    </li>
-                    }
+                    {!user.isAuth && <>
+                        <li className="nav-item">
+                            <a href="/sign-in" className={`nav-link ${classes} `}>Sign in</a>
+                        </li>
+                        <li className="nav-item">
+                            <a href="/sign-up" className="nav-link text-success">
+                                Join Today
+                            </a>
+                        </li>
+                    </>  }
 
+          
                 </ul>
 
                 {/* <ul className="navbar-nav icons">
@@ -81,30 +87,21 @@ export default function Header({classes}) {
                 </li>
             </ul>
 
-            <ul className="navbar-nav action">
-            {!user.isAuth && 
-                <li className="nav-item">
-                    <a href="/sign-up" className="nav-link text-success">
-
-                        
-                        Signup
-                    </a>
-                </li>
-                }
                 
-
+            <div className="ml-auto">
+            <ul className="navbar-nav items">
             {user.isAuth && 
                 <li className="nav-">
                     <a href="/account" className="btn custbtn ml-lg-auto primary-button">
+                        <img className="mr-1" src="/icons/white/user.svg" style={{ height:'18px', width:'18px' }} />
+                        
                         {user.username}
                     </a>
                 </li>
                 }
             </ul>
-    
-                
             </div>    
-
+            </div> 
         </nav>
     </header>
     )
