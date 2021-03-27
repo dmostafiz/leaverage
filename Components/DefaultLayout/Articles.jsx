@@ -9,13 +9,14 @@ import JSLoader from '../../helpers/JSLoader'
 
   useEffect(async () => {
 
-    const data = await fetch(`${process.env.API}/post/get/top/4`)
+    const response = await fetch(`${process.env.API}/post/get/top/4`)
 
-    console.log(data)
+    const jsonData = await response.json()
 
-    const topArticles = await data.json()
+    console.log('Artcles: ',jsonData)
 
-    setPosts(topArticles)
+  
+    setPosts(jsonData)
 
   }, [])
 
@@ -35,9 +36,10 @@ import JSLoader from '../../helpers/JSLoader'
          </Link>
         </div>
       </div>
-      <div className="bricklayer items columns-4">
+      <div className="row">
         
-        {posts ? posts.map((post, index) =><div key={index} className="card p-0 text-center item">
+        { posts.map((post, index) =><div key={index} className="col-lg-3 col-md-4 mb-3">
+        <div className="card p-0 text-center item">
             <div className="image-over">
               <img src={post.imageUrl ? post.imageUrl : 'https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'} alt="Lorem ipsum" />
             </div>
@@ -60,12 +62,9 @@ import JSLoader from '../../helpers/JSLoader'
                 </a>
               </div>
             </div>
-          </div>) : <h1>Loading...</h1>}  
+          </div>
+          </div>)}  
   
-
-
-        
-        <div className="swiper-pagination" />
       </div>
     </div>
   </div>
