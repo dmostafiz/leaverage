@@ -217,5 +217,5 @@ header .navbar-sticky {
   display: block !important;
 }
 .az-content{
-  height: 100vh !important;
+  height: auto !important;
 }
