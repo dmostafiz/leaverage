@@ -78,7 +78,7 @@ const Signin = () => {
     
             setLoading(false)
 
-            return window.location.href = '/account'
+            return window.location.href = '/manage'
             //  router.prefetch('/dashboard')
         }
         else

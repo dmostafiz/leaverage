@@ -28,21 +28,21 @@ export default function Index({initPost}) {
             {/* <div class="navbar-holder"></div>   */}
 
             {/* <div className="text-center">
-                <img width="80%" src={post.imageUrl} />
+                <img width="100%" src={post.imageUrl} />
             </div> */}
 
             {/* <div style={{ height:'500px', widht:'100%', background:`url(${post.imageUrl})`, backgroundSize:"cover"  }}></div> */}
             {/* Content */}
-            <div style={{ borderBottom:"2px solid #e7e7e7" }}></div>
+            {/* <div style={{ borderBottom:"2px solid #e7e7e7" }}></div> */}
 
-
+            <div className="navbar-holder"></div>
             <section id="content" className="single">
                 <div className="container">
 
 
                     <div className="row ">
                         {/* Main */}
-                        <div className="col-md-12 text-center pt-5">
+                        <div className="col-md-12 text-center">
                             <h3 className="text-3xl font-medium mt-0 ml-0 mb-4">{post?.title}</h3>
 
                             <span className="text-muted">
@@ -50,15 +50,15 @@ export default function Index({initPost}) {
                                 </span>
 
                             <div className="mt-4 mb-5 d-flex justify-content-center align-items-center">
-                                <img className="shadow-sm bg-light mr-2" src={post.author.profile.avatar} 
+                                <img className="shadow-sm bg-light mr-2" src={post?.author?.profile.avatar} 
                                 style={{ 
                                     width:"30px", 
                                     height:"30px", 
                                     borderRadius:"50%"
                                 }} />
                                <div className="d-flex flex-column  justify-content-start align-items-start">
-                                <span className="text-dark" style={{fontSize:"16px"}}>{`${post.author.profile.first_name} ${post.author.profile.last_name}`}</span>
-                                <span className="text-success" style={{fontSize:"12px"}}>{`@${post.author.username}`}</span>
+                                <span className="text-dark" style={{fontSize:"16px"}}>{`${post?.author?.profile.first_name} ${post?.author?.profile.last_name}`}</span>
+                                <span className="text-success" style={{fontSize:"12px"}}>{`@${post?.author?.username}`}</span>
                                </div>
                             </div>
                             
@@ -74,10 +74,10 @@ export default function Index({initPost}) {
                     </div>
                     {/* <div className="" style={{ borderBottom:"2px solid #e7e7e7" }}></div> */}
 
-                   {post.imageUrl && <div className="max-w-5xl mx-auto text-center mb-4">
+                   {/* {post.imageUrl && <div className="max-w-5xl mx-auto text-center mb-4">
                         <img width="100%" src={post.imageUrl} />
                     </div>}
-                    
+                     */}
 
 
                     <div className="row">

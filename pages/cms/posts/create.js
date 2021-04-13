@@ -19,6 +19,7 @@ import toast, { Toaster } from 'react-hot-toast';
 // )
 import Dropzone from 'react-dropzone'
 import token from '../../../helpers/token'
+import {useRouter} from 'next/router'
 
 
 
@@ -41,7 +42,10 @@ const Create = ({ user }) => {
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [imageUrl, setImageUrl] = useState('')
+
+    // const [imageUrl, setImageUrl] = useState('')
+    const [rawImage, setRawImage] = useState('')
+
     const [categories, setCategories] = useState([])
     const [tags, setTags] = useState([])
 
@@ -70,20 +74,33 @@ const Create = ({ user }) => {
     const handleImageUpload = async (imgs) => {
         setImageLoading(true)
         const image = imgs[0]
-        let data = new FormData();
-        data.append('file', image);
-        data.append('upload_preset', 'leaverage');
+        // let data = new FormData();
+        // data.append('file', image);
+        // data.append('upload_preset', 'leaverage');
 
-        const response = await axios.post('https://api.Cloudinary.com/v1_1/dgzzionee/image/upload',
-            data, { headers: { 'Content-Type': 'multipart/form-data' } })
+        // const response = await axios.post('https://api.Cloudinary.com/v1_1/dgzzionee/image/upload',
+        //     data, { headers: { 'Content-Type': 'multipart/form-data' } })
 
-        const uploadedFile = response.data
+        // const uploadedFile = response.data
 
-        console.log('Upload: ', uploadedFile.secure_url)
+        // console.log('Upload: ', uploadedFile.secure_url)
+        const reader = new FileReader()
+        reader.readAsDataURL(image)
 
-        setImageUrl(uploadedFile.secure_url)
+        reader.onloadend = () => {
+            setRawImage(reader.result)
+            // setImageUrl(reader.result)
+            // setTemporaryImage(reader.result)
+            // setImageUrl(reader.result)
+            setImageLoading(false)
 
-        setImageLoading(false)
+            // console.log(reader.result);
+        }
+
+
+        // setImageUrl(uploadedFile.secure_url)
+
+        // setImageLoading(false)
     }
 
     const handleCategoryChange = (value) => {
@@ -163,6 +180,7 @@ const Create = ({ user }) => {
     const [success, setSuccess] = useState()
     
     
+    const router = useRouter()
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -173,7 +191,7 @@ const Create = ({ user }) => {
             title:title,
             slug:slug,
             body:description,
-            imageUrl: imageUrl,
+            image: rawImage,
             categories:categories,
             tags:tags,
             metaTitle:seoTitle,
@@ -197,7 +215,9 @@ const Create = ({ user }) => {
         if(data.type == 'success') {
             toast.success(data.msg);
             setSuccess(data.msg)
-            clearAll()
+
+            router.push(`/cms/posts/${data.id}/edit`)
+            
         }
         else{
             // clearAll()
@@ -221,7 +241,7 @@ const Create = ({ user }) => {
         setCats([])
         setTitle('')
         setDescription('')
-        setImageUrl('')
+        setRawImage('')
         setCategories([])
         setCats([])
         setTags([])
@@ -277,7 +297,7 @@ const Create = ({ user }) => {
                                     </div>
                                     <div className="row row-xs align-items-center mg-b-20">
                                         <div className="col-md-12">
-                                            <TynnyMCE setDesc={handleDescriptionChange} />
+                                            <TynnyMCE body='' setDesc={handleDescriptionChange} />
                                         </div>
                                     </div>
 
@@ -359,7 +379,7 @@ const Create = ({ user }) => {
                             <div className="col-md-4">
 
                                 <Dropzone
-                                    style={{ background: `url(${imageUrl})` }}
+                                    style={{ background: `url(${rawImage})` }}
                                     className="drop-zone"
                                     onDrop={acceptedFiles => handleImageUpload(acceptedFiles)}>
 
@@ -371,7 +391,7 @@ const Create = ({ user }) => {
                                             {imgLoading ? <div class="spinner-border"
                                                 role="status"
                                                 style={{
-                                                    color: imageUrl == '' ? '#d6d6d6' : 'white',
+                                                    color: rawImage == '' ? '#d6d6d6' : 'white',
                                                     width: "50px",
                                                     height: "50px",
                                                     position: 'relative',

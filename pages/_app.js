@@ -1,6 +1,5 @@
 import axios from 'axios';
 import '../styles/globals.css'
-import 'tailwindcss/tailwind.css'
 import '../styles/nprogress.css'
 import {Provider} from 'react-redux'
 import { createWrapper } from 'next-redux-wrapper'     
@@ -13,6 +12,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import jQuery from 'jquery'; 
 // import jQuery from 'jquery'; 
 import { useEffect } from 'react';
+// import 'tailwindcss/tailwind.css'
 // import 'tailwindcss/tailwind.css'
 
 function MyApp({ Component, pageProps }) {

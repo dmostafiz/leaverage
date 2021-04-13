@@ -11,33 +11,11 @@ const Index = ({user}) => {
              <div className="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
               <div className="container">
 
-
                 <div className="az-content-body">
                     <div className="az-dashboard-one-title">
                     <div>
                         <h2 className="az-dashboard-title">Dashboard (CMS)</h2>
                         <p className="az-dashboard-text">It seems you havn't started any project yet'.</p>
-                    </div>
-                    <div className="az-content-header-right">
-                        <div className="media">
-                        <div className="media-body">
-                            <label>Start Date</label>
-                            <h6>Oct 10, 2018</h6>
-                        </div>{/* media-body */}
-                        </div>{/* media */}
-                        <div className="media">
-                        <div className="media-body">
-                            <label>End Date</label>
-                            <h6>Oct 23, 2018</h6>
-                        </div>{/* media-body */}
-                        </div>{/* media */}
-                        <div className="media">
-                        <div className="media-body">
-                            <label>Event Category</label>
-                            <h6>All Categories</h6>
-                        </div>{/* media-body */}
-                        </div>{/* media */}
-                        <a href="#" className="btn btn-purple">Create new post</a>
                     </div>
                     </div>{/* az-dashboard-one-title */}
                     <div className="az-dashboard-nav hidden lg:flex">
@@ -47,6 +25,9 @@ const Index = ({user}) => {
                 </div>{/* az-content-body */}
                 
                 {/* Important contents end here */}
+
+
+                
                 
                 </div>
             </div>{/* az-content */}

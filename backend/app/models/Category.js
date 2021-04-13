@@ -21,8 +21,9 @@ const categorySchema = mongoose.Schema({
         default: true
     },
     allowed:{
+      type: String,
       enum:['all', 'private'],
-      default:['all']
+      default:'all'
     },
     posts:[
         {

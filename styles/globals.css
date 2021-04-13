@@ -24,7 +24,9 @@
 .tox-statusbar__branding{
   display: none;
 }
-
+/* .container.header {
+  max-width: 1067px !important;
+} */
 
 section{
   /* background-color: #e5e5e500 !important; */
@@ -108,7 +110,7 @@ section{
 }
 
 .tag-list > ul {
-  margin-left: -39px !important;
+  /* margin-left: -39px !important; */
 }
 
 
@@ -209,8 +211,9 @@ header .navbar-sticky {
     right: 10% !important;
     bottom: 0 !important;
     width: auto !important; */
+    /* right: 8% !important; */
     right: 0% !important;
-    height: 91% !important;
+    height: 87% !important;
 }
 
 .az-footer {
@@ -218,4 +221,13 @@ header .navbar-sticky {
 }
 .az-content{
   height: auto !important;
+}
+
+.full-slider .inner .left, .no-slider .inner .left {
+  width: 100% !important;
+}
+
+
+.slide-content .title {
+    font-size: 71px !important;
 }

@@ -4,8 +4,14 @@ import checkAuthAndRedirect from '../../../helpers/checkAuthAndRedirect';
 import NavLeft from '../../../Components/AccountLayout/Cms/NavLeft';
 import NavRight from '../../../Components/AccountLayout/Cms/NavRight';
 import Link from 'next/link';
+import useSWR from 'swr';
+import moment from 'moment';
 
 const Index = ({ user }) => {
+
+  const {data} = useSWR(`${process.env.API}/post/get`)
+  const posts = data
+
   return (
     <AccountLayout user={user}>
       <div className="az-content az-content-dashboard">
@@ -75,144 +81,33 @@ const Index = ({ user }) => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
+                {posts?.map((post, index) => <tr>
+                  <th scope="row">{index + 1}</th>
                   <td>
-                    Tiger Nixon ebluar indicoroll of twin
+                    {post.title}
                     <div>
-                      <a href="" className="text-success"><small>Edit</small></a>
+                      <Link href={`/cms/posts/${post._id}/edit`}>
+                        <a href={`/cms/posts/${post._id}/edit`} className="text-success"><small>Edit</small></a>
+                      </Link>
                       <small className="ml-1 mr-1">|</small>
                       <a href="" className="text-danger"><small>Delete</small></a>
                     </div>
                   </td>
                   <td>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. making it look like readable English.
-                  </td>
-                  <td>System Architect</td>
-                  <td>22 Apr, 2015</td>
-                  <td>22 Apr, 2015</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>
-                    thie most beautiful of the systme
-                    <div>
-                      <a href="" className="text-success"><small>Edit</small></a>
-                      <small className="ml-1 mr-1">|</small>
-                      <a href="" className="text-danger"><small>Delete</small></a>
-                    </div>
+                  {post.metaDescription.substr(0, 150)}
                   </td>
                   <td>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. as opposed to using 'Content here, content here', making it look like readable English.
+                    <ul>
+                      {post.categories?.map((cat, index) => <li>{cat.name}</li>)}
+                    </ul>
                   </td>
-                  <td>Accountant</td>
-                  <td>22 Apr, 2015</td>
-                  <td>22 Apr, 2015</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>
-                    Ashton Cox of the right side of the ocean in the middle east
-                    <div>
-                      <a href="" className="text-success"><small>Edit</small></a>
-                      <small className="ml-1 mr-1">|</small>
-                      <a href="" className="text-danger"><small>Delete</small></a>
-                    </div>
-                  </td>
-                  <td>
-                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-                  </td>
-                  <td>Junior Technical Author</td>
-                  <td>22 Apr, 2015</td>
-                  <td>22 Apr, 2015</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>
-                    Right side of the ocean in the middle east
-                    <div>
-                      <a href="" className="text-success"><small>Edit</small></a>
-                      <small className="ml-1 mr-1">|</small>
-                      <a href="" className="text-danger"><small>Delete</small></a>
-                    </div>
-                  </td>
-                  <td>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-                  </td>
-                  <td>Senior Javascript Developer</td>
-                  <td>22 Apr, 2015</td>
-                  <td>22 Apr, 2015</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-
-                  <td>
-                    One of the most popular saight in the middle east
-                    <div>
-                      <a href="" className="text-success"><small>Edit</small></a>
-                      <small className="ml-1 mr-1">|</small>
-                      <a href="" className="text-danger"><small>Delete</small></a>
-                    </div>
-                  </td>
-                  <td>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                  </td>
-                  <td>Accountant</td>
-                  <td>22 Apr, 2015</td>
-                  <td>22 Apr, 2015</td>
+                  <td>{moment(post.createdAt).format('MMMM Do YYYY') }</td>
+                  <td>{moment(post.updatedAt).format('MMMM Do YYYY') }</td>
                 </tr>
 
-                <tr>
-                  <th scope="row">6</th>
-                  <td>
-                    One of the most popular saight
-                    <div>
-                      <a href="" className="text-success"><small>Edit</small></a>
-                      <small className="ml-1 mr-1">|</small>
-                      <a href="" className="text-danger"><small>Delete</small></a>
-                    </div>
-                  </td>
-                  <td>
-                    It is a long established fact tha. As opposed to using 'Content here, content here', making it look like readable English.
-                  </td>
-                  <td>Junior Technical Author</td>
-                  <td>22 Apr, 2015</td>
-                  <td>22 Apr, 2015</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>
-                    The right side of one of the most popular saight
-                    <div>
-                      <a href="" className="text-success"><small>Edit</small></a>
-                      <small className="ml-1 mr-1">|</small>
-                      <a href="" className="text-danger"><small>Delete</small></a>
-                    </div>
-                  </td>
-                  <td>
-                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-                  </td>
-                  <td>Senior Javascript Developer</td>
-                  <td>22 Apr, 2015</td>
-                  <td>22 Apr, 2015</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>
-                    Ocasion of the most popular saight
-                    <div>
-                      <a href="" className="text-success"><small>Edit</small></a>
-                      <small className="ml-1 mr-1">|</small>
-                      <a href="" className="text-danger"><small>Delete</small></a>
-                    </div>
-                  </td>
-                  <td>
-                    As opposed to using 'Content here, content here', making it look like readable English.
-                  </td>
-                  <td>Accountant</td>
-                  <td>22 Apr, 2015</td>
-                  <td>22 Apr, 2015</td>
-                </tr>
+                )}
+
+    
               </tbody>
             </table>
 

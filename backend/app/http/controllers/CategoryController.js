@@ -1,6 +1,7 @@
 const User = require('../../models/User');
 const Category  = require('../../models/Category');
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const Post = require('../../models/Post');
 
 exports.store = async (req, res) => {
 
@@ -36,8 +37,7 @@ exports.store = async (req, res) => {
 }
 
 exports.delete = async (req, res) => {
-     
-    console.log(req.params.cid)
+
    try {
 
     await Category.findByIdAndDelete(req.params.cid)
@@ -58,5 +58,29 @@ exports.get = async (req, res)  => {
         res.status(200).json(categories)
     } catch (error) {
         res.status(200).json({type:"error", msg: error.message})
+    }
+}
+
+exports.postCatsget = async (req, res) => {
+
+    try {
+ 
+        const cats = await Category.find().sort({_id: +1})
+        
+        const categoriesWithPosts = []
+
+        const mapCats = async (cat, index) => {
+            const posts = await Post.find({categories: cat._id})
+            if(posts.length > 0){
+                categoriesWithPosts.push(cat)
+            }
+        }
+
+        await Promise.all(cats.map(mapCats))
+
+        return res.status(200).json(categoriesWithPosts)
+ 
+    }catch(error) {
+     res.json({type: 'error', msg:error.message})
     }
 }

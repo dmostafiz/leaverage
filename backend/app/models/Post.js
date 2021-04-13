@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+var random = require('mongoose-random');
 
 const postSchema = mongoose.Schema({
     title:{
@@ -50,5 +51,7 @@ const postSchema = mongoose.Schema({
 })
 
 postSchema.set('timestamps', true)
+
+postSchema.plugin(random)
 
 module.exports = mongoose.model('Post', postSchema)

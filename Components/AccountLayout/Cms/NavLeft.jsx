@@ -18,6 +18,10 @@ const NavLeft = () => {
                 <a className={`nav-link ${IsActive(['/cms/pages'],'active')}`}>Pages</a>
             </Link>
 
+            <Link href="/cms/sliders">
+                <a className={`nav-link ${IsActive(['/cms/sliders'],'active')}`}>Sliders</a>
+            </Link>
+
             {/* <div className="dropdown-menu tx-13" x-placement="top-start" >
                 <Link href="/cms/posts">
                     <a className="dropdown-item">Posts</a>

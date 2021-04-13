@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "serve": "concurrently \"next dev\" \"cd backend && npm run dev\""
+    "serve": "concurrently \"next dev\" \"cd backend && npm run dev\"",
+    "go": "concurrently \"next build\" \"next start\" \"cd backend && npm run dev\""
   },
   "dependencies": {
     "@tinymce/tinymce-react": "^3.10.4",

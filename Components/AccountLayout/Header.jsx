@@ -40,14 +40,14 @@ export default function Header() {
 
           <ul className="nav">
 
-            <li className={`nav-item ${IsActive(['/account'], 'active')}`}>
-              <Link href="/account">
+            <li className={`nav-item ${IsActive(['/manage'], 'active')}`}>
+              <Link href="/manage">
                 <a className="nav-link"><i className="typcn typcn-chart-area-outline" /> Dashboard</a>
               </Link>
             </li>
 
-            <li className={`nav-item ${IsActive(['/account/my-projects'], 'active')}`}>
-              <Link href="/account/my-projects">
+            <li className={`nav-item ${IsActive(['/manage/my-projects'], 'active')}`}>
+              <Link href="/manage/my-projects">
                 <a className="nav-link"><i className="typcn typcn-folder" /> My Projects</a>
               </Link>
             </li>
@@ -59,15 +59,11 @@ export default function Header() {
                 '/cms/concepts',
                 '/cms/projects',
                 'cms/reviews',
-
                 '/cms/posts/create',
               ], 'active')}`}>
               <Link href="/cms">
                 <a href="#" className="nav-link with-sub"><i className="typcn typcn-document" /> CMS</a>
               </Link>
-
-
-
 
 
               <nav className="az-menu-sub block md:hidden">
@@ -82,6 +78,9 @@ export default function Header() {
                 </Link>
                 <Link href="/cms/pages">
                     <a className={`nav-link ${IsActive(['/cms/pages'],'active')}`}>Pages</a>
+                </Link>
+                <Link href="/cms/sliders">
+                    <a className={`nav-link ${IsActive(['/cms/sliders'],'active')}`}>Sliders</a>
                 </Link>
 
                 <Link href="/cms/concepts">
@@ -213,28 +212,28 @@ export default function Header() {
               <p className="az-notification-text">You have 2 unread notification</p>
               <div className="az-notification-list">
                 <div className="media new">
-                  <div className="az-img-user"><img src="/account/img/img2.jpg" alt="" /></div>
+                  <div className="az-img-user"><img src="/manage/img/img2.jpg" alt="" /></div>
                   <div className="media-body">
                     <p>Congratulate <strong>Socrates Itumay</strong> for work anniversaries</p>
                     <span>Mar 15 12:32pm</span>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media new">
-                  <div className="az-img-user online"><img src="/account/img/img3.jpg" alt="" /></div>
+                  <div className="az-img-user online"><img src="/manage/img/img3.jpg" alt="" /></div>
                   <div className="media-body">
                     <p><strong>Joyce Chua</strong> just created a new blog post</p>
                     <span>Mar 13 04:16am</span>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
-                  <div className="az-img-user"><img src="/account/img/img4.jpg" alt="" /></div>
+                  <div className="az-img-user"><img src="/manage/img/img4.jpg" alt="" /></div>
                   <div className="media-body">
                     <p><strong>Alt=""hea Cabardo</strong> just created a new blog post</p>
                     <span>Mar 13 02:56am</span>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
-                  <div className="az-img-user"><img src="/account/img/img5.jpg" alt="" /></div>
+                  <div className="az-img-user"><img src="/manage/img/img5.jpg" alt="" /></div>
                   <div className="media-body">
                     <p><strong>Adrian Monino</strong> added new comment on your photo</p>
                     <span>Mar 12 10:40pm</span>

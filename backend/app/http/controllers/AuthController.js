@@ -112,7 +112,7 @@ exports.authorize = async (req, res) => {
         
         const data = jwt.verify(token, process.env.APP_SECRET);
 
-        console.log("JWT: ", data)
+        // console.log("JWT: ", data)
         
         // res.json({verify: data})
         // if (err) {
@@ -122,7 +122,7 @@ exports.authorize = async (req, res) => {
         const user = await User.findOne({_id: data.id})
         const {_id, username, email, user_type} = user;
 
-        console.log("server: ", user)
+        // console.log("server: ", user)
 
         const profile = await Profile.findOne().populate('User', user.id)
 

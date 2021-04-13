@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import axios from 'axios'
 
-const TynnyMCE = ({setDesc}) => {
+const TynnyMCE = ({body, setDesc}) => {
 
+    const [contentBody, setContentBody] = useState('')
+
+    useEffect(() => {
+           
+       setContentBody(body) 
+       
+    }, [setDesc])
 
     const initImageUpload = (editor) => {
         var inp = $(`<input id='tinymce-uploader' type='file' name='pic' accept='image/*' style='display:none' multiple>`);
@@ -43,42 +50,47 @@ const TynnyMCE = ({setDesc}) => {
 
 
     return (
-        <Editor
-            apiKey='n07kqhwmimi936tsx8nh222m7jrwbweyy7yowcwx8gjtmyol'
-            // initialValue="<p>This is the initial content of the editor</p>"
-            placeHolder="Write awesome blog"
-            init={{
-                height : "350",
-                placeholder: "Start writing an amazing article...",
-                menubar: false,
-                content_style: "div, p { font-size: 15px; }",
-                // fixed_toolbar_container: '#mytoolbar',
-                skin:'snow',
-                // inline: true,
-                // toolbar_location: "bottom",
-                plugins: [
-                    'advlist autolink link image lists charmap print preview hr anchor pagebreak',
-                    'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-                    'table emoticons template paste help'
-                  ],
+        <>
+        {/* {body && ( */}
+            <Editor
+                apiKey='n07kqhwmimi936tsx8nh222m7jrwbweyy7yowcwx8gjtmyol'
+                // initialValue="<p>This is the initial content of the editor</p>"
+                placeHolder="Write awesome blog"
+                init={{
+                    height : "350",
+                    placeholder: "Start writing an amazing article...",
+                    menubar: false,
+                    content_style: "div, p { font-size: 15px; }",
+                    // fixed_toolbar_container: '#mytoolbar',
+                    skin:'snow',
+                    // inline: true,
+                    // toolbar_location: "bottom",
+                    plugins: [
+                        'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+                        'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+                        'table emoticons template paste help'
+                      ],
+    
+                    toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist |link imageupload media| forecolor emoticons | styleselect  | fontsizeselect  table | pagebreak print | preview   fullscreen',
+                    
+                    fontsize_formats:
+                    "8pt 9pt 10pt 11pt 12pt 14pt 16pt 18pt 24pt 30pt 36pt 48pt 60pt 72pt 96pt",
+                    setup: function(editor) {
+                        initImageUpload(editor);
+    
+                        editor.on('init', function(ed) {
+                            this.getBody().style.fontSize = '14px';
+                        });
+                    },
+                    content_style: 'body { font-size:14px }'
+                }}
+    
+                value={body} 
+                onEditorChange={(content)=>setDesc(content)}
+            />
 
-                toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist |link imageupload media| forecolor emoticons | styleselect  | fontsizeselect  table | pagebreak print | preview   fullscreen',
-                
-                fontsize_formats:
-                "8pt 9pt 10pt 11pt 12pt 14pt 16pt 18pt 24pt 30pt 36pt 48pt 60pt 72pt 96pt",
-                setup: function(editor) {
-                    initImageUpload(editor);
-
-                    editor.on('init', function(ed) {
-                        this.getBody().style.fontSize = '14px';
-                    });
-                },
-                content_style: 'body { font-size:14px }'
-            }}
-
-
-            onEditorChange={(content)=>setDesc(content)}
-        />
+        {/* )} */}
+        </>
     );
 }
 
