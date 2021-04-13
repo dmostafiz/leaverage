@@ -53,6 +53,7 @@ function HeroSlider() {
                     <p className="description" dangerouslySetInnerHTML={{ __html:slider.description}}></p>
 
                     {slider.hasButton && <a 
+                    target="_blank"
                     href={slider.buttonLink}
                     style={{ backgroundColor: slider.buttonBgColor, color: slider.buttonTextColor }}
                     className="ml-auto mr-auto ml-md-0 mt-4 btn primary-button">

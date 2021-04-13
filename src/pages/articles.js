@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import BlogArticles from '../Components/DefaultLayout/BlogArticles'
 import DefaultLayout from '../Layouts/DefaultLayout'
 import Router, {useRouter} from 'next/router'
+import Loading from '../Components/Loading'
 
 export default function Articles({ allPosts, postCount }) {
 
@@ -103,10 +104,10 @@ export default function Articles({ allPosts, postCount }) {
 
             {allPosts ? <BlogArticles posts={posts} /> : <h1>Loading</h1>}
 
-            <div className="text-center mb-5">
-                {loadMore && <a href="javascript:void(0)" onClick={handleLoadMore} className="text-gray-500">
-                  {loadMoreLoading ? 'Loading...' : 'Load more' }
-                </a>}
+            <div style={{ marginLeft:'50%' }} className="mb-5">
+                {!loadMoreLoading ? loadMore && <a href="javascript:void(0)" onClick={handleLoadMore} className="text-gray-500">
+                  Load more
+                </a> : <Loading height='25px' width='25px'/> }
             </div>
 
         </DefaultLayout>
