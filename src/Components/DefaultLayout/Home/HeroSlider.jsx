@@ -30,7 +30,7 @@ function HeroSlider() {
             {sliders.map((slider, index) => (
             <div key={index} className="swiper-slide slide-center">
 
-              <img data-aos="zoom-out-up" data-aos-delay="100" src={slider.image} className="hero-image" alt="Hero Image" />
+              <img src={slider.image} className="hero-image" alt="Hero Image" />
             
               {/* <Image
                 layout="fill"
@@ -55,8 +55,6 @@ function HeroSlider() {
                     {slider.hasButton && <a 
                     href={slider.buttonLink}
                     style={{ backgroundColor: slider.buttonBgColor, color: slider.buttonTextColor }}
-                    data-aos="zoom-out-up" 
-                    data-aos-delay="100" 
                     className="ml-auto mr-auto ml-md-0 mt-4 btn primary-button">
                     <i className="icon-cup" />
                     {slider.buttonName}
