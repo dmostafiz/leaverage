@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useRouter} from 'next/router'
-import {makeAuthentication} from '../state/auth/actions'
+import {makeAuthentication} from '../../state/auth/actions'
 import {useDispatch} from 'react-redux'
 import Cookies from 'js-cookie'
 import Link from 'next/link'
