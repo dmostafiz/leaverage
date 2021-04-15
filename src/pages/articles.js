@@ -28,9 +28,11 @@ export default function Articles({ allPosts, postCount }) {
 
         if(categories.length < 1)
         {
+        //    setTimeout(async () => {
             const response = await axios.get(`${process.env.API}/posts-cat/get`)
             const cats = await response.data
             setCategories(cats)
+        //    }, 5000)
         }
 
         Router.events.on('routeChangeStart', () => {
@@ -100,10 +102,9 @@ export default function Articles({ allPosts, postCount }) {
                             </p>
                         ) : 
 
-                        [1,2,3,4,5,6].map((c, index) => <p key={index}>
-                            <SkeletonTheme color="#c1c1c1" highlightColor="#F0F0F0" key={index}>
-                            <Skeleton count={1} height={20} width={70} />
-                        </SkeletonTheme></p>) 
+                        [1,2,3,4,5,6].map((c, index) => <p key={c} className="mx-1">
+                            <Skeleton count={1} height={15} width={70} />
+                        </p>) 
                         //  <Loading height='20px' width='20px' center={false} />
                          }
        
