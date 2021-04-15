@@ -84,20 +84,22 @@ export default function Articles({ allPosts, postCount }) {
 
             <div className="navbar-holder" style={{ minHeight: '53px' }}></div>
 
-            <div className="category-menu border border-b-3 text-white">
+            <div className="category-menu text-white">
                 <div className="max-w-6xl mx-auto">
                    
-                        <p className="mx-2">
+                        <p className="mx-2 border">
                             <Link href={`/articles?category=all`}>
-                                <a className="text-gray-500">All Articles</a>
+                                <a>All Articles</a>
                             </Link>
-                            <span className="text-gray-300 ml-2">|</span>
+                            {/* <span className="text-gray-300 ml-2">|</span> */}
                         </p>
-                        {categories.length ? categories.map((cat, index) => <p key={cat._id} className="mx-1">
+                        {categories.length ? categories.map((cat, index) => <p key={cat._id} className="mx-1 border">
                                 <Link href={`/articles?category=${cat.slug}`}>
                                     <a>{cat.name}</a>
                                 </Link>
-                                {categories.length > (index + 1) && <span className="text-gray-300 ml-2">|</span>}
+                                {/* {categories.length > (index + 1) && 
+                                <span className="text-gray-300 ml-2">|</span>
+                                } */}
                                 
                             </p>
                         ) : 

@@ -243,3 +243,13 @@ header .navbar-sticky {
   display: inline-block;
   white-space: nowrap;
 }
+
+.category-menu div p{
+  /* background-color: red; */
+  border-radius: 3px;
+}
+
+.category-menu div > p > a{
+  padding:0px 10px;
+  color:rgb(116, 116, 116) !important;
+}
