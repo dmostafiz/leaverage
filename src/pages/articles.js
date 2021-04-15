@@ -87,12 +87,14 @@ export default function Articles({ allPosts, postCount }) {
             <div className="category-menu text-white">
                 <div className="max-w-6xl mx-auto">
                    
-                        <p className="mx-2 border">
+                       {categories.length ? <p className="mx-2 border">
                             <Link href={`/articles?category=all`}>
                                 <a>All Articles</a>
                             </Link>
                             {/* <span className="text-gray-300 ml-2">|</span> */}
-                        </p>
+                        </p> : <p className="mx-1">
+                            <Skeleton count={1} height={15} width={70} />
+                        </p>} 
                         {categories.length ? categories.map((cat, index) => <p key={cat._id} className="mx-1 border">
                                 <Link href={`/articles?category=${cat.slug}`}>
                                     <a>{cat.name}</a>

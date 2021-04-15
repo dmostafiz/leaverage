@@ -30,7 +30,7 @@ function Home(props) {
   return (
       <DefaultLayout>
         <HeroSlider /> 
-        <Articles posts={props.topArticles}/>
+        <Articles/>
         <Services/>  
         <Testimonials/>
         <Subscribe/>

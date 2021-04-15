@@ -13,7 +13,7 @@ import PostsPlaceHolder from '../../../helpers/PostsPlaceHolder'
 
   useEffect(async () => {
 
-    setTimeout(async () => {
+    // setTimeout(async () => {
 
       const response = await fetch(`${process.env.API}/post/get/top/4`)
   
@@ -23,7 +23,7 @@ import PostsPlaceHolder from '../../../helpers/PostsPlaceHolder'
   
     
       setPosts(jsonData)
-    }, 5000)
+    // }, 5000)
 
   }, [])
 

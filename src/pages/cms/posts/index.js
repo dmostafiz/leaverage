@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AccountLayout from '../../../Layouts/AccountLayout'
 import checkAuthAndRedirect from '../../../../helpers/checkAuthAndRedirect';
 import NavLeft from '../../../Components/AccountLayout/Cms/NavLeft';
@@ -6,11 +6,20 @@ import NavRight from '../../../Components/AccountLayout/Cms/NavRight';
 import Link from 'next/link';
 import useSWR from 'swr';
 import moment from 'moment';
+import Loading from '../../../Components/Loading';
+// import { LoadingIndicator } from 'react-select/src/components/indicators';
 
 const Index = ({ user }) => {
 
+  const [posts, setPosts] = useState([])
+
   const {data} = useSWR(`${process.env.API}/post/get`)
-  const posts = data?.posts
+  
+  useEffect(() => {
+    // setTimeout(()=> {
+      setPosts(data?data.posts:[])
+    // }, 5000)
+  },[data])
 
   console.log('SWR POsts: ',posts)
 
@@ -71,6 +80,7 @@ const Index = ({ user }) => {
 
           <div className="table-responsive">
 
+          {posts.length?
             <table className="table mg-b-0">
               <thead>
                 <tr>
@@ -82,8 +92,9 @@ const Index = ({ user }) => {
                   <th width="15%">Last modified</th>
                 </tr>
               </thead>
+
               <tbody>
-                {posts?.map((post, index) => <tr>
+                {posts.map((post, index) => <tr>
                   <th scope="row">{index + 1}</th>
                   <td>
                     {post.title}
@@ -109,10 +120,14 @@ const Index = ({ user }) => {
 
                 )}
 
-    
-              </tbody>
-            </table>
+              </tbody> 
 
+            </table>
+              : <div className="text-center">
+              <Loading height={150} width={150} center={true}/>
+              </div>
+              
+            }
 
           </div>
           {/* <!-- table-responsive --> */}
