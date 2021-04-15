@@ -2,6 +2,7 @@ import moment from 'moment';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
+import PostsPlaceHolder from '../../../helpers/PostsPlaceHolder';
 
 
 export default function BlogArticles({posts}) {
@@ -22,7 +23,7 @@ export default function BlogArticles({posts}) {
       <main className="col-12  p-0 mb-5">
 
         <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4">
-            {posts?.map((post, index) => <div key={post._id} className="card p-0 text-center item">
+            {posts?posts.map((post, index) => <div key={post._id} className="card p-0 text-center item">
             <div className="image-over">
               <img src={post.imageUrl ? post.imageUrl : 'https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'} alt="Lorem ipsum" />
             </div>
@@ -45,7 +46,7 @@ export default function BlogArticles({posts}) {
                 </a>
               </div>
             </div>
-          </div>)}
+          </div>) : <PostsPlaceHolder count={8}/>}
 
         </div>
       </main>

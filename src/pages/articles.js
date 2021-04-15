@@ -5,6 +5,9 @@ import BlogArticles from '../Components/DefaultLayout/BlogArticles'
 import DefaultLayout from '../Layouts/DefaultLayout'
 import Router, {useRouter} from 'next/router'
 import Loading from '../Components/Loading'
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+
+const loadLimit = 12
 
 export default function Articles({ allPosts, postCount }) {
 
@@ -13,7 +16,7 @@ export default function Articles({ allPosts, postCount }) {
     const[categories, setCategories] = useState([])
     const[loadMore, setLoadMore] = useState(true)
     const[loadMoreLoading, setLoadMoreLoading] = useState(false)
-    const[limit, setLimit] = useState(12)
+    const[limit, setLimit] = useState(loadLimit)
 
     const router = useRouter()
     // const [posts, setPosts] = useState(allPosts)
@@ -31,7 +34,7 @@ export default function Articles({ allPosts, postCount }) {
         }
 
         Router.events.on('routeChangeStart', () => {
-            setLimit(12)
+            setLimit(loadLimit)
         })
         //will update posts
 
@@ -46,7 +49,7 @@ export default function Articles({ allPosts, postCount }) {
 
         const category = router.query.category == undefined || null ? 'all' : router.query.category
 
-        const shouldLoad = 12
+        const shouldLoad = loadLimit
 
         const response = await axios.get(`${process.env.API}/posts/get/${category}/${limit+shouldLoad}`)
         const posts = await response.data.posts
@@ -81,23 +84,30 @@ export default function Articles({ allPosts, postCount }) {
 
             <div className="category-menu border border-b-3 text-white">
                 <div className="max-w-6xl mx-auto">
-                    <ul className="flex">
-                        <li className="mx-2">
+                   
+                        <p className="mx-2">
                             <Link href={`/articles?category=all`}>
                                 <a className="text-gray-500">All Articles</a>
                             </Link>
                             <span className="text-gray-300 ml-2">|</span>
-                        </li>
-                        {categories.map((cat, index) => <li key={cat._id} className="mx-1">
+                        </p>
+                        {categories.length ? categories.map((cat, index) => <p key={cat._id} className="mx-1">
                                 <Link href={`/articles?category=${cat.slug}`}>
                                     <a>{cat.name}</a>
                                 </Link>
                                 {categories.length > (index + 1) && <span className="text-gray-300 ml-2">|</span>}
                                 
-                            </li>
-                        )}
+                            </p>
+                        ) : 
+
+                        [1,2,3,4,5,6].map((c, index) => <p key={index}>
+                            <SkeletonTheme color="#c1c1c1" highlightColor="#F0F0F0" key={index}>
+                            <Skeleton count={1} height={20} width={70} />
+                        </SkeletonTheme></p>) 
+                        //  <Loading height='20px' width='20px' center={false} />
+                         }
        
-                    </ul>
+                   
                 </div>
             </div>
 
@@ -107,7 +117,7 @@ export default function Articles({ allPosts, postCount }) {
             <div className="text-center mb-5">
                 {!loadMoreLoading ? loadMore && <a href="javascript:void(0)" onClick={handleLoadMore} className="text-gray-500">
                   Load more
-                </a> : <Loading height='25px' width='25px' /> }
+                </a> : <Loading height='25px' width='25px' center={true} /> }
             </div>
 
         </DefaultLayout>
@@ -118,7 +128,7 @@ export default function Articles({ allPosts, postCount }) {
 export const getServerSideProps = async (ctx) => {
 
     const filter = ctx.query.category
-    const limit = 12
+    const limit = loadLimit
     const response = await axios.get(`${process.env.API}/posts/get/${filter}/${limit}`)
 
     const allPosts = await response.data.posts

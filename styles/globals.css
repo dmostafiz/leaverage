@@ -231,3 +231,15 @@ header .navbar-sticky {
 .slide-content .title {
     font-size: 71px !important;
 }
+
+.category-menu div{
+  width: 100%;
+  padding: 10px 0;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.category-menu div p{
+  display: inline-block;
+  white-space: nowrap;
+}

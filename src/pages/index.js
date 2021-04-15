@@ -12,6 +12,7 @@ import Testimonials from '../Components/DefaultLayout/Testimonials'
 import {getInitialSliders} from '../../state/slider/actions'
 import TestSlider from '../Components/DefaultLayout/Home/testSlider';
 import DefaultLayout from '../Layouts/DefaultLayout'
+import Skeleton from 'react-loading-skeleton';
 
 function Home(props) {
 
@@ -21,9 +22,6 @@ function Home(props) {
   useEffect(() => {
 
     console.log(props.topArticles)
-
-
-
 
 
     dispatch(getInitialSliders(props.sliders))

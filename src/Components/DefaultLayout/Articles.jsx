@@ -2,6 +2,10 @@ import moment from 'moment'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import JSLoader from '../../../helpers/JSLoader'
+import Loading from '../Loading'
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import PostsPlaceHolder from '../../../helpers/PostsPlaceHolder'
+// import Placeholder from 'react-select/src/components/Placeholder'
 
  const Articles = () => {
 
@@ -9,14 +13,17 @@ import JSLoader from '../../../helpers/JSLoader'
 
   useEffect(async () => {
 
-    const response = await fetch(`${process.env.API}/post/get/top/4`)
+    setTimeout(async () => {
 
-    const jsonData = await response.json()
-
-    console.log('Artcles: ',jsonData)
-
+      const response = await fetch(`${process.env.API}/post/get/top/4`)
   
-    setPosts(jsonData)
+      const jsonData = await response.json()
+  
+      console.log('Artcles: ',jsonData)
+  
+    
+      setPosts(jsonData)
+    }, 5000)
 
   }, [])
 
@@ -38,7 +45,7 @@ import JSLoader from '../../../helpers/JSLoader'
       </div>
       <div className="row">
         
-        { posts.map((post, index) =><div key={index} className="col-lg-3 col-md-4 mb-3">
+        { posts.length ? posts.map((post, index) =><div key={index} className="col-lg-3 col-md-4 mb-3">
         <div className="card p-0 text-center item">
             <div className="image-over">
               <img src={post.imageUrl ? post.imageUrl : 'https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'} alt="Lorem ipsum" />
@@ -63,7 +70,7 @@ import JSLoader from '../../../helpers/JSLoader'
               </div>
             </div>
           </div>
-          </div>)}  
+          </div>) : <PostsPlaceHolder/>}  
   
       </div>
     </div>
