@@ -23,7 +23,7 @@ function HeroSlider() {
 
       return (
   
-      <section id="slider" className="hero p-0 odd">
+      <section id="slider" className="hero p-0 odd" >
         <div className="swiper-container full-slider slider-h-100">
           <div className="swiper-wrapper">
     

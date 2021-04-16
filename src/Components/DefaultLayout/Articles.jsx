@@ -5,6 +5,7 @@ import JSLoader from '../../../helpers/JSLoader'
 import Loading from '../Loading'
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import PostsPlaceHolder from '../../../helpers/PostsPlaceHolder'
+import BlogPosts from './BlogPosts'
 // import Placeholder from 'react-select/src/components/Placeholder'
 
  const Articles = () => {
@@ -43,9 +44,10 @@ import PostsPlaceHolder from '../../../helpers/PostsPlaceHolder'
          </Link>
         </div>
       </div>
-      <div className="row">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4">
         
-        { posts.length ? posts.map((post, index) =><div key={index} className="col-lg-3 col-md-4 mb-3">
+        {/* <BlogPosts posts={posts} />  */}
+        { posts.length ? posts.map((post, index) =><div key={index} className="">
         <div className="card p-0 text-center item">
             <div className="image-over">
               <img src={post.imageUrl ? post.imageUrl : 'https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'} alt="Lorem ipsum" />
@@ -64,7 +66,6 @@ import PostsPlaceHolder from '../../../helpers/PostsPlaceHolder'
                 </a>
                 <a href="#" className="d-lg-flex align-items-center">
                 <i className="icon-clock"> </i>
-                {/* {moment(post.createdAt).fromNow()} */}
                 {moment(post.createdAt).format('Do MMMM')}
                 </a>
               </div>

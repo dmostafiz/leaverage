@@ -88,8 +88,8 @@ export default function Articles({ allPosts, postCount }) {
                 <div className="max-w-6xl mx-auto">
                    
                        {categories.length ? <p className="mx-2 border">
-                            <Link href={`/articles?category=all`}>
-                                <a>All Articles</a>
+                            <Link href={`/articles`}>
+                                <a>All</a>
                             </Link>
                             {/* <span className="text-gray-300 ml-2">|</span> */}
                         </p> : <p className="mx-1">

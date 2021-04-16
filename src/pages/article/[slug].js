@@ -36,20 +36,19 @@ export default function Index({initPost}) {
             {/* <div style={{ borderBottom:"2px solid #e7e7e7" }}></div> */}
 
             <div className="navbar-holder"></div>
-            <section id="content" className="single">
+            <section id="content" className="single -mt-16 md:-mt-2">
                 <div className="container">
-
 
                     <div className="row ">
                         {/* Main */}
-                        <div className="col-md-12 text-center">
-                            <h3 className="text-3xl font-medium mt-0 ml-0 mb-4">{post?.title}</h3>
+                        <div className="max-w-6xl text-center mx-auto">
+                            <h3 className="text-2xl md:text-4xl font-medium mt-0 ml-0 mb-5">{post?.title}</h3>
 
                             <span className="text-muted">
                                 {moment(post.createdAt).format('dddd, MMMM Do YYYY')} (about {moment(post.createdAt).fromNow()})
                                 </span>
 
-                            <div className="mt-4 mb-5 d-flex justify-content-center align-items-center">
+                            <div className="mt-4 mb-4 d-flex justify-content-center align-items-center">
                                 <img className="shadow-sm bg-light mr-2" src={post?.author?.profile.avatar} 
                                 style={{ 
                                     width:"30px", 
@@ -62,7 +61,7 @@ export default function Index({initPost}) {
                                </div>
                             </div>
                             
-                            <div className="tag-list-article mb-5">
+                            <div className="tag-list-article mb-3">
                                 <ul>
                                     {post.tags.map((tag, index) =>
                                         <li key={index}><span>#{tag}</span></li>
@@ -97,33 +96,17 @@ export default function Index({initPost}) {
                            {Parser(post ? post.body : '')}
                            </div>
 
-                            <div className="tag-list-article d-flex mt-5">
+                            <div className="flex items-center flex-row tag-list-article d-flex mt-3 mb-5">
                                 <span className="mr-2">Categories:</span> 
                                 <ul>
-
                                     {post.categories.map(cat =>
                                         <li><span>{cat.name}</span></li>
                                     )}
-
                                 </ul>
                             </div> 
                             
                             {/* Post Holder */}
-                            <div className="mb-5 post-holder">
-                                <span className="posted-on">Posted on</span>
-                                <ul>
-                                  {post.categories.map((cat, index) =>
-                                        <li key={index} className="post-meta-item">
-                                            <a href="#" rel="bookmark">{cat.name} </a>
-                                        </li>
-                                    )}
-                                    {/* <li className="post-meta-item">
-                                            <a href="#" rel="bookmark">
-                                                    November 12, 2019
-                                            </a>
-                                    </li> */}
-                                </ul>
-                            </div>
+         
                             {/* Comments */}
                             <h3>Leave a Reply</h3>
                             <p>Sed mauris nulla, tempor eu est vel, dapibus hendrerit mauris.</p>
