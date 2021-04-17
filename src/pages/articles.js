@@ -84,6 +84,8 @@ export default function Articles({ allPosts, postCount }) {
 
             <div className="navbar-holder" style={{ minHeight: '53px' }}></div>
 
+
+
             <div className="category-menu text-white">
                 <div className="max-w-6xl mx-auto">
                    

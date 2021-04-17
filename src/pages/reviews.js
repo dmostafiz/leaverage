@@ -15,7 +15,7 @@ export default function Reviews() {
 
                     <div className="intro mt-4">
                         <div className="align-self-center text-center text-md-left">
-                            <h2 className="text-3xl text-gray-900 text-dark">Our honest reviews</h2>
+                            <h2 className="text-3xl text-gray-900 text-dark">Our Achivements (Client Feedbacks)</h2>
                             <p>Focused on results we seek to raise the level of our customers.</p>
                         </div>
 
@@ -23,47 +23,39 @@ export default function Reviews() {
 
                     <div className="row">
                         <main className="col-12  p-0 mb-5">
-                            <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-8">
+                            <div className="grid lg:grid-cols-1 md:grid-cols-3 grid-cols-1 gap-2">
 
 
 {[1,2,3,4,5,6,7,8,9,12,4,5,4564,6].map((project, index) => (
 
 <div className="">
-    <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-    <div className="bg-cover bg-center h-56 p-4" style={{backgroundSize:'cover',backgroundImage: `url(https://picsum.photos/id/${index}/200/300)`}}>
-
+  <div className="px-5 py-4 bg-white dark:bg-gray-800 shadow rounded-lg ">
+    <div className="flex mb-4">
+      <img className="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+      <div className="ml-2 mt-0.5">
+        <div className="flex flex-col md:flex-row">
+            <span className="block font-medium text-base leading-snug text-black dark:text-gray-100">
+                Loyce Kuvalis
+            </span>
+            <span className="block font-small text-gray-400 md:ml-2">
+                (New Joursey, US)
+            </span>
+        </div>
+        <span className="block font-small text-base leading-snug text-gray-400">CEO - CalyForm Unit</span>
+        {/* <span className="block text-sm text-gray-500 dark:text-gray-400 font-light leading-snug">16 December at 08:25</span> */}
+      </div>
     </div>
-    <div className="p-4">
-        <p className="uppercase tracking-wide text-sm font-bold text-gray-700">Company forced matrix with PTC</p>
-        <p>
-            <span className="text-3xl text-gray-900 mr-2">$1,500</span> 
-            <span>Estimated cost</span>
-        </p>
-        <p className="text-gray-700 mt-2">Estimated cost of the whole project. Days development forced matrix with</p>
+    <p className="text-gray-800 dark:text-gray-100 leading-snug md:leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud enim ad minim ve quis nostrud.</p>
+    <div className="flex justify-between items-center mt-5">
+      <div className="flex ">
+        <img width="20px" src="star.svg" />
+        <span className="ml-1 text-gray-500 dark:text-gray-400  font-light">5.0</span>
+      </div>  
+      <div className="ml-1 text-gray-500 dark:text-gray-400 font-light">3 Orders</div>
     </div>
-    <div className="flex justify-between p-4 b text-gray-700">
-        <div className="inline-flex content-betwen">
-        {/* Icon */}
-        <p><span className="text-gray-900 font-bold">30</span> Days development</p>
-        </div>
-        <div className="inline-flex space-center">
-        {/* Icon   */}
-        <p><span className="text-gray-900 font-bold">5</span> Revisions</p>
-        </div>
-    </div>
-    {/* <div className="px-4 pt-3 pb-4 border-t border-gray-300 bg-green-200">
-        <div className="text-xs uppercase font-bold text-gray-600 tracking-wide">Realtor</div>
-        <div className="flex items-center pt-2">
-        <div className="bg-cover bg-center w-10 h-10 rounded-full mr-3" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1500522144261-ea64433bbe27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80)'}}>
-        </div>
-        <div>
-            <p className="font-bold text-gray-900">Tiffany Heffner</p>
-            <p className="text-sm text-gray-700">(555) 555-4321</p>
-        </div>
-        </div>
-    </div> */}
-    </div>
+  </div>
 </div>
+
 
 ))}
 
