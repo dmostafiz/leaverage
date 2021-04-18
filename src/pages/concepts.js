@@ -23,12 +23,12 @@ export default function Concepts() {
 
                     <div className="row">
                         <main className="col-12  p-0 mb-5">
-                            <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5">
+                            <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
 
 
 {[1,2,3,4,5,6,7,8,9,12,4,5,4564,6].map((project, index) => (
 
-<div className="">
+<div className="shadow">
 
   <div className="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
     <div className="mb-8">

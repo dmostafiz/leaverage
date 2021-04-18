@@ -9,9 +9,7 @@ export default function Services() {
         <h2 className="text-4xl font-bold tracking-wide">My Services</h2>
         <p>Focused on results we seek to raise the level of our customers.</p>
       </div>
-      <div className="col-12 col-md-3 align-self-end">
-        <a href="#" className="btn mx-auto mr-md-0 ml-md-auto primary-button"><i className="icon-grid" />VIEW ALL</a>
-      </div>
+  
     </div>
     <div className="row justify-content-center text-center items">
       <div className="col-12 col-md-6 col-lg-4 item">

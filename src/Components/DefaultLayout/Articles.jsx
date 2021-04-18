@@ -14,7 +14,7 @@ import BlogPosts from './BlogPosts'
 
   useEffect(async () => {
 
-    // setTimeout(async () => {
+    setTimeout(async () => {
 
       const response = await fetch(`${process.env.API}/post/get/top/4`)
   
@@ -24,12 +24,12 @@ import BlogPosts from './BlogPosts'
   
     
       setPosts(jsonData)
-    // }, 5000)
+    }, 5000)
 
   }, [])
 
     return (
-<section id="news" className="section-4 carousel showcase news">
+<section id="news" className="shadow section-4 carousel showcase news">
 <div className="container max-w-6xl">
   <div className="overflow-holder">
     <div className="container">
@@ -46,8 +46,8 @@ import BlogPosts from './BlogPosts'
       </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4">
         
-        {/* <BlogPosts posts={posts} />  */}
-        { posts.length ? posts.map((post, index) =><div key={index} className="">
+         { posts.length ? <BlogPosts posts={posts} /> : <PostsPlaceHolder/>} 
+        {/* { posts.length ? posts.map((post, index) =><div key={index} className="">
         <div className="card p-0 text-center item">
             <div className="image-over">
               <img src={post.imageUrl ? post.imageUrl : 'https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'} alt="Lorem ipsum" />
@@ -71,7 +71,7 @@ import BlogPosts from './BlogPosts'
               </div>
             </div>
           </div>
-          </div>) : <PostsPlaceHolder/>}  
+          </div>) : <PostsPlaceHolder/>}   */}
   
       </div>
     </div>
