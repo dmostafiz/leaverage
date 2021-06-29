@@ -14,7 +14,7 @@ import BlogPosts from './BlogPosts'
 
   useEffect(async () => {
 
-    setTimeout(async () => {
+    // setTimeout(async () => {
 
       const response = await fetch(`${process.env.API}/post/get/top/4`)
   
@@ -24,7 +24,7 @@ import BlogPosts from './BlogPosts'
   
     
       setPosts(jsonData)
-    }, 5000)
+    // }, 5000)
 
   }, [])
 

@@ -131,6 +131,9 @@ export default function Index({initPost}) {
                                 </fieldset>
                             </form>
                             </div>
+
+
+
                         </div>        
                         </main>
                         {/* Sidebar */}

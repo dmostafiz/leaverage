@@ -5,33 +5,11 @@ import getAuthUserByToken from '../../helpers/getAuthUserByToken'
 import Header from '../Components/DefaultLayout/Header';
 import Footer from '../Components/DefaultLayout/Footer';
 import Head from 'next/head'
-import loadJs from 'loadjs'
 import cookie from 'js-cookie'
 import JSLoader from '../../helpers/JSLoader';
 
-
 export default function DefaultLayout({children, classes}){
   const dispatch = useDispatch()
-  const [loadingSite, setLoadingSite] = useState(false)
-
-
-    // const scriptArr = [
-    //   "/assets/js/vendor/jquery.min.js",
-    //   "/assets/js/vendor/jquery.easing.min.js",
-    //   "/assets/js/vendor/jquery.inview.min.js",
-    //   "/assets/js/vendor/popper.min.js",
-    //   "/assets/js/vendor/bootstrap.min.js",
-    //   "/assets/js/vendor/ponyfill.min.js",
-    //   "/assets/js/vendor/slider.min.js",
-    //   "/assets/js/vendor/animation.min.js",
-    //   "/assets/js/vendor/progress-radial.min.js",
-    //   "/assets/js/vendor/bricklayer.min.js",
-    //   "/assets/js/vendor/gallery.min.js",
-    //   "/assets/js/vendor/shuffle.min.js",
-    //   "/assets/js/vendor/cookie-notice.min.js",
-    //   "/assets/js/vendor/particles.min.js",
-    //   "/assets/js/main.js",
-    // ]
 
     function loadScripts(){
       JSLoader("/assets/js/vendor/jquery.min.js")
@@ -66,31 +44,6 @@ export default function DefaultLayout({children, classes}){
         dispatch(makeAuthentication(data))
       }
       
-      
-
-
-      // scriptArr.map(src => {
-
-      //   let script = document.querySelector(`script[src="${src}"]`)
-
-      //   console.log('Loaded Script: '.script)   
-
-      //   if (script) {
-      //       script.remove();
-      //   }
-
-      //   script = document.createElement("script");
-      //   script.src = src;
-      //   script.async = true;
-      //   // script.setAttribute("data-status", "loading");
-      //   // Add script to document body
-      //   document.body.appendChild(script);
-
-
-      // })
-
-
-      
     },[])
 
     return (
@@ -107,27 +60,12 @@ export default function DefaultLayout({children, classes}){
           <link rel="stylesheet" href="/assets/css/vendor/cookie-notice.min.css"/>
           <link rel="stylesheet" href="/assets/css/default.css"/>
           <link rel="stylesheet" href="/assets/css/theme-custom.css"/>
-          
-          {/* <script src="/assets/js/vendor/jquery.min.js"></script>
-          <script src="/assets/js/vendor/jquery.easing.min.js"></script>
-          <script src="/assets/js/vendor/jquery.inview.min.js"></script>
-          <script src="/assets/js/vendor/popper.min.js"></script>
-          <script src="/assets/js/vendor/bootstrap.min.js"></script>
-          <script src="/assets/js/vendor/ponyfill.min.js"></script>
-          <script src="/assets/js/vendor/slider.min.js"></script>
-          <script src="/assets/js/vendor/animation.min.js"></script>
-          <script src="/assets/js/vendor/progress-radial.min.js"></script>
-          <script src="/assets/js/vendor/bricklayer.min.js"></script>
-          <script src="/assets/js/vendor/gallery.min.js"></script>
-          <script src="/assets/js/vendor/shuffle.min.js"></script>
-          <script src="/assets/js/vendor/cookie-notice.min.js"></script>
-          <script src="/assets/js/vendor/particles.min.js"></script>
-          <script src="/assets/js/main.js"></script> */}
-
+      
       </Head>
 
       <Header classes={classes} />
         {children}
+        
       <Footer/>
 
         <div>
