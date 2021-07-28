@@ -6,7 +6,7 @@ export default function BlogPosts({posts}) {
     return (
         <>
         {posts?.map((post, index) => (
-            <div className="shadow bg-gray-100 w-full m-auto h-64" style={{backgroundImage: post.imageUrl ? `url(${post.imageUrl})` : 'url(https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+            <div key={index} className="shadow bg-gray-100 w-full m-auto h-64" style={{backgroundImage: post.imageUrl ? `url(${post.imageUrl})` : 'url(https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
             <div className="flex flex-row items-end h-full w-full">
               <div className="flex flex-col w-full pb-3 pt-10 px-3 bg-gradient-to-t from-black text-gray-200">
               <Link href={`/article/${post.slug}`}>

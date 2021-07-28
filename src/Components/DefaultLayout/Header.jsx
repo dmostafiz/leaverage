@@ -18,7 +18,7 @@ export default function Header({classes}) {
 
 
     <header id="header">
-        <nav className="dark navbar navbar-expand">
+        <nav className=" navbar navbar-expand">
 
             <div className="container">
                 

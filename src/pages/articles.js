@@ -7,24 +7,33 @@ import Router, {useRouter} from 'next/router'
 import Loading from '../Components/Loading'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 
-const loadLimit = 12
+const loadLimit = 3
 
-export default function Articles({ allPosts, postCount }) {
+export default function Articles() {
 
-    const[posts, setPosts] = useState(allPosts)
+    const[posts, setPosts] = useState([])
 
     const[categories, setCategories] = useState([])
     const[loadMore, setLoadMore] = useState(true)
     const[loadMoreLoading, setLoadMoreLoading] = useState(false)
     const[limit, setLimit] = useState(loadLimit)
+    const[postCount, setPostCount] = useState(0)
 
     const router = useRouter()
-    // const [posts, setPosts] = useState(allPosts)
+
+    var filter = router.query.category
 
     useEffect(async () => {
-        setPosts(allPosts)
 
-        hideLoadMoreBtn(limit)
+        const response = await axios.get(`${process.env.API}/posts/get/${filter}/${limit}`)
+    
+        const allPosts = await response.data.posts
+        const postCount = await response.data.count
+
+        setPosts(allPosts)
+        setPostCount(postCount)
+
+        // hideLoadMoreBtn(limit)
 
         if(categories.length < 1)
         {
@@ -37,6 +46,8 @@ export default function Articles({ allPosts, postCount }) {
 
         Router.events.on('routeChangeStart', () => {
             setLimit(loadLimit)
+            setPostCount(postCount)
+            hideLoadMoreBtn(loadLimit)
         })
         //will update posts
 
@@ -45,32 +56,30 @@ export default function Articles({ allPosts, postCount }) {
 
     const handleLoadMore = async () => {
 
-        hideLoadMoreBtn()
+        // hideLoadMoreBtn()
 
         setLoadMoreLoading(true)
 
-        const category = router.query.category == undefined || null ? 'all' : router.query.category
+        // const category = filter == undefined || null ? 'all' : filter
 
-        const shouldLoad = loadLimit
+        const extndsLimit = limit + loadLimit
+        setLimit(extndsLimit)
 
-        const response = await axios.get(`${process.env.API}/posts/get/${category}/${limit+shouldLoad}`)
+        const response = await axios.get(`${process.env.API}/posts/get/${filter}/${extndsLimit}`)
+
         const posts = await response.data.posts
 
         setPosts(posts)
 
-        const extnds = limit + shouldLoad
-
-        setLimit(extnds)
-
         setLoadMoreLoading(false)
 
-        hideLoadMoreBtn(extnds)
+        hideLoadMoreBtn(extndsLimit)
 
 
     }
 
     const hideLoadMoreBtn = (limit) => {
-        if(limit == postCount || limit > postCount){
+        if(limit >= postCount){
             setLoadMore(false)
         }
         else{
@@ -119,7 +128,7 @@ export default function Articles({ allPosts, postCount }) {
             </div>
 
 
-            {allPosts ? <BlogArticles posts={posts} /> : <h1>Loading</h1>}
+            {posts ? <BlogArticles posts={posts} /> : <h1>Loading</h1>}
 
             <div className="text-center mb-5">
                 {!loadMoreLoading ? loadMore && <a href="javascript:void(0)" onClick={handleLoadMore} className="text-gray-500">
@@ -132,15 +141,15 @@ export default function Articles({ allPosts, postCount }) {
 }
 
 
-export const getServerSideProps = async (ctx) => {
+// export const getServerSideProps = async (ctx) => {
 
-    const filter = ctx.query.category
-    const limit = loadLimit
-    const response = await axios.get(`${process.env.API}/posts/get/${filter}/${limit}`)
+//     const filter = ctx.query.category
+//     const limit = loadLimit
+//     const response = await axios.get(`${process.env.API}/posts/get/${filter}/${limit}`)
 
-    const allPosts = await response.data.posts
-    const postCount = await response.data.count
-    return {
-        props: { allPosts, postCount }
-    }
-}
+//     const allPosts = await response.data.posts
+//     const postCount = await response.data.count
+//     return {
+//         props: { allPosts, postCount }
+//     }
+// }
