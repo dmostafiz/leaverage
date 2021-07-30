@@ -27,7 +27,7 @@ setSliders(data)
 return (
 
 <>
-  { sliders.length ?
+  {/* { sliders.length ? */}
   <div className="w-full h-screen">
     <Swiper spaceBetween={0} slidesPerView={1} onSlideChange={()=> console.log('slider working')}
       onSwiper={(swiper) => console.log(swiper)}
@@ -60,7 +60,7 @@ return (
                     <p className="text-gray-50 text-base">We working as a giant team with worldwide best freelancers. When
                       we take over, you will relax on your path. </p>
                   </div>
-                  <div className="bg-gray-50 rounded-lg  shadow-inner">
+                  <div className="bg-gray-50 rounded-lg shadow-inner">
                     <div className="py-4 px-4">
                       <div className="flex flex-col">
                         <h4 className="text-gray-500 text-lg font-semibold mb-3">We're currently working on</h4>
@@ -88,7 +88,7 @@ return (
       ))}
 </ Swiper>
 </div> : <div></div>
-}
+{/* } */}
 
 </>
 )

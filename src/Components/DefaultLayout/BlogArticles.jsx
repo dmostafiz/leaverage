@@ -10,7 +10,7 @@ export default function BlogArticles({posts}) {
 
   return (
 <section id="blog" className="max-w-6xl mx-auto section-vs-0 section-vsr-30 body-mode-dark showcase blog-grid masonry news">
-  <div data-aos="fade-in" data-aos-delay='100' data-aos-anchor="body" className="container full-grid">
+  <div data-aos-anchor="body" className="container full-grid">
   
   <div className="intro mt-4">
       <div className="align-self-center text-center text-md-left">

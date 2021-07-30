@@ -6,6 +6,7 @@ import DefaultLayout from '../Layouts/DefaultLayout'
 import Router, {useRouter} from 'next/router'
 import Loading from '../Components/Loading'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import NavHolder from '../Components/DefaultLayout/NavHolder'
 
 const loadLimit = 3
 
@@ -91,12 +92,11 @@ export default function Articles() {
         <DefaultLayout>
 
 
-            <div className="navbar-holder" style={{ minHeight: '53px' }}></div>
-
+            <NavHolder />
 
 
             <div className="category-menu text-white">
-                <div className="max-w-6xl mx-auto">
+                <div className="max-w-6xl mx-auto mt-3">
                    
                        {categories.length ? <p className="mx-2 border">
                             <Link href={`/articles`}>

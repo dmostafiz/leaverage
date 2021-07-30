@@ -18,7 +18,7 @@ export default function Header({classes}) {
 
 
     <header id="header">
-        <nav className=" navbar navbar-expand">
+        <nav className=" navbar navbar-expand py-3">
 
             <div className="container">
                 
