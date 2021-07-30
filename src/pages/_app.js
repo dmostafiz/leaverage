@@ -1,6 +1,9 @@
 import axios from 'axios';
 import '../../styles/globals.css'
 import '../../styles/nprogress.css'
+
+// import 'swiper/swiper.scss';
+
 import {Provider} from 'react-redux'
 import { createWrapper } from 'next-redux-wrapper'     
 import store from '../../state/store'

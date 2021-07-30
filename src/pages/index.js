@@ -173,7 +173,7 @@ function Home(props) {
 
 
 
-<div className="mx-auto items-center max-w-lg bg-white shadow overflow-hidden mx-auto">
+<div className="items-center max-w-lg bg-white shadow overflow-hidden mx-auto">
     <div className="py-4 px-8 mt-3">
       <div className="flex flex-col mb-8">
         <h2 className="text-gray-700 font-semibold text-2xl tracking-wide mb-2">Why you should hire us?</h2>
