@@ -28,7 +28,7 @@ return (
 
 <>
   {/* { sliders.length ? */}
-  <div className="w-full h-screen">
+  <div className="w-full h-screen mb-1">
     <Swiper spaceBetween={0} slidesPerView={1} onSlideChange={()=> console.log('slider working')}
       onSwiper={(swiper) => console.log(swiper)}
       >
@@ -38,7 +38,7 @@ return (
         <div className="bg-gradient-to-r from-gray-900 via-green-900 to-yellow-400 pb-10 min-h-screen flex justify-center items-center align-middle pt-32">
        
          <div className="mx-auto max-w-6xl flex flex-col md:flex-row ">
-            <div className="w-full md:w-2/3 pb-10 flex flex-col relative px-10 md:px-0 justify-center items-start gap-5">
+            <div className="w-full md:w-2/3 pb-10 flex flex-col px-10 md:px-0 justify-center items-start gap-5">
                 <h1 className="text-green-500 text-5xl md:text-7xl font-extrabold "
                   dangerouslySetInnerHTML={{ __html: slider.title }}></h1>
                 <p className="text-gray-50 text-2xl md:text-3xl" dangerouslySetInnerHTML={{ __html: slider.description }}>

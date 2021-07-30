@@ -1,5 +1,6 @@
 import React from 'react'
 import BlogArticles from '../Components/DefaultLayout/BlogArticles'
+import NavHolder from '../Components/DefaultLayout/NavHolder'
 import DefaultLayout from '../Layouts/DefaultLayout'
 
 export default function Concepts() {
@@ -7,7 +8,7 @@ export default function Concepts() {
         <DefaultLayout>
 
 
-            <div className="navbar-holder" style={{ minHeight: '53px' }}></div>
+            <NavHolder />
 
 
 

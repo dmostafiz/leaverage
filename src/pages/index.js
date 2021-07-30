@@ -33,7 +33,7 @@ function Home(props) {
 
 
 {/* This is an example component */}
-<div className="max-w-6xl mx-auto pb-2 md:pt-5">
+<div className="max-w-6xl mx-auto mt-72 md:mt-0">
 <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-4">
 
 {/* review item */}
@@ -171,7 +171,7 @@ function Home(props) {
   </div>
 </div>
 
-
+{/* 
 
 <div className="items-center max-w-lg bg-white shadow overflow-hidden mx-auto">
     <div className="py-4 px-8 mt-3">
@@ -196,7 +196,7 @@ function Home(props) {
         <a href="#" className="block tracking-widest uppercase text-center shadow bg-green-400 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">Hire Us</a>
       </div>
     </div>
-  </div>
+  </div> */}
 
 
 
@@ -216,7 +216,7 @@ function Home(props) {
     <div className="max-w-6xl mx-auto">
       <p className="font-bold text-sm uppercase">Services</p>
       <p className="text-3xl font-bold mb-3">Multimedia products</p>
-      <p className="text-2xl mb-10 leading-none mb-5">What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?</p>
+      <p className="text-2xl mb-10 leading-none">What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?</p>
       <a href="#" className="bg-white py-4 px-8 text-green-500 font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact us</a>
     </div>  
   </div>

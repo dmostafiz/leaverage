@@ -29,7 +29,7 @@ import BlogPosts from './BlogPosts'
   }, [])
 
     return (
-<section id="news" className="shadow section-4 carousel showcase news">
+<section id="news" className="">
 <div className="container max-w-6xl">
   <div className="overflow-holder">
     <div className="container">
