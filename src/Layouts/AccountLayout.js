@@ -10,7 +10,7 @@ import {makeAuthentication} from '../../state/auth/actions'
 import JSLoader from '../../helpers/JSLoader';
 
 
-export default function AccountLayout({children, user}){
+export default function AccountLayout({children, user, title = "Unknown"}){
     const router = useRouter()
     const dispatch = useDispatch()
 
@@ -44,6 +44,8 @@ export default function AccountLayout({children, user}){
       <>
      
       <Head>
+
+        <title>{title} | Webexe</title>
 
         <link href="/account/lib/fontawesome-free/css/all.min.css" rel="stylesheet" />
         <link href="/account/lib/ionicons/css/ionicons.min.css" rel="stylesheet" />

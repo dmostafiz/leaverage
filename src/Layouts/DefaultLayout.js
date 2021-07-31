@@ -8,7 +8,7 @@ import Head from 'next/head'
 import cookie from 'js-cookie'
 import JSLoader from '../../helpers/JSLoader';
 
-export default function DefaultLayout({children, classes}){
+export default function DefaultLayout({children, classes, title = "Unknown"}){
   const dispatch = useDispatch()
 
     function loadScripts(){
@@ -50,7 +50,7 @@ export default function DefaultLayout({children, classes}){
       <>
 
       <Head>
-        
+          <title>{title} | Webexe</title>
           <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css"/>
           <link rel="stylesheet" href="/assets/css/vendor/slider.min.css"/>
           <link rel="stylesheet" href="/assets/css/main.css"/>

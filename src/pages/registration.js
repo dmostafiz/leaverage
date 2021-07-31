@@ -4,7 +4,7 @@ import DefaultLayout from '../Layouts/DefaultLayout'
 
 export default function registration() {
     return (
-       <DefaultLayout>
+       <DefaultLayout title="Sign Up">
        <div class="navbar-holder"></div>
 <section data-aos="zoom-in" data-aos-delay='200' id="contact" className="section-7 form">
   <div className="container">

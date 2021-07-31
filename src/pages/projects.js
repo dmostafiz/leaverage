@@ -5,7 +5,7 @@ import DefaultLayout from '../Layouts/DefaultLayout'
 
 export default function Projects() {
     return (
-        <DefaultLayout>
+        <DefaultLayout title="Projects">
 
 
             <div className="navbar-holder" style={{ minHeight: '53px' }}></div>

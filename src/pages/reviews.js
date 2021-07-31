@@ -4,7 +4,7 @@ import DefaultLayout from '../Layouts/DefaultLayout'
 
 export default function Reviews() {
     return (
-        <DefaultLayout>
+        <DefaultLayout title="Reviews">
 
 
             <div className="navbar-holder" style={{ minHeight: '53px' }}></div>

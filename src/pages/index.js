@@ -15,6 +15,7 @@ import DefaultLayout from '../Layouts/DefaultLayout'
 import Skeleton from 'react-loading-skeleton';
 import ProfileAndReview from '../Components/DefaultLayout/ProfileAndReview'
 
+
 function Home(props) {
 
 const dispatch = useDispatch()
@@ -27,7 +28,7 @@ dispatch(getInitialSliders(props.sliders))
 }, [])
 
 return (
-<DefaultLayout>
+<DefaultLayout title="Home">
   <HeroSlider />
 
   <ProfileAndReview />

@@ -89,7 +89,7 @@ const Signin = () => {
     }
 
     return (
-      <AuthLayout>
+      <AuthLayout title="Sign In">
         <div className="az-signin-wrapper">
             <div className="az-card-signin">
                 <a href="/">

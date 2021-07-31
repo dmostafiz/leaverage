@@ -5,15 +5,9 @@ import DefaultLayout from '../Layouts/DefaultLayout'
 
 export default function Concepts() {
     return (
-        <DefaultLayout>
-
+        <DefaultLayout title="Concepts">
 
             <NavHolder />
-
-
-
-
-
 
 
 <div className="max-w-2xl mx-auto items-center justify-center md:pt-2">

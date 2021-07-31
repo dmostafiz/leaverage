@@ -8,7 +8,7 @@ import AuthLayout from '../Layouts/AuthLayout';
 
 const Signup = () => {
     return (
-      <AuthLayout>
+      <AuthLayout title="Sign Up">
         <div className="az-signup-wrapper">
             <div className="az-column-signup-left">
                 <div>

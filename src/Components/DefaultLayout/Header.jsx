@@ -87,7 +87,7 @@ export default function Header({classes}) {
                                 <a href="/sign-in" className={`nav-link ${classes} `}>Sign in</a>
                             </li>
                             <li className="nav-item">
-                                <a href="/sign-up" className="nav-link bg-yellow-500 px-20 text-gray-500">
+                                <a href="/sign-up" className="bg-yellow-500 shadow-md rounded px-3 py-2 text-dark">
                                     Join Today
                                 </a>
                             </li>
