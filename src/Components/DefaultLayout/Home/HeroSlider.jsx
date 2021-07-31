@@ -27,7 +27,7 @@ setSliders(data)
 return (
 
 <>
-  {/* { sliders.length ? */}
+  { sliders.length ?
   <div className="w-full">
     <Swiper spaceBetween={0} slidesPerView={1} onSlideChange={()=> console.log('slider working')}
       onSwiper={(swiper) => console.log(swiper)}
@@ -87,8 +87,8 @@ return (
       </SwiperSlide>
       ))}
 </ Swiper>
-</div> : <div></div>
-{/* } */}
+</div> : <div className="max-h-96"></div>
+} 
 
 </>
 )
