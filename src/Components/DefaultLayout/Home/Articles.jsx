@@ -1,11 +1,11 @@
-import moment from 'moment'
+// import moment from 'moment'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import JSLoader from '../../../helpers/JSLoader'
-import Loading from '../Loading'
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import PostsPlaceHolder from '../../../helpers/PostsPlaceHolder'
-import BlogPosts from './BlogPosts'
+// import JSLoader from '../../../../helpers/JSLoader'
+// import Loading from '../../Loading'
+// import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import PostsPlaceHolder from '../../../../helpers/PostsPlaceHolder'
+import BlogPosts from '../BlogPosts'
 // import Placeholder from 'react-select/src/components/Placeholder'
 
  const Articles = () => {
