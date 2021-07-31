@@ -35,7 +35,7 @@ return (
       { sliders.map((slider, index) => (
 
       <SwiperSlide key={index}>
-        <div className="bg-gradient-to-r from-gray-900 via-green-900 to-yellow-400 pb-10 min-h-screen flex justify-center items-center align-middle pt-32">
+        <div className="bg-gradient-to-r from-gray-900 via-green-900 to-green-600 md:to-yellow-400 pb-10 min-h-screen flex justify-center items-center align-middle pt-32">
        
          <div className="mx-auto max-w-6xl flex flex-col md:flex-row ">
             <div className="w-full md:w-2/3 pb-10 flex flex-col px-10 md:px-0 justify-center items-start gap-5">
