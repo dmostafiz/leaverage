@@ -87,7 +87,7 @@ return (
       </SwiperSlide>
       ))}
 </ Swiper>
-</div> : <div className="max-h-96"></div>
+</div> : <div className="max-h-72 mt-72 mb-72"></div>
 } 
 
 </>
