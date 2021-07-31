@@ -87,7 +87,7 @@ export default function Header({classes}) {
                                 <a href="/sign-in" className={`nav-link ${classes} `}>Sign in</a>
                             </li>
                             <li className="nav-item">
-                                <a href="/sign-up" className="nav-link text-success">
+                                <a href="/sign-up" className="nav-link bg-yellow-500 px-20 text-gray-500">
                                     Join Today
                                 </a>
                             </li>

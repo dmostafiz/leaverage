@@ -28,14 +28,14 @@ return (
 
 <>
   {/* { sliders.length ? */}
-  <div className="w-full h-screen mb-1">
+  <div className="w-full">
     <Swiper spaceBetween={0} slidesPerView={1} onSlideChange={()=> console.log('slider working')}
       onSwiper={(swiper) => console.log(swiper)}
       >
       { sliders.map((slider, index) => (
 
       <SwiperSlide key={index}>
-        <div className="bg-gradient-to-r from-gray-900 via-green-900 to-green-600 md:to-yellow-400 pb-10 min-h-screen flex justify-center items-center align-middle pt-32">
+        <div className="bg-gradient-to-r from-gray-900 via-green-900 to-green-700 md:to-green-600 pb-10 pt-32 min-h-screen flex justify-center items-center align-middle ">
        
          <div className="mx-auto max-w-6xl flex flex-col md:flex-row ">
             <div className="w-full md:w-2/3 pb-10 flex flex-col px-10 md:px-0 justify-center items-start gap-5">
