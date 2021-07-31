@@ -39,7 +39,7 @@ return (
        
          <div className="mx-auto max-w-6xl flex flex-col md:flex-row ">
             <div className="w-full md:w-2/3 pb-10 flex flex-col px-10 md:px-0 justify-center items-start gap-5">
-                <h1 className="text-green-500 text-5xl md:text-7xl font-extrabold "
+                <h1 className="text-yellow-500 text-5xl md:text-7xl font-extrabold "
                   dangerouslySetInnerHTML={{ __html: slider.title }}></h1>
                 <p className="text-gray-50 text-2xl md:text-3xl" dangerouslySetInnerHTML={{ __html: slider.description }}>
                 </p>

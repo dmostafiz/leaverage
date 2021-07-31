@@ -110,9 +110,9 @@ jQuery(function ($) {
 
     if (window.location.pathname == '/') {
         $('.nav-link').removeClass('text-gray-400').addClass('text-light')
-        $('#site-logo').attr('src', '/webexe/logo2-white.png')
+        $('#site-logo').attr('src', '/webexe/white.png')
     }else{
-        $('#site-logo').attr('src', '/webexe/logo2-green.png')
+        $('#site-logo').attr('src', '/webexe/dark.png')
     }
 
     var position = $(window).scrollTop();
@@ -141,7 +141,7 @@ jQuery(function ($) {
 
                 navbar.addClass('navbar-sticky');
 
-                $('#site-logo').attr('src', '/webexe/logo2-green.png')
+                $('#site-logo').attr('src', '/webexe/dark.png')
 
                 if (window.location.pathname == '/') {
                     $('.nav-link').removeClass('text-light').addClass('text-gray-400')
@@ -174,7 +174,7 @@ jQuery(function ($) {
                 if ($(window).scrollTop() <= 100 && $('.navbar-holder').length == 0) {
                     navbar.removeClass('navbar-sticky');
 
-                    $('#site-logo').attr('src', '/webexe/logo2-white.png')
+                    $('#site-logo').attr('src', '/webexe/white.png')
 
 
                     if (window.location.pathname == '/') {

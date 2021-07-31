@@ -25,7 +25,7 @@ export default function Header({classes}) {
             <div className="container header">
             <Link href="/">
             <a className={`navbar-brand ${classes}`}>
-                <img id="site-logo" src="/webexe/logo2-white.png" alt=""/>
+                <img id="site-logo" src="/webexe/white.png" alt=""/>
             </a>
             </Link>
             <div className="ml-auto" />
@@ -33,23 +33,23 @@ export default function Header({classes}) {
 
                     <li className="nav-item">
                         <Link href="/concepts">
-                            <a className={`nav-link ${classes}`}>Concepts</a>
+                            <a className={`nav-link ${classes} text-gray-400`}>Concepts</a>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link href="/projects">
-                            <a className={`nav-link ${classes}`}>Projects</a>
+                            <a className={`nav-link ${classes} text-gray-400`}>Projects</a>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link href="/reviews">
-                            <a className={`nav-link ${classes}`}>Reviews</a>
+                            <a className={`nav-link ${classes} text-gray-400`}>Reviews</a>
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link href="/articles">
-                            <a className={`nav-link ${classes}`}>Articles</a>
+                            <a className={`nav-link ${classes} text-gray-400`}>Articles</a>
                         </Link>
                     </li>
 
@@ -73,7 +73,7 @@ export default function Header({classes}) {
                     <ul className="navbar-nav items">
                         {user.isAuth && 
                             <li className="nav-">
-                                <a href="/manage" className="btn  custbtn ml-lg-auto primary-button">
+                                <a href="/manage" className="btn custbtn ml-lg-auto text-gray-400">
                                     <img className="mr-1" src="/icons/white/user.svg" style={{ height:'18px', width:'18px' }} />
                                     
                                     {user.username}
