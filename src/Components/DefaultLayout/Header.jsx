@@ -25,7 +25,7 @@ export default function Header({classes}) {
             <div className="container header">
             <Link href="/">
             <a className={`navbar-brand ${classes}`}>
-                <img id="site-logo" src="/webexe/logo2-green.png" alt=""/>
+                <img id="site-logo" src="/webexe/logo2-white.png" alt=""/>
             </a>
             </Link>
             <div className="ml-auto" />

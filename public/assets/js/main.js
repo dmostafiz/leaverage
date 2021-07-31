@@ -110,6 +110,9 @@ jQuery(function ($) {
 
     if (window.location.pathname == '/') {
         $('.nav-link').removeClass('text-gray-400').addClass('text-light')
+        $('#site-logo').attr('src', '/webexe/logo2-white.png')
+    }else{
+        $('#site-logo').attr('src', '/webexe/logo2-green.png')
     }
 
     var position = $(window).scrollTop();
