@@ -25,7 +25,7 @@ export default function Header({classes}) {
             <div className="container header">
             <Link href="/">
             <a className={`navbar-brand ${classes}`}>
-                <i className="text-success">DMostafiz</i>
+                <img id="site-logo" src="/webexe/logo1-green.png" alt=""/>
             </a>
             </Link>
             <div className="ml-auto" />
@@ -33,23 +33,23 @@ export default function Header({classes}) {
 
                     <li className="nav-item">
                         <Link href="/concepts">
-                            <a className={`nav-link ${classes} text-light`}>Concepts</a>
+                            <a className={`nav-link ${classes}`}>Concepts</a>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link href="/projects">
-                            <a className={`nav-link ${classes} text-light`}>Projects</a>
+                            <a className={`nav-link ${classes}`}>Projects</a>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link href="/reviews">
-                            <a className={`nav-link ${classes} text-light`}>Reviews</a>
+                            <a className={`nav-link ${classes}`}>Reviews</a>
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link href="/articles">
-                            <a className={`nav-link ${classes} text-light`}>Articles</a>
+                            <a className={`nav-link ${classes}`}>Articles</a>
                         </Link>
                     </li>
 

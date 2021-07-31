@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function ProfileAndReview() {
 return (
@@ -68,7 +69,7 @@ return (
                     <div className="flex pb-3 mt-3 items-center border-b">
                         <a target="_blank" href="https://www.fiverr.com/dmostafiz"
                             className="py-2 rounded flex-1 bg-green-500 text-white text-center font-bold">
-                            <i className="fas fa-plus-circle" /> Meet me on Fiverr
+                            <i className="fas fa-plus-circle" /> Get me on Fiverr
                         </a>
                     </div>
 
@@ -107,7 +108,7 @@ return (
                     <div className="border-b -mx-8 px-8 ">
                         <div className="flex items-center mt-1">
                             <div className=" w-1/5 text-yellow-500 tracking-tighter">
-                                <span>5 star</span>
+                                <span className="font-bold">5 star</span>
                             </div>
                             <div className="w-3/5">
                                 <div className="bg-gray-300 w-full rounded-lg h-2">
@@ -120,7 +121,7 @@ return (
                         </div>{/* first */}
                         <div className="flex items-center mt-1">
                             <div className="w-1/5 text-yellow-500 tracking-tighter">
-                                <span>4 star</span>
+                                <span className="font-bold">4 star</span>
                             </div>
                             <div className="w-3/5">
                                 <div className="bg-gray-300 w-full rounded-lg h-2">
@@ -133,7 +134,7 @@ return (
                         </div>{/* second */}
                         <div className="flex items-center mt-1">
                             <div className="w-1/5 text-yellow-500 tracking-tighter">
-                                <span>3 star</span>
+                                <span className="font-bold">3 star</span>
                             </div>
                             <div className="w-3/5">
                                 <div className="bg-gray-300 w-full rounded-lg h-2">
@@ -146,7 +147,7 @@ return (
                         </div>{/* thierd */}
                         <div className="flex items-center mt-1">
                             <div className=" w-1/5 text-yellow-500 tracking-tighter">
-                                <span>2 star</span>
+                                <span className="font-bold">2 star</span>
                             </div>
                             <div className="w-3/5">
                                 <div className="bg-gray-300 w-full rounded-lg h-2">
@@ -159,7 +160,7 @@ return (
                         </div>{/* 4th */}
                         <div className="flex items-center mt-1">
                             <div className="w-1/5 text-yellow-500  tracking-tighter">
-                                <span>1 star</span>
+                                <span className="font-bold">1 star</span>
                             </div>
                             <div className="w-3/5">
                                 <div className="bg-gray-300 w-full rounded-lg h-2">
@@ -192,7 +193,7 @@ return (
                                             <p className="text-gray-500 font-semibold">Total Reviews</p>
                                             <div className="flex items-baseline space-x-4">
                                                 <h2 className="text-2xl font-semibold">
-                                                    342
+                                                    16
                                                 </h2>
                                                 {/* <p className="text-green-700 flex font-semibold space-x-1">
                                                     <span>↑</span>
@@ -217,7 +218,7 @@ return (
                                             <p className="text-gray-500 font-semibold">Total Projects</p>
                                             <div className="flex items-baseline space-x-4">
                                                 <h2 className="text-2xl font-semibold">
-                                                    422
+                                                    23
                                                 </h2>
                                                 {/* <p className="text-green-700 flex font-semibold space-x-1">
                                                     <span>↑</span>
@@ -233,11 +234,15 @@ return (
                     </div>
 
                     <h3 className="font-medium tracking-tight">We working as a giant</h3>
+
                     <p className="text-gray-700 text-sm py-1">
                         give your opinion about this item.We working as a giant team with worldwide best freelancersr.
                     </p>
-                    <button className="bg-gray-100 border border-gray-400 px-3 py-1 rounded  text-gray-800 mt-2">write a
-                        review</button>
+
+
+                     <Link  href="/reviews">
+                        <a className="py-2 rounded text-yellow-600 font-bold">What customers says about us</a>
+                     </Link>
 
                 </div>
             </div>

@@ -108,6 +108,10 @@ jQuery(function ($) {
 
     'use strict';
 
+    if (window.location.pathname == '/') {
+        $('.nav-link').removeClass('text-gray-400').addClass('text-light')
+    }
+
     var position = $(window).scrollTop();
     var navbar   = $('.navbar');
     var toTop    = $('#scroll-to-top');
@@ -123,7 +127,7 @@ jQuery(function ($) {
 
         navbar.removeAttr('data-aos');
         navbar.removeAttr('data-aos-delay');
-
+        
         var scroll = $(window).scrollTop();
 
         if (!navbar.hasClass('relative')) {
@@ -133,13 +137,22 @@ jQuery(function ($) {
 
                 navbar.addClass('navbar-sticky');
 
+                // $('#site-logo').attr('src', '/webexe/logo1-green.png')
+                if (window.location.pathname == '/') {
+                    $('.nav-link').removeClass('text-light').addClass('text-gray-400')
+                }
                 if(navbar.hasClass('navbar-fixed') || window.innerWidth <= 767) {
                     navbar.removeClass('hidden').addClass('visible');
+                    // alert('ok');
+                    // $('#site-logo').attr('src', '/webexe/logo1-white.png')
 
                 } else {
 
                     if ($(window).scrollTop() >= window.innerHeight) {
                         navbar.removeClass('visible').addClass('hidden');
+                        // alert('ok');
+                        // $('#site-logo').attr('src', '/webexe/logo2-white.png')
+
                     }
                 }                
 
@@ -150,11 +163,18 @@ jQuery(function ($) {
 
                 if(!navbar.hasClass('navbar-no-fixed')) {
                     navbar.removeClass('hidden').addClass('visible');
+                    
                 }
 
                 // Top
                 if ($(window).scrollTop() <= 100 && $('.navbar-holder').length == 0) {
                     navbar.removeClass('navbar-sticky');
+                    $('#site-logo').attr('src', '/webexe/logo1-green.png')
+
+                    if (window.location.pathname == '/') {
+                        $('.nav-link').removeClass('text-gray-400').addClass('text-light')
+                    }
+
 
                 } else {                   
 
