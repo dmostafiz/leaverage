@@ -120,6 +120,7 @@ jQuery(function ($) {
         if (position > 0) {
             navbar.addClass('navbar-sticky');
         }
+        // $('.nav-link').addClass('text-light');
         toTop.hide();
     })
 
@@ -137,24 +138,24 @@ jQuery(function ($) {
 
                 navbar.addClass('navbar-sticky');
 
-                // $('#site-logo').attr('src', '/webexe/logo1-green.png')
+                $('#site-logo').attr('src', '/webexe/logo2-green.png')
+
                 if (window.location.pathname == '/') {
                     $('.nav-link').removeClass('text-light').addClass('text-gray-400')
                 }
+                
                 if(navbar.hasClass('navbar-fixed') || window.innerWidth <= 767) {
                     navbar.removeClass('hidden').addClass('visible');
-                    // alert('ok');
-                    // $('#site-logo').attr('src', '/webexe/logo1-white.png')
 
                 } else {
 
                     if ($(window).scrollTop() >= window.innerHeight) {
                         navbar.removeClass('visible').addClass('hidden');
-                        // alert('ok');
-                        // $('#site-logo').attr('src', '/webexe/logo2-white.png')
-
                     }
                 }                
+
+                
+
 
                 toTop.fadeOut('fast');
 
@@ -169,7 +170,9 @@ jQuery(function ($) {
                 // Top
                 if ($(window).scrollTop() <= 100 && $('.navbar-holder').length == 0) {
                     navbar.removeClass('navbar-sticky');
-                    $('#site-logo').attr('src', '/webexe/logo1-green.png')
+
+                    $('#site-logo').attr('src', '/webexe/logo2-white.png')
+
 
                     if (window.location.pathname == '/') {
                         $('.nav-link').removeClass('text-gray-400').addClass('text-light')
