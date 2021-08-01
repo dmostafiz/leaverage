@@ -11,48 +11,23 @@ export default function Index({initPost}) {
     const router = useRouter()
     const [post, setPost] = useState(initPost)
     
-    // useEffect( async () =>{
-        
-    //     const { slug } = router.query
-    //     //  console.log(slug)
-    //      const data = await fetch(`http://localhost:3333/api/post/get/${slug}`)
-    //      const postData = await data.json()
-
-    //      console.log('Single Post: ',postData)
- 
-    //      setPost(postData)
-
-    // }, [])
-
     return (
         <DefaultLayout>
-            {/* <div class="navbar-holder"></div>   */}
-
-            {/* <div className="text-center">
-                <img width="100%" src={post.imageUrl} />
-            </div> */}
-
-            {/* <div style={{ height:'500px', widht:'100%', background:`url(${post.imageUrl})`, backgroundSize:"cover"  }}></div> */}
-            {/* Content */}
-            {/* <div style={{ borderBottom:"2px solid #e7e7e7" }}></div> */}
 
             <NavHolder />
 
             <section id="content" className="single -mt-16 md:-mt-8">
                 <div className="container">
 
-                    <div className="row mb-12">
+                    <div className="max-w-3xl mx-auto">
+
                         {/* Main */}
-                        <div className="max-w-2xl text-center mx-auto">
-                            <h3 className="text-2xl md:text-4xl font-bold mt-0 ml-0 mb-3">
-                                {post?.title}
-                            </h3>
-
-                            <span className="text-muted">
-                                {moment(post.createdAt).format('dddd, MMMM Do YYYY')} (about {moment(post.createdAt).fromNow()})
-                                </span>
-
-                            <div className="mt-3 mb-20 d-flex justify-content-center align-items-center">
+                        <div className=" ">
+                            <div className="text-left">
+                                <h3 className="text-2xl md:text-4xl font-bold mt-0 ml-0 mb-3">
+                                    {post?.title}
+                                </h3>
+                               <div className="mb-4 d-flex ">
                                 <img className="shadow-sm bg-light mr-2" src={post?.author?.profile.avatar} 
                                 style={{ 
                                     width:"30px", 
@@ -65,41 +40,32 @@ export default function Index({initPost}) {
                                </div>
                             </div>
                             
-                            <div className="tag-list-article">
+                            </div>
+
+                            <span className="text-muted mb-20">
+                                {moment(post.createdAt).format('dddd, MMMM Do YYYY')} (about {moment(post.createdAt).fromNow()})
+                            </span>
+
+                            <div className="tag-list-article mt-3">
                                 <ul>
                                     {post.tags.map((tag, index) =>
-                                        <li key={index}><span className="px-2 py-2 mx-1 text-sm"># {tag}</span></li>
+                                        <li className="mr-3" key={index}>
+                                            <span className="text-gray-400 text-md">
+                                                #{tag}
+                                            </span>
+                                        </li>
                                     )}
                                 </ul>
                             </div>
 
                         </div>
-                    </div>
-                    {/* <div className="" style={{ borderBottom:"2px solid #e7e7e7" }}></div> */}
 
-                   {/* {post.imageUrl && <div className="max-w-5xl mx-auto text-center mb-4">
-                        <img width="100%" src={post.imageUrl} />
-                    </div>} */}
-                    
+                        <div className="single-content text-xl">
+                            {Parser(post ? post.body : '')}
+                        </div>
 
-
-                    <div className="row">
-                        {/* Main */}
-   
-                        <main className="col-12 col-lg-8 offset-lg-2">
-                         
-                        <div className="row">
-                            <div className="col-12 align-self-center">
-                 
-                     
-                            {/* <div dangerouslySetInnerHTML={{ __html:post?.body}}></div> */}
-
-
-
-                           <div className="single-content text-xl">
-                           {Parser(post ? post.body : '')}
-                           </div>
-
+                        <div>
+                            
                             <div className="flex items-center flex-row tag-list-article d-flex mt-3 mb-5">
                                 <span className="mr-2">Categories:</span> 
                                 <ul>
@@ -134,14 +100,10 @@ export default function Index({initPost}) {
                                 </div>
                                 </fieldset>
                             </form>
-                            </div>
+                        
+                        </div>  
 
 
-
-                        </div>        
-                        </main>
-                        {/* Sidebar */}
-                        {/* <AsideArticle/> */}
                     </div>
                 </div>
             </section>

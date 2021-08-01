@@ -140,15 +140,15 @@ section{
 
 .tag-list-article > ul >li {
   display: inline-block;
-  margin-right: 5px;
+  /* margin-right: 5px; */
 }
 
 .tag-list-article > ul >li > span{
 
   overflow: hidden;
-  background: #d6d6d673;
-  padding:2px 7px;
-  border-radius: 10%;
+  /* background: #d6d6d673; */
+  /* padding:2px 7px; */
+  /* border-radius: 10%; */
 
   text-overflow: ellipsis;
   white-space: nowrap;
