@@ -32,9 +32,14 @@
 1. Preloader
 ----------------------------------------------*/
 
-jQuery(function ($) {
 
+jQuery(function ($) {
+    
     'use strict';
+
+    $('#menu').on('shown.bs.modal', function () {
+    // $('.modal-backdrop').remove()
+    })
 
     let preloader = $('.preloader');
 
@@ -48,57 +53,57 @@ jQuery(function ($) {
 2. Responsive Menu
 ----------------------------------------------*/
 
-jQuery(function ($) {
+// jQuery(function ($) {
 
-    'use strict';
+//     'use strict';
 
-    function navResponsive() {
+//     function navResponsive() {
 
-        let navbar = $('.navbar .items');
-        let menu = $('#menu .items');
+//         let navbar = $('.navbar .items');
+//         let menu = $('#menu .items');
 
-        menu.html('');
-        navbar.clone().appendTo(menu);
+//         // menu.html('');
+//         // navbar.clone().appendTo(menu);
 
-        $('.menu .icon-arrow-right').removeClass('icon-arrow-right').addClass('icon-arrow-down');
+//         $('.menu .icon-arrow-right').removeClass('icon-arrow-right').addClass('icon-arrow-down');
 
-        $('.menu .nav-item.dropdown').each(function() {
-            let children = $(this).children('.nav-link');
-            children.addClass('prevent');
-        })
-    }
+//         $('.menu .nav-item.dropdown').each(function() {
+//             let children = $(this).children('.nav-link');
+//             children.addClass('prevent');
+//         })
+//     }
 
-    navResponsive();
+//     navResponsive();
 
-    $(window).on('resize', function () {
-        navResponsive();
-    })
+//     $(window).on('resize', function () {
+//         navResponsive();
+//     })
 
-    $('.menu .dropdown-menu').each(function() {
-        var children = $(this).children('.dropdown').length;
-        $(this).addClass('children-'+children);
-    })
+//     $('.menu .dropdown-menu').each(function() {
+//         var children = $(this).children('.dropdown').length;
+//         $(this).addClass('children-'+children);
+//     })
 
-    $('.menu .nav-item.dropdown').each(function() {
-        var children = $(this).children('.nav-link');
-        children.addClass('prevent');
-    })
+//     $('.menu .nav-item.dropdown').each(function() {
+//         var children = $(this).children('.nav-link');
+//         children.addClass('prevent');
+//     }) 
 
-    $(document).on('click', '#menu .nav-item .nav-link', function (e) {
+//     $(document).on('click', '#menu .nav-item .nav-link', function (e) {
 
-        if($(this).hasClass('prevent')) {
-            e.preventDefault();
-        }
+//         if($(this).hasClass('prevent')) {
+//             e.preventDefault();
+//         }
 
-        var nav_link = $(this);
+//         var nav_link = $(this);
 
-        nav_link.next().toggleClass('show');
+//         nav_link.next().toggleClass('show');
 
-        if(nav_link.hasClass('smooth-anchor')) {
-            $('#menu').modal('hide');
-        }
-    })
-})
+//         if(nav_link.hasClass('smooth-anchor')) {
+//             $('#menu').modal('hide');
+//         }
+//     })
+// })
 
 /*----------------------------------------------
 3. Navigation
@@ -108,11 +113,11 @@ jQuery(function ($) {
 
     'use strict';
 
-    if (window.location.pathname == '/') {
-        $('.nav-link').removeClass('text-gray-400').addClass('text-light')
-        $('#site-logo').attr('src', '/webexe/white.png')
-    }else{
+    if (window.location.pathname != '/') {
         $('#site-logo').attr('src', '/webexe/dark.png')
+        $('.nav-link').removeClass('text-light').addClass('text-dark')
+    }else{
+        // $('#site-logo').attr('src', '/webexe/dark.png')
     }
 
     var position = $(window).scrollTop();
@@ -129,6 +134,11 @@ jQuery(function ($) {
 
     $(window).scroll(function () {
 
+        // if(window.location.pathname == '/'){
+            $('#site-logo').attr('src', '/webexe/dark.png')
+            $('.nav-link').removeClass('text-light').addClass('text-dark')
+        // }
+
         navbar.removeAttr('data-aos');
         navbar.removeAttr('data-aos-delay');
         
@@ -141,10 +151,10 @@ jQuery(function ($) {
 
                 navbar.addClass('navbar-sticky');
 
-                $('#site-logo').attr('src', '/webexe/dark.png')
+                // $('#site-logo').attr('src', '/webexe/dark.png')
 
                 if (window.location.pathname == '/') {
-                    $('.nav-link').removeClass('text-light').addClass('text-gray-400')
+                    // $('.nav-link').removeClass('text-light').addClass('text-gray-400')
                 }
                 
                 if(navbar.hasClass('navbar-fixed') || window.innerWidth <= 767) {
@@ -154,11 +164,11 @@ jQuery(function ($) {
 
                     if ($(window).scrollTop() >= window.innerHeight) {
                         navbar.removeClass('visible').addClass('hidden');
+
                     }
                 }                
 
-                
-
+        
 
                 toTop.fadeOut('fast');
 
@@ -174,26 +184,25 @@ jQuery(function ($) {
                 if ($(window).scrollTop() <= 100 && $('.navbar-holder').length == 0) {
                     navbar.removeClass('navbar-sticky');
 
-                    $('#site-logo').attr('src', '/webexe/white.png')
-
-
-                    if (window.location.pathname == '/') {
-                        $('.nav-link').removeClass('text-gray-400').addClass('text-light')
+                    if(window.location.pathname == '/'){
+                        $('#site-logo').attr('src', '/webexe/white.png')
+                        $('.nav-link').removeClass('text-dark').addClass('text-light')
                     }
 
+               
 
                 } else {                   
 
                     if(!navbar.hasClass('navbar-no-fixed')) {
-                        navbar.addClass('visible');
+                        // navbar.addClass('visible');
                     }
                 }
 
                 if (position >= window.innerHeight && window.innerWidth >= 767) {
-                    toTop.fadeIn('fast');
+                    // toTop.fadeIn('fast');
 
                 } else {
-                    toTop.fadeOut('fast');
+                    // toTop.fadeOut('fast');
                 }
             }
             position = scroll;
@@ -1081,3 +1090,4 @@ jQuery(function ($) {
         })
     }
 })
+

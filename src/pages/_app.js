@@ -26,19 +26,18 @@ function MyApp({ Component, pageProps }) {
 
 
   Router.events.on('routeChangeStart', () => {
-    // toast.loading('Loading...',{
-    //   id: 'push',
-    // });
+
     NProgress.start()
   })
 
   Router.events.on('routeChangeComplete', () => {
     // const toastId = toast.loading('Loading...');
     // toast.dismiss('push')
-
     $('body').removeClass('az-header-menu-show');
 
+ 
     NProgress.done()
+
   })
 
 

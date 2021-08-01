@@ -87,7 +87,7 @@ return (
       </SwiperSlide>
       ))}
 </ Swiper>
-</div> : <div className="h-32"></div>
+</div> : <div className="bg-gradient-to-r from-gray-900 via-green-900 to-green-700 md:to-green-600 pb-10 pt-32 min-h-screen flex justify-center items-center align-middle bg-opacity"></div>
 } 
 
 </>

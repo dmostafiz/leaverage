@@ -5,7 +5,7 @@ export default function ProfileAndReview() {
 return (
 <>
     {/* This is an example component */}
-    <div className="max-w-6xl mx-auto md:mt-10">
+    <div className="max-w-6xl mx-auto md:mt-10 ">
         <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-0 md:gap-3">
 
             <div style={{ minHeight:"478px" }} className="w-full bg-white py-6 px-6 shadow-md">

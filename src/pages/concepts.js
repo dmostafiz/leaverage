@@ -10,7 +10,7 @@ export default function Concepts() {
             <NavHolder />
 
 
-<div className="max-w-2xl mx-auto items-center justify-center md:pt-2">
+<div className="max-w-2xl mx-auto items-center justify-center md:mb-16">
   <div className="w-full rounded-lg shadow-lg p-4 flex md:flex-row flex-col">
     <div className="flex-1">
       <h3 className="font-semibold text-lg tracking-wide">Write your idea and get paid</h3>
@@ -22,10 +22,6 @@ export default function Concepts() {
       <button className="bg-blue-400 text-white font-bold px-4 py-2 text-sm uppercase rounded tracking-wider focus:outline-none hover:bg-blue-600">Write Idea</button>
     </div>
   </div>
-
-
-
-
 </div>
 
 

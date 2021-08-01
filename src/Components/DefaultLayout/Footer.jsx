@@ -1,4 +1,5 @@
 import React from 'react'
+import Logo from './Logo'
 
 export default function Footer() {
     return (
@@ -11,15 +12,11 @@ export default function Footer() {
           <div className="row">
             <div className="branding col-12 p-3 text-center text-lg-left item">
               <div className="brand">
-                <a href="index.html" className="logo">
-                  Leverage.                                 
-                  {/* 
-                                      Custom Logo
-                                      <img src="assets/images/logo.svg" alt="Leverage">
-                                  */}
+                <a href="/" className="mb-">
+                    <Logo type="green" width="200" />
                 </a>
               </div>
-              <p>Authentic and innovative.<br />Built to the smallest detail<br />with a focus on usability<br />and performance.</p>
+              <p>We are the team of best freelancers worldwide and we develop custom fullstack web & mobile applications for any local or international business.</p>
               <ul className="navbar-nav social share-list mt-0 ml-auto">
                 <li className="nav-item">
                   <a href="#" className="nav-link"><i className="icon-social-instagram ml-0" /></a>
@@ -45,13 +42,13 @@ export default function Footer() {
                 <li className="nav-item">
                   <a href="#" className="nav-link">
                     <i className="icon-phone mr-2" />
-                    +1 123 98765 4321
+                    +880 1881-766497
                   </a>
                 </li>
                 <li className="nav-item">
                   <a href="#" className="nav-link">
                     <i className="icon-envelope mr-2" />
-                    hello@business.com
+                    webexe.dev@gmail.com
                   </a>
                 </li>
                 <li className="nav-item">
@@ -105,14 +102,8 @@ export default function Footer() {
   <section id="copyright" className="p-3 copyright">
     <div className="container">
       <div className="row">
-        <div className="col-12 col-md-6 p-3 text-center text-lg-left">
-          <p>Enjoy the low price. We are tracking any intention of piracy.</p>
-          {/*
-                      Suggestion: Replace the text above with a description of your website.
-                   */}
-        </div>
-        <div className="col-12 col-md-6 p-3 text-center text-lg-right">
-          <p>© 2020 Leverage is Proudly Powered by <a href="https://codings.dev/" target="_blank">Codings</a>.</p>
+        <div className="col-12 p-3 text-center ">
+          <p>© webexe developers. 2020 </p>
         </div>
       </div>
     </div>

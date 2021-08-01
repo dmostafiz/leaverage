@@ -26,7 +26,8 @@ dispatch(getInitialSliders(props.sliders))
 }, [])
 
 return (
-<DefaultLayout title="Home">
+<DefaultLayout title="Home" logoType="white" classes="text-light">
+  
   <HeroSlider />
 
   <ProfileAndReview />
@@ -50,7 +51,7 @@ return (
     </div>
   </div>
   <Services />
-  <Testimonials />
+  {/* <Testimonials /> */}
   <Subscribe />
   {/*
   <AboutImage />

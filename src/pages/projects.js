@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import BlogArticles from '../Components/DefaultLayout/BlogArticles'
+import NavHolder from '../Components/DefaultLayout/NavHolder'
 import DefaultLayout from '../Layouts/DefaultLayout'
 
 export default function Projects() {
@@ -8,7 +9,7 @@ export default function Projects() {
         <DefaultLayout title="Projects">
 
 
-            <div className="navbar-holder" style={{ minHeight: '53px' }}></div>
+            <NavHolder />
 
 
             <section id="blog" className="max-w-6xl mx-auto section-vs-0 section-vsr-30 body-mode-dark blog-grid masonry news">
