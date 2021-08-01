@@ -5,24 +5,24 @@ import {useDispatch} from 'react-redux'
 import Cookies from 'js-cookie'
 import Link from 'next/link'
 import AuthLayout from '../Layouts/AuthLayout';
+import Logo from '../Components/Logo'
 
 const Signup = () => {
     return (
       <AuthLayout title="Sign Up">
-        <div className="az-signup-wrapper">
-            <div className="az-column-signup-left">
+        <div className="flex">
+            <div className="az-column-signup-left h-screen">
                 <div>
-                <i className="typcn typcn-chart-bar-outline" />
                 <a href="/">
-                    <h1 className="az-logo">DMostafiz</h1>
+                    <Logo type="green" width="200" />
                 </a>
-                <h5>Responsive Modern Dashboard &amp; Admin Template</h5>
+                <h5 className="mt-2">Worldwide best frelance developers</h5>
                 <p>We are excited to launch our new company and product Azia. After being featured in too many magazines to mention and having created an online stir, we know that BootstrapDash is going to be big. We also hope to win Startup Fictional Business of the Year this year.</p>
                 <p>Browse our site and see for yourself why you need Azia.</p>
                 <a href="index.html" className="btn btn-outline-indigo">Learn More</a>
                 </div>
             </div>{/* az-column-signup-left */}
-            <div className="az-column-signup">
+            <div className="az-column-signup h-screen">
                     <a href="/">
                         <h1 className="az-logo">DMostafiz</h1>
                     </a>

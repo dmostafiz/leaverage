@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react'
 import Link from 'next/link'
 import {useDispatch, useSelector} from 'react-redux'
 import {useRouter} from 'next/router'
-import Logo from './Logo'
+import Logo from '../Logo'
 
 export default function Header({logoType = 'dark', classes = "text-dark"}) {
     const user = useSelector(state => state.auth)
@@ -111,7 +111,7 @@ export default function Header({logoType = 'dark', classes = "text-dark"}) {
 
                         {!user.isAuth && <>
                             <li className="nav-item">
-                                <a href="/sign-in" className={`nav-link textlight`}>Sign in</a>
+                                <a href="/sign-in" className={`nav-link ${classes}`}>Sign in</a>
                             </li>
                             <li className="nav-item">
                                 <a href="/sign-up" className="bg-yellow-500 shadow-md rounded px-3 py-2 text-dark">
@@ -125,7 +125,7 @@ export default function Header({logoType = 'dark', classes = "text-dark"}) {
 
                 <ul className="navbar-nav toggle">
                     <li className="nav-item">
-                        <a href="#" id="menubarg" className={`nav-link`} data-toggle="modal" data-target="#menu">
+                        <a href="#" id="menubarg" className={`nav-link ${classes}`} data-toggle="modal" data-target="#menu">
                             <i className="icon-menu m-0"></i>
                         </a>
                     </li>
