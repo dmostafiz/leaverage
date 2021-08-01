@@ -68,49 +68,9 @@ export default function DefaultLayout({children, classes, title = "Unknown", log
         {children}
       <Footer/>
 
-        <div>
-          <div id="search" className="p-0 modal fade" role="dialog" aria-labelledby="search" aria-hidden="true">
-            <div className="modal-dialog modal-dialog-slideout" role="document">
-              <div className="modal-content full">
-                <div className="modal-header" data-dismiss="modal">
-                  Search <i className="icon-close" />
-                </div>
-                <div className="modal-body">
-                  <form className="row">
-                    <div className="col-12 p-0 align-self-center">
-                      <div className="row">
-                        <div className="col-12 p-0 pb-3">
-                          <h2>What are you looking for?</h2>
-                          <p>Search for services and news about the best that happens in the world.</p>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-12 p-0 input-group">
-                          <input type="text" className="form-control" placeholder="Enter Keywords" />
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-12 p-0 input-group align-self-center">
-                          <button className="btn primary-button"><i className="icon-magnifier" />SEARCH</button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+ 
+      <MobileMenu /> 
 
-
-          <MobileMenu /> 
-
-          {/* Scroll [to top] */}
-          <div id="scroll-to-top" className="scroll-to-top">
-            <a href="#header" className="smooth-anchor">
-              <i className="icon-arrow-up" />
-            </a>
-          </div>
-        </div>
 
       </>
   )
