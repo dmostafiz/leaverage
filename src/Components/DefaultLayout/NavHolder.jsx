@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function NavHolder() {
     return (
-        <div className="" style={{ minHeight: '120px' }}></div>
+        <div className="h-24 md:h-28" ></div>
     )
 }

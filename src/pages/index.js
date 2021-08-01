@@ -8,7 +8,7 @@ import Articles from '../Components/DefaultLayout/Home/Articles'
 import HeroSlider from '../Components/DefaultLayout/Home/HeroSlider'
 import Services from '../Components/DefaultLayout/Services'
 import Subscribe from '../Components/DefaultLayout/Subscribe'
-import Testimonials from '../Components/DefaultLayout/Testimonials'
+// import Testimonials from '../Components/DefaultLayout/Testimonials'
 import {getInitialSliders} from '../../state/slider/actions'
 import DefaultLayout from '../Layouts/DefaultLayout'
 import ProfileAndReview from '../Components/DefaultLayout/ProfileAndReview'
@@ -29,6 +29,7 @@ return (
 <DefaultLayout title="Home" logoType="white" classes="text-light">
   
   <HeroSlider />
+  {/* <Services /> */}
 
   <ProfileAndReview />
  

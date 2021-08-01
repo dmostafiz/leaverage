@@ -8,7 +8,7 @@ import Loading from '../Components/Loading'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import NavHolder from '../Components/DefaultLayout/NavHolder'
 
-const loadLimit = 3
+const loadLimit = 9
 
 export default function Articles() {
 

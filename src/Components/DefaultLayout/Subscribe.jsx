@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Subscribe() {
     return (
-<section id="subscribe" className="section-6 subscribe">
+<section id="subscribe" className="subscribe">
   <div className="container smaller">
     <div className="row text-center intro">
       <div className="col-12">

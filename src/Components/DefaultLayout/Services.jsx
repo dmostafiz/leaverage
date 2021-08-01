@@ -2,11 +2,11 @@ import React from 'react'
 
 export default function Services() {
     return (
-<section id="services" className="section-1 offers">
+<section id="services" className="offers">
   <div className="container max-w-6xl">
     <div className="row intro">
       <div className="col-12 col-md-9 align-self-center text-center text-md-left">
-        <h2 className="text-4xl font-bold tracking-wide">My Services</h2>
+        <h2 className="text-4xl font-bold tracking-wide">Our Areas</h2>
         <p>Focused on results we seek to raise the level of our customers.</p>
       </div>
   

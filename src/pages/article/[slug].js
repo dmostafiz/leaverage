@@ -4,6 +4,7 @@ import DefaultLayout from '../../Layouts/DefaultLayout';
 import Router, {useRouter} from 'next/router'
 import Parser from 'html-react-parser'
 import moment from 'moment';
+import NavHolder from '../../Components/DefaultLayout/NavHolder';
 
 export default function Index({initPost}) {
 
@@ -35,20 +36,23 @@ export default function Index({initPost}) {
             {/* Content */}
             {/* <div style={{ borderBottom:"2px solid #e7e7e7" }}></div> */}
 
-            <div className="navbar-holder"></div>
-            <section id="content" className="single -mt-16 md:-mt-2">
+            <NavHolder />
+
+            <section id="content" className="single -mt-16 md:-mt-8">
                 <div className="container">
 
-                    <div className="row ">
+                    <div className="row mb-12">
                         {/* Main */}
-                        <div className="max-w-6xl text-center mx-auto">
-                            <h3 className="text-2xl md:text-4xl font-medium mt-0 ml-0 mb-5">{post?.title}</h3>
+                        <div className="max-w-2xl text-center mx-auto">
+                            <h3 className="text-2xl md:text-4xl font-bold mt-0 ml-0 mb-3">
+                                {post?.title}
+                            </h3>
 
                             <span className="text-muted">
                                 {moment(post.createdAt).format('dddd, MMMM Do YYYY')} (about {moment(post.createdAt).fromNow()})
                                 </span>
 
-                            <div className="mt-4 mb-4 d-flex justify-content-center align-items-center">
+                            <div className="mt-3 mb-20 d-flex justify-content-center align-items-center">
                                 <img className="shadow-sm bg-light mr-2" src={post?.author?.profile.avatar} 
                                 style={{ 
                                     width:"30px", 
@@ -61,10 +65,10 @@ export default function Index({initPost}) {
                                </div>
                             </div>
                             
-                            <div className="tag-list-article mb-3">
+                            <div className="tag-list-article">
                                 <ul>
                                     {post.tags.map((tag, index) =>
-                                        <li key={index}><span>#{tag}</span></li>
+                                        <li key={index}><span className="px-2 py-2 mx-1 text-sm"># {tag}</span></li>
                                     )}
                                 </ul>
                             </div>
@@ -75,8 +79,8 @@ export default function Index({initPost}) {
 
                    {/* {post.imageUrl && <div className="max-w-5xl mx-auto text-center mb-4">
                         <img width="100%" src={post.imageUrl} />
-                    </div>}
-                     */}
+                    </div>} */}
+                    
 
 
                     <div className="row">
@@ -92,7 +96,7 @@ export default function Index({initPost}) {
 
 
 
-                           <div className="single-content">
+                           <div className="single-content text-xl">
                            {Parser(post ? post.body : '')}
                            </div>
 

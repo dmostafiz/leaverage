@@ -1,5 +1,4 @@
 import React from 'react'
-import BlogArticles from '../Components/DefaultLayout/BlogArticles'
 import NavHolder from '../Components/DefaultLayout/NavHolder'
 import DefaultLayout from '../Layouts/DefaultLayout'
 
@@ -11,7 +10,7 @@ export default function Concepts() {
 
 
 <div className="max-w-2xl mx-auto items-center justify-center md:mb-16">
-  <div className="w-full rounded-lg shadow-lg p-4 flex md:flex-row flex-col">
+  <div className="w-full rounded-lg shadow-md md:shadow-lg p-4 flex md:flex-row flex-col">
     <div className="flex-1">
       <h3 className="font-semibold text-lg tracking-wide">Write your idea and get paid</h3>
       <p className="text-gray-500 my-1">
