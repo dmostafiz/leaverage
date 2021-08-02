@@ -1,9 +1,5 @@
 import React from 'react'
-// import { SkeletonTheme } from 'react-loading-skeleton'
-// import Typography from '@material-ui/core/Typography';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-// import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
-// import Skeleton from '@material-ui/lab/Skeleton';
 
 export default function SliderPlaceHolder() {
     return (
@@ -16,7 +12,7 @@ export default function SliderPlaceHolder() {
                     <SkeletonTheme color="#ffffff" highlightColor="#b6b6b6">
                         <Skeleton width="80%" height={50} className="opacity-5 mb-3"/> 
                     
-                        <Skeleton width="100%" height={22} count={6} className="opacity-5 mb-1"/>
+                        <Skeleton width="100%" height={22} duration={2} count={6} className="opacity-5 mb-1"/>
 
                         <Skeleton width={140} height={50} className="opacity-5 mt-3" />
                     </SkeletonTheme>
