@@ -92,8 +92,8 @@ export default function Articles() {
         <DefaultLayout title="Articles">
 
 
-            <NavHolder />
-
+            {/* <NavHolder /> */}
+            <div className="h-16"></div>
 
             <div className="category-menu text-white">
                 <div className="max-w-6xl mx-auto mt-3">
