@@ -3,6 +3,7 @@ import Link from 'next/link'
 import {useDispatch, useSelector} from 'react-redux'
 import {useRouter} from 'next/router'
 import Logo from '../Logo'
+import SiderDrawer from '../SiderDrawer'
 
 export default function Header({logoType = 'dark', classes = "text-dark"}) {
     const user = useSelector(state => state.auth)
@@ -25,6 +26,16 @@ export default function Header({logoType = 'dark', classes = "text-dark"}) {
         <nav className="navbar navbar-expand py-3" style={{ background: currentRoute != '/' ? '#f5f5f5' : '' }}>
 
             <div className="container">
+
+            <ul className="navbar-nav toggle">
+                    <li className="nav-item">
+
+                        <SiderDrawer ancore="left" classess={classes}/>
+                        {/* <a href="#" id="menubarg" className={`nav-link ${classes}`} data-toggle="modal" data-target="#menu">
+                            <i className="icon-menu m-0"></i>
+                        </a> */}
+                    </li>
+                </ul>
                 
             <div className="container header">
             <Link href="/">
@@ -123,13 +134,9 @@ export default function Header({logoType = 'dark', classes = "text-dark"}) {
                 </div> 
 
 
-                <ul className="navbar-nav toggle">
-                    <li className="nav-item">
-                        <a href="#" id="menubarg" className={`nav-link ${classes}`} data-toggle="modal" data-target="#menu">
-                            <i className="icon-menu m-0"></i>
-                        </a>
-                    </li>
-                </ul>
+
+
+
 
 
 

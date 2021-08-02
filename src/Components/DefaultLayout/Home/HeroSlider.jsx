@@ -4,6 +4,8 @@ import { getInitialSliders } from '../../../../state/slider/actions'
 import Image from 'next/image'
 import axios from 'axios'
 import { Swiper, SwiperSlide } from 'swiper/react';
+import PostsPlaceHolder from '../../../../helpers/PostsPlaceHolder'
+import SliderPlaceHolder from '../../../../helpers/SliderPlaceHolder'
 
 function HeroSlider() {
 
@@ -17,11 +19,11 @@ useEffect(async () => {
 const response = await axios.get(`${process.env.API}/slider/getactive`)
 const data = await response.data
 
-// setTimeout(() => {
+setTimeout(() => {
 
 setSliders(data)
 
-// }, 5000)
+}, 5000)
 }, [])
 
 return (
@@ -87,7 +89,7 @@ return (
       </SwiperSlide>
       ))}
 </ Swiper>
-</div> : <div className="bg-gradient-to-r from-gray-900 via-green-900 to-green-700 md:to-green-600 pb-10 pt-32 min-h-screen flex justify-center items-center align-middle bg-opacity"></div>
+</div> : <SliderPlaceHolder />
 } 
 
 </>
