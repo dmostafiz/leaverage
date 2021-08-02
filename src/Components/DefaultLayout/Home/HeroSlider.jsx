@@ -19,11 +19,11 @@ useEffect(async () => {
 const response = await axios.get(`${process.env.API}/slider/getactive`)
 const data = await response.data
 
-// setTimeout(() => {
+setTimeout(() => {
 
 setSliders(data)
 
-// }, 5000)
+}, 10000)
 
 
 }, [])
