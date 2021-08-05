@@ -7,11 +7,11 @@ import Backdrope from '../Backdrope'
 
 export default function DefaultMenuItems({user, classes}) {
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
-    const handlBuyeServicesClick = () => {
-        dispatch(initBackdrop(true))
-    }
+    // const handlBuyeServicesClick = () => {
+    //     dispatch(initBackdrop(true))
+    // }
 
     return (
     <>
@@ -33,17 +33,18 @@ export default function DefaultMenuItems({user, classes}) {
                 <a className={`nav-link ${classes}`}>Projects</a>
                 </Link>
             </li>
-            <li className="nav-item">
-                <Link href="/articles">
-                <a className={`nav-link ${classes}`}>Tech Articles</a>
-                </Link>
-            </li>
             
             <li className="nav-item">
                 <Link href="/achievments">
                 <a className={`nav-link ${classes}`}>Our Achievments</a>
                 </Link>
             </li>
+
+            <li className="nav-item">
+                <Link href="/articles">
+                <a className={`nav-link ${classes}`}>Tech Articles</a>
+                </Link>
+            </li> 
 
 
             {/* <li className="nav-item">

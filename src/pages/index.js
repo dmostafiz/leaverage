@@ -12,7 +12,6 @@ import Subscribe from '../Components/DefaultLayout/Subscribe'
 import {getInitialSliders} from '../../state/slider/actions'
 import DefaultLayout from '../Layouts/DefaultLayout'
 import ProfileAndReview from '../Components/DefaultLayout/ProfileAndReview'
-import SiderDrawer from '../Components/SiderDrawer'
 
 
 function Home(props) {

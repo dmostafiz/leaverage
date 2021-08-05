@@ -11,8 +11,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Link from 'next/link';
-import Logo from './Logo';
+import Logo from '../Logo';
 
+import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
 
 const useStyles = makeStyles({
     list: {
@@ -52,41 +53,60 @@ export default function SiderDrawer({ancore, classess}) {
         <div>
             <Logo width="200" type="dark" classes="py-6 px-3" />
         </div>
+
+        <div className="px-3 py-3 flex flex-col gap-3">
+              <Link href={`/calculate-cost`}> 
+              <a href="/calculate-cost" className="bg-green-600 hover:bg-green-600 shadow-md rounded py-2 text-light text-center" >BUILD YOUR BUDGET</a>
+              </Link>
+
+        </div>
           
         <List>
 
             <Link href="/" >
                 <ListItem button >
-                    <ListItemText>Home</ListItemText>
+                    {/* <Icon> <BeachAccessIcon /> </Icon> */}
+                    <ListItemIcon><HomeTwoToneIcon /></ListItemIcon>
+                    <ListItemText>Go to Home</ListItemText>
                 </ListItem>
             </Link>
 
             <Link href="/concepts" >
                 <ListItem button >
-                    <ListItemText>Concepts</ListItemText>
+                    <ListItemText>Business Concepts</ListItemText>
                 </ListItem>
             </Link>
 
             <Link href="/projects" >
                 <ListItem button >
-                    <ListItemText>Projects</ListItemText>
+                    <ListItemText>Previous Projects</ListItemText>
                 </ListItem>
             </Link>
 
-            <Link href="/reviews" >
+            <Link href="/achievments" >
                 <ListItem button >
-                    <ListItemText>Reviews</ListItemText>
+                    <ListItemText>Our Achievments</ListItemText>
                 </ListItem>
             </Link>
 
 
             <Link href="/articles" >
                 <ListItem button >
-                    <ListItemText>Articles</ListItemText>
+                    <ListItemText>Technology Articles</ListItemText>
                 </ListItem>
             </Link>
 
-  
+            {/* <ListItem button > */}
+            <div className="px-3 py-3 flex flex-col gap-3">
+                <Link href={`/sign-in`}> 
+                <a href="/calculate-cost" className="bg-indigo-500 shadow-md rounded py-2 text-light text-center" >SIGN IN</a>
+                </Link>
+
+                <Link href={`/sign-up`}> 
+                <a href="/calculate-cost" className="bg-blue-600 shadow-md rounded py-2 text-light text-center" >CREATE NEW ACCOUNT</a>
+                </Link>
+            </div>
+            {/* </ListItem> */}
         </List>
 
 
