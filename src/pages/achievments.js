@@ -5,7 +5,7 @@ import DefaultLayout from '../Layouts/DefaultLayout'
 
 export default function Reviews() {
     return (
-        <DefaultLayout title="Reviews">
+        <DefaultLayout title="Reviews" nav="home">
 
             <NavHolder />
 

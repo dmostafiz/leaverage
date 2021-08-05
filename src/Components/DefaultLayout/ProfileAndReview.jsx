@@ -6,7 +6,7 @@ return (
 <>
     {/* This is an example component */}
     <div className="max-w-6xl mx-auto md:mt-10 ">
-        <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-0 md:gap-3">
+        <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-0 md:gap-8">
 
             <div style={{ minHeight:"478px" }} className="w-full bg-white py-6 px-6 shadow-md">
 
@@ -32,30 +32,30 @@ return (
                         </p>
                     </div>
 
-                    <div class="flex justify-center items-center">
-                        <div class="flex items-center mt-2">
+                    <div className="flex justify-center items-center">
+                        <div className="flex items-center mt-2">
 
-                            <svg class="mx-1 w-4 h-4 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg"
+                            <svg className="mx-1 w-4 h-4 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20">
                                 <path
                                     d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                             </svg>
-                            <svg class="mx-1 w-4 h-4 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg"
+                            <svg className="mx-1 w-4 h-4 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20">
                                 <path
                                     d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                             </svg>
-                            <svg class="mx-1 w-4 h-4 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg"
+                            <svg className="mx-1 w-4 h-4 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20">
                                 <path
                                     d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                             </svg>
-                            <svg class="mx-1 w-4 h-4 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg"
+                            <svg className="mx-1 w-4 h-4 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20">
                                 <path
                                     d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                             </svg>
-                            <svg class="mx-1 w-4 h-4 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg"
+                            <svg className="mx-1 w-4 h-4 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20">
                                 <path
                                     d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />

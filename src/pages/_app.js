@@ -12,12 +12,12 @@ import NProgress from 'nprogress'
 import Router from 'next/router'
 import {SWRConfig} from 'swr'
 import toast, { Toaster } from 'react-hot-toast';
-import jQuery from 'jquery'; 
+import jQuery from 'jquery';  
 // import jQuery from 'jquery'; 
 import { useEffect } from 'react';
-// import 'tailwindcss/tailwind.css'
-// import 'tailwindcss/tailwind.css'
-
+import 'tailwindcss/tailwind.css'
+import 'tailwindcss/tailwind.css'
+// import 'swiper/swiper.scss';
 function MyApp({ Component, pageProps }) {
 
   NProgress.configure({

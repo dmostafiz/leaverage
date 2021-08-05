@@ -8,8 +8,9 @@ import Head from 'next/head'
 import cookie from 'js-cookie'
 import JSLoader from '../../helpers/JSLoader';
 import MobileMenu from '../Components/DefaultLayout/MobileMenu';
+import Backdrope from '../Components/Backdrope';
 
-export default function DefaultLayout({children, classes, title = "Unknown", logoType}){
+export default function DefaultLayout({children, classes, title = "Unknown", logoType, nav}){
   const dispatch = useDispatch()
 
     function loadScripts(){
@@ -25,8 +26,8 @@ export default function DefaultLayout({children, classes, title = "Unknown", log
       JSLoader("/assets/js/vendor/bricklayer.min.js")
       JSLoader("/assets/js/vendor/gallery.min.js")
       JSLoader("/assets/js/vendor/shuffle.min.js")
-      JSLoader("/assets/js/vendor/cookie-notice.min.js")
       JSLoader("/assets/js/vendor/particles.min.js")
+      JSLoader("/assets/js/vendor/cookie-notice.min.js")
       JSLoader("/assets/js/main.js")
     }
 
@@ -64,13 +65,13 @@ export default function DefaultLayout({children, classes, title = "Unknown", log
       
       </Head>
 
-      <Header classes={classes} logoType={logoType}/>
+      <Header classes={classes} logoType={logoType} nav={nav}/>
         {children}
       <Footer/>
 
+      <Backdrope />
  
       <MobileMenu /> 
-
 
       </>
   )

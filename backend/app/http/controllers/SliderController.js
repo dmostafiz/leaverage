@@ -77,6 +77,29 @@ exports.getActive = async (req, res) => {
    }
 }
 
+
+exports.getRandomOne = async (req, res) => {
+   try {
+
+      const sliderCount = await Slider.find({status: 'active'}).count()
+
+      const limit = 10;
+        
+      var rand = Math.floor(Math.random() * sliderCount)
+
+      if(  rand  > sliderCount  ) rand = sliderCount -1
+
+      const slider = await Slider.find({status: 'active'})
+                           .skip(rand)
+                           .limit(limit)
+
+      // console.log('Active sliders: ',sliders)
+      res.status(200).json(slider)
+   } catch (error) {
+      res.status(500).json({error: error.message})
+   }
+}
+
 exports.getByID = async(req, res) => {
    
    try {

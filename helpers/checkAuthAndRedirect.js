@@ -2,11 +2,11 @@ import nookies from 'nookies';
 
 const checkAuthAndRedirect = async (url, ctx) => {
 
-  console.log('checkAuth step 1')
+  // console.log('checkAuth step 1')
 
   if(ctx.req && !ctx.req.cookies.login)
   {
-    console.log('checkAuth step 2')
+    // console.log('checkAuth step 2')
 
     ctx.res.writeHead(302, { 
       Location: '/sign-in'
@@ -15,13 +15,13 @@ const checkAuthAndRedirect = async (url, ctx) => {
   }
   
   else if(!ctx.req && !nookies.get(ctx).login){
-    console.log('checkAuth step 3')
+    // console.log('checkAuth step 3')
     return window.location.href = '/account' 
   }
-  console.log('checkAuth step 4')
+  // console.log('checkAuth step 4')
   const authInfo =  JSON.parse(nookies.get(ctx).login)
 
-  console.log('checkAuth step 5')
+  // console.log('checkAuth step 5')
 
   const response = await fetch(url, {
     method: 'POST',
@@ -31,9 +31,9 @@ const checkAuthAndRedirect = async (url, ctx) => {
      },
   })
 
-  console.log('checkAuth step 6')
+  // console.log('checkAuth step 6')
   const data = await response.json()
-  console.log('checkAuth step 7: ', data)
+  // console.log('checkAuth step 7: ', data)
 
   if(!data.isAuth && !ctx.req){
     return window.location.href = '/account'

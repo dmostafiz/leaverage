@@ -89,7 +89,7 @@ export default function Articles() {
     }
 
     return (
-        <DefaultLayout title="Articles">
+        <DefaultLayout title="Articles" nav="home">
 
 
             {/* <NavHolder /> */}

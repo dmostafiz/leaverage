@@ -37,6 +37,7 @@ router.post('/slider/delete/:id', Authorization, SliderController.deleteByID)
 router.get('/slider/get/:id', SliderController.getByID)
 router.get('/slider/getall', SliderController.getAll)
 router.get('/slider/getactive', SliderController.getActive)
+router.get('/slider/get-random-one', SliderController.getRandomOne)
 
 module.exports = router
 

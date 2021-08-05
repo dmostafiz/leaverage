@@ -4,7 +4,7 @@ import DefaultLayout from '../Layouts/DefaultLayout'
 
 export default function Concepts() {
     return (
-        <DefaultLayout title="Concepts">
+        <DefaultLayout title="Concepts" nav="home">
 
             <NavHolder />
 
@@ -14,11 +14,11 @@ export default function Concepts() {
     <div className="flex-1">
       <h3 className="font-semibold text-lg tracking-wide">Write your idea and get paid</h3>
       <p className="text-gray-500 my-1">
-        We working to get new online business concepts so that peoples can start their new business online. <br/> <span className="font-semibold">You will Earn 3% of total project value from every orders on your concept.</span> 
+        We working to get new online business concepts so that peoples can start their new business online. <br/> <span className="font-semibold">You will Earn 6% of total project value from every orders on your concept.</span> 
       </p>
     </div>
     <div className="md:px-2 items-center flex md:ml-3">
-      <button className="bg-blue-400 text-white font-bold px-4 py-2 text-sm uppercase rounded tracking-wider focus:outline-none hover:bg-blue-600">Write Idea</button>
+      <button className="bg-green-700 text-white font-bold px-4 py-2 text-sm uppercase rounded tracking-wider focus:outline-none hover:bg-green-800">Write Idea</button>
     </div>
   </div>
 </div>

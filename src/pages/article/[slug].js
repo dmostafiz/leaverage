@@ -12,7 +12,7 @@ export default function Index({initPost}) {
     const [post, setPost] = useState(initPost)
     
     return (
-        <DefaultLayout>
+        <DefaultLayout title={post?.title} nav="home">
 
             <NavHolder />
 

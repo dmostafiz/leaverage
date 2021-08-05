@@ -27,7 +27,7 @@ dispatch(getInitialSliders(props.sliders))
 }, [])
 
 return (
-<DefaultLayout title="Home" logoType="white" classes="text-light">
+<DefaultLayout title="Home" logoType="white" classes="text-light" nav="home">
   
   <HeroSlider />
   {/* <Services /> */}

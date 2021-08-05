@@ -6,7 +6,7 @@ import DefaultLayout from '../Layouts/DefaultLayout'
 
 export default function Projects() {
     return (
-        <DefaultLayout title="Projects">
+        <DefaultLayout title="Projects" nav="home">
 
 
             <NavHolder />
@@ -30,7 +30,7 @@ export default function Projects() {
 
 {[1,2,3,4,5,6,7,8,9,12,4,5,4564,6].map((project, index) => (
 
-<div className="">
+<div key={index} className="">
     <div className="bg-white shadow-xl rounded-lg overflow-hidden">
     <div className="bg-cover bg-center h-56 p-4" style={{backgroundSize:'cover',backgroundImage: `url(https://picsum.photos/id/${index}/200/300)`}}>
 

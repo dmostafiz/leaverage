@@ -6,6 +6,7 @@ import axios from 'axios'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import PostsPlaceHolder from '../../../../helpers/PostsPlaceHolder'
 import SliderPlaceHolder from '../../../../helpers/SliderPlaceHolder'
+// import Backdrope from '../../Backdrope'
 
 function HeroSlider() {
 
@@ -16,10 +17,12 @@ const [sliders, setSliders] = useState([])
 
 useEffect(async () => {
 
-const response = await axios.get(`${process.env.API}/slider/getactive`)
+const response = await axios.get(`${process.env.API}/slider/get-random-one`)
 const data = await response.data
 
 // setTimeout(() => {
+
+console.log(data);
 
 setSliders(data)
 
@@ -33,13 +36,18 @@ return (
 <>
   { sliders.length ?
   <div className="w-full">
-    <Swiper spaceBetween={0} slidesPerView={1} onSlideChange={()=> console.log('slider working')}
+    <Swiper 
+      effect="fade"
+      spaceBetween={0} 
+      slidesPerView={1} 
+      onSlideChange={()=> console.log('slider working')}
       onSwiper={(swiper) => console.log(swiper)}
-      >
-      { sliders.map((slider, index) => (
+      // onSlideChangeTransitionStart=
+    >
+    { sliders.map((slider, index) => (
 
       <SwiperSlide key={index}>
-        <div className="bg-gradient-to-r from-gray-900 via-green-900 to-green-700 md:to-green-600 pb-10 pt-32 min-h-screen flex justify-center items-center align-middle bg-opacity">
+        <div className="bg-gradient-to-r from-blue-900 via-indigo-700  to-blue-900 md:to-indigo-700 pb-10 pt-32 min-h-screen flex justify-center items-center align-middle bg-opacity">
        
          <div className="mx-auto max-w-6xl flex flex-col md:flex-row ">
             <div className="w-full md:w-2/3 pb-10 flex flex-col px-10 md:px-0 justify-center items-start gap-5">
@@ -81,6 +89,8 @@ return (
                     <a href="#"
                       className="block tracking-widest uppercase text-center shadow bg-yellow-400 hover:bg-yellow-500 text-light font-extrabold py-3 rounded">Hire
                       Us</a>
+
+                      
                   </div>
                 </div>
 
@@ -89,7 +99,7 @@ return (
 
         </div>
       </SwiperSlide>
-      ))}
+    ))}
 </ Swiper>
 </div> : <SliderPlaceHolder />
 } 
