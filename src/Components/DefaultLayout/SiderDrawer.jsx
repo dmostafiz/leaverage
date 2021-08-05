@@ -13,7 +13,11 @@ import MailIcon from '@material-ui/icons/Mail';
 import Link from 'next/link';
 import Logo from '../Logo';
 
-import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
+import HomeIcon from '@material-ui/icons/Home';
+import DevicesIcon from '@material-ui/icons/Devices';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
+import StarHalfIcon from '@material-ui/icons/StarHalf';
+import BusinessIcon from '@material-ui/icons/Business';
 
 const useStyles = makeStyles({
     list: {
@@ -65,26 +69,28 @@ export default function SiderDrawer({ancore, classess}) {
 
             <Link href="/" >
                 <ListItem button >
-                    {/* <Icon> <BeachAccessIcon /> </Icon> */}
-                    <ListItemIcon><HomeTwoToneIcon /></ListItemIcon>
+                    <ListItemIcon><HomeIcon /></ListItemIcon>
                     <ListItemText>Go to Home</ListItemText>
                 </ListItem>
             </Link>
 
             <Link href="/concepts" >
                 <ListItem button >
+                    <ListItemIcon><BusinessIcon /></ListItemIcon>
                     <ListItemText>Business Concepts</ListItemText>
                 </ListItem>
             </Link>
 
             <Link href="/projects" >
                 <ListItem button >
+                    <ListItemIcon><DevicesIcon /></ListItemIcon>
                     <ListItemText>Previous Projects</ListItemText>
                 </ListItem>
             </Link>
 
             <Link href="/achievments" >
                 <ListItem button >
+                    <ListItemIcon><StarHalfIcon /></ListItemIcon>
                     <ListItemText>Our Achievments</ListItemText>
                 </ListItem>
             </Link>
@@ -92,12 +98,13 @@ export default function SiderDrawer({ancore, classess}) {
 
             <Link href="/articles" >
                 <ListItem button >
+                    <ListItemIcon><MenuBookIcon /></ListItemIcon>
                     <ListItemText>Technology Articles</ListItemText>
                 </ListItem>
             </Link>
 
             {/* <ListItem button > */}
-            <div className="px-3 py-3 flex flex-col gap-3">
+            <div className="px-3 py-3 flex flex-col gap-3 mt-5">
                 <Link href={`/sign-in`}> 
                 <a href="/calculate-cost" className="bg-indigo-500 shadow-md rounded py-2 text-light text-center" >SIGN IN</a>
                 </Link>
