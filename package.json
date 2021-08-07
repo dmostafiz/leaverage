@@ -58,7 +58,6 @@
     "postcss": "^8.2.8",
     "sass": "^1.37.5",
     "sass-loader": "^12.1.0",
-    "tailwindcss": "^2.0.4",
-    "webpack": "^5.48.0"
+    "tailwindcss": "^2.0.4"
   }
 }

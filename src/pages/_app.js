@@ -16,8 +16,9 @@ import jQuery from 'jquery';
 // import jQuery from 'jquery'; 
 import { useEffect } from 'react';
 import 'tailwindcss/tailwind.css'
-import 'tailwindcss/tailwind.css'
 // import 'swiper/swiper-bundle.css';
+
+
 function MyApp({ Component, pageProps }) {
 
   NProgress.configure({
