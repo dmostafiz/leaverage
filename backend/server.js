@@ -6,10 +6,12 @@ const router = require('./routes/web')
 const expressValidator = require('express-validator')
 const cors = require('cors')
 const connectDB = require('./db/connect')
+const sequelize = require('./db/sequelize')
 
 const app = express()
 
 connectDB()
+sequelize()
 
 app.use(cors())
 app.use(express.json({ limit:'50mb' }));

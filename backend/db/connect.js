@@ -9,7 +9,7 @@ const connectDB = async () => {
           useFindAndModify:false
         })
 
-        console.log("DB CONNECTED")
+        console.log("MONGO DB CONNECTED")
         
     } catch (error) {
         console.log("DB ERROR!: ",error)
