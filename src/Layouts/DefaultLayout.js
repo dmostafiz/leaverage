@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {Suspense, useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {makeAuthentication} from '../../state/auth/actions'
 import getAuthUserByToken from '../../helpers/getAuthUserByToken'
@@ -65,9 +65,11 @@ export default function DefaultLayout({children, classes, title = "Unknown", log
       
       </Head>
 
+{/* <Suspense fallback={()=><h1>App is loading....</h1>}> */}
       <Header classes={classes} logoType={logoType} nav={nav}/>
         {children}
       <Footer/>
+{/* </Suspense> */}
 
       <Backdrope />
  

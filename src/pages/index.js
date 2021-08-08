@@ -37,9 +37,10 @@ return (
  
   <Technologies />
  
+  <Services />
+  
   <Articles />
 
-  <Services />
 
   {/* <Testimonials /> */}
 
