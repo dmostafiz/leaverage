@@ -5,18 +5,13 @@ import Modal from '@material-ui/core/Modal';
 // import VREPlayer from 'videojs-react-enhanced';
 
 
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
 
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
 
   return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
+    top: '50%',
+    left: '50%',
+    transform: `translate(-50%, -50%)`,
   };
 }
 
