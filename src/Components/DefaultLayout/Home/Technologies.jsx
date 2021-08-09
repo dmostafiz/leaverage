@@ -6,7 +6,7 @@ export default function Technologies() {
         <div className="max-w-6xl mx-auto text-gray-500">
           {/* <p className="font-bold text-sm uppercase">Our technologies</p> */}
           <h2 className="text-3xl font-bold tracking-wide mb-2">Technologies</h2>
-          <p>We develop applications using modern frameworks written in powerful languages.</p>
+          <p className="text-xl">To increase performance, security and scalability of applications we use  best technologies.</p>
   
           <div className=" grid grid-cols-3 md:grid-cols-7 gap-3 md:gap-5 mt-5">
   
