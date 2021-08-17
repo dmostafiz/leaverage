@@ -27,6 +27,7 @@ router.get('/post/get/:slug', PostController.getSingle)
 router.get('/posts/get/:filter?/:limit?', PostController.get)
 router.get('/post/getid/:id', PostController.getById)
 router.get('/post/get/top/:limit', PostController.getTopByLimit)
+router.get('/post/get/random/:limit', PostController.getTopByLimit)
 router.get('/category/:slug/posts', PostController.getPostsByCategory)
 
 //Sliders

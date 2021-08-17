@@ -10,8 +10,8 @@ const sequelize = require('./db/sequelize')
 
 const app = express()
 
-connectDB()
 sequelize()
+connectDB()
 
 app.use(cors())
 app.use(express.json({ limit:'50mb' }));

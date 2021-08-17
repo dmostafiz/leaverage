@@ -39,7 +39,7 @@ export default function Header({logoType = 'dark', classes = "text-dark", nav = 
                 <div className="container header">
                     <Link href="/">
                         <a className={`navbar-brand ${classes}`}>
-                            <Logo type={logoType} classes="-mt-2" />
+                            <Logo type={logoType} width="200px" classes="-mt-2" />
                         </a>
                     </Link>
 

@@ -16,7 +16,7 @@ import BlogPosts from '../BlogPosts'
 
     // setTimeout(async () => {
 
-      const response = await fetch(`${process.env.API}/post/get/top/8`)
+      const response = await fetch(`${process.env.API}/post/get/random/3`)
   
       const jsonData = await response.json()
   
@@ -37,7 +37,7 @@ import BlogPosts from '../BlogPosts'
         <p>Every week we publish exclusive content on various topics.</p>
       </div>
    
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-10">
+      <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2 gap-5">
         
          { posts.length ? <BlogPosts posts={posts} /> : <PostsPlaceHolder/>} 
 

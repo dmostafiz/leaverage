@@ -261,6 +261,48 @@ exports.getTopByLimit = async (req, res) => {
     }
 } 
 
+exports.getTopByRandom = async (req, res) => {
+
+    
+    
+    try {
+        const limit = parseInt(req.params.limit)
+        // console.log(`Limit = ${req.params.limit}`)
+
+        const postCount = await Post.count()
+
+        
+        var rand = Math.floor(Math.random() * postCount)
+
+        if((rand + limit) > postCount) rand = rand - limit
+        // console.log('random', rand)
+
+        const posts = await Post.find()
+        .skip(rand)
+        .limit(limit)
+        .populate([
+            {
+                path:'author',
+                model:'User',
+                populate:{
+                    path:'profile',
+                    model:'Profile'
+                }
+            },
+
+            {
+                path:'categories',
+                model:'Category'
+            }
+        ])
+
+        // console.log('Single post: ',post)
+
+        res.status(200).json(posts)
+    } catch (error) {
+        res.status(200).json({type:"error", msg: error.message})
+    }
+} 
 
 exports.getPostsByCategory = async (req, res) => {
     console.log('Category Slug: ', req.params.slug)

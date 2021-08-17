@@ -27,7 +27,7 @@ dispatch(getInitialSliders(props.sliders))
 }, [])
 
 return (
-<DefaultLayout title="Home" logoType="white" classes="text-light" nav="home">
+<DefaultLayout title="Home" logoType="green-light" classes="text-light" nav="home">
   
   <HeroSlider />
   {/* <Services /> */}
@@ -60,34 +60,8 @@ return (
 }
 
 Home.getInitialProps = async () => {
-const sliders = [
-{
-title: 'Let\'s Build Something.',
-subtitle: 'We work with the most innovative solutions on the market to help you get the best results.',
-imageLink: '/me2.png'
-},
-{
-title: 'Boost your Creativity.',
-subtitle: 'Escape the fad and discover our creative services that will give authority to your brand.',
-imageLink: '/me4.png'
-},
-{
-title: 'Reach the Next Level.',
-subtitle: 'Are you ready? Count on us to revolutionize your company\'s online identity.',
-imageLink: '/me5.png'
-},
-]
 
-// const data = await fetch(`${process.env.API}/post/get/top/6`)
-
-// console.log(data)
-
-// const topArticles = await data.json()
-
-return {
-sliders,
-// topArticles
-}
+return {}
 
 }
 

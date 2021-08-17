@@ -114,7 +114,7 @@ jQuery(function ($) {
     'use strict';
 
     if (window.location.pathname != '/') {
-        $('#site-logo').attr('src', '/webexe/dark.png')
+        // $('#site-logo').attr('src', '/webexe/dark.png')
         $('.nav-link').removeClass('text-light').addClass('text-dark')
     }else{
         // $('#site-logo').attr('src', '/webexe/dark.png')
@@ -135,7 +135,7 @@ jQuery(function ($) {
     $(window).scroll(function () {
 
         // if(window.location.pathname == '/'){
-            $('#site-logo').attr('src', '/webexe/dark.png')
+            // $('#site-logo').attr('src', '/webexe/dark.png')
             $('.nav-link').removeClass('text-light').addClass('text-dark')
         // }
 
@@ -185,7 +185,7 @@ jQuery(function ($) {
                     navbar.removeClass('navbar-sticky');
 
                     if(window.location.pathname == '/'){
-                        $('#site-logo').attr('src', '/webexe/white.png')
+                        // $('#site-logo').attr('src', '/webexe/white.png')
                         $('.nav-link').removeClass('text-dark').addClass('text-light')
                     }
 
