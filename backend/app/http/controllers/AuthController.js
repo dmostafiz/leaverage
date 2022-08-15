@@ -7,65 +7,65 @@ var validator = require('validator');
 
 exports.login = async (req, res) => {
 
-    const {username, password} = req.body
+    const { username, password } = req.body
 
     try {
         var user
-        user = await User.findOne({ username:username })
+        user = await User.findOne({ username: username })
 
-        if(!user) user = await User.findOne({ email:username })
-            if(!user) return res.status(400).json({status:'error', msg: "User not found."})
+        if (!user) user = await User.findOne({ email: username })
+        if (!user) return res.status(400).json({ status: 'error', msg: "User not found." })
 
         const compare = await bcrypt.compare(req.body.password, user.password)
 
-        if(!compare) return res.status(201).json({status:'error', msg:'Invalid Credentials'})
+        if (!compare) return res.status(201).json({ status: 'error', msg: 'Invalid Credentials' })
 
-        const token = jwt.sign({id: user.id}, process.env.APP_SECRET, {expiresIn:'1d'})
-        
-        const userData = {_id:user._id, username:user.username, email:user.email, type: user.user_type}
+        const token = jwt.sign({ id: user.id }, process.env.APP_SECRET, { expiresIn: '1d' })
+
+        const userData = { _id: user._id, username: user.username, email: user.email, type: user.user_type }
 
         const profile = await Profile.findOne().populate('User', user._id)
-     
-        res.status(201).json({isAuth:true, token, user:userData, profile, msg: "Logged in successfully."})
-        
+
+        res.status(201).json({ isAuth: true, token, user: userData, profile, msg: "Logged in successfully." })
+
     } catch (error) {
-        res.status(400).json({isAuth:false, msg: "Something went wrong. Please try again later."})
+        res.status(400).json({ isAuth: false, msg: "Something went wrong. Please try again later." })
     }
 
 }
 
 exports.register = async (req, res) => {
 
-    const {username, email, password, password_confirmation} = req.body
+    const { username, email, password, password_confirmation } = req.body
 
     const allErrors = []
 
-    if(validator.isEmpty(username)) allErrors.push({ username: "Username should not be empty." })
-    if(!validator.isLength(username,{min:5})) allErrors.push({ username: "Username should must 5 char or long." })
+    if (validator.isEmpty(username)) allErrors.push({ username: "Username should not be empty." })
+    if (!validator.isLength(username, { min: 5 })) allErrors.push({ username: "Username should must 5 char or long." })
 
-    if(validator.isEmpty(email) )  allErrors.push({ email: "Email should not be empty" })
-    if(!validator.isEmail(email) )  allErrors.push({ email: "Email should be a valid email address." })
-    
+    if (validator.isEmpty(email)) allErrors.push({ email: "Email should not be empty" })
+    if (!validator.isEmail(email)) allErrors.push({ email: "Email should be a valid email address." })
+
     // if(password != password_confirmation) allErrors.push({ password: "Password not matched." })
-    if(!validator.equals(password, password_confirmation) ) allErrors.push({ password: "Password does not matched." })
-    
+    if (!validator.equals(password, password_confirmation)) allErrors.push({ password: "Password does not matched." })
+
     // res.status(422).json({errors:{password:"Password not matched."}})
 
     try {
 
-        const checkUserByUsername = await User.findOne({username: username})
-        if(checkUserByUsername) allErrors.push({ username: "Username has already been taken." })
+        const checkUserByUsername = await User.findOne({ username: username })
+        if (checkUserByUsername) allErrors.push({ username: "Username has already been taken." })
         // return res.status(302).json({errors:{username:"Username has already been taken"}})
 
-        const checkUserByEmail = await User.findOne({email: email})
+        const checkUserByEmail = await User.findOne({ email: email })
 
-        if(checkUserByEmail) allErrors.push({ email: "Email has already been taken." })
-        
+        if (checkUserByEmail) allErrors.push({ email: "Email has already been taken." })
+
         // return res.status(302).json({errors:{email:"Email has already been taken"}})
         // const solved = []
         // const dt = allErrors.map(([key,error]) => { solved.push(`{${key}:"${error}"}`) })
 
-        if(allErrors.length) return res.status(422).json({errors: allErrors})
+        if (allErrors.length) return res.status(422).json({ errors: allErrors })
 
         const salt = await bcrypt.genSalt(12)
 
@@ -93,13 +93,13 @@ exports.register = async (req, res) => {
         user.profile = profile
         await user.save()
 
-        const token = jwt.sign({id: user.id}, process.env.APP_SECRET, {expiresIn:'1d'})
-        
-        res.status(201).json({status: 'success', token, msg: "Account created successfully."})
+        const token = jwt.sign({ id: user.id }, process.env.APP_SECRET, { expiresIn: '1d' })
+
+        res.status(201).json({ status: 'success', token, msg: "Account created successfully." })
 
 
     } catch (error) {
-        res.status(400).json({status:'error', msg: error.message})
+        res.status(400).json({ status: 'error', msg: error.message })
     }
 
 }
@@ -109,30 +109,51 @@ exports.authorize = async (req, res) => {
     // console.log('Server Token:', token)
 
     try {
-        
+
         const data = jwt.verify(token, process.env.APP_SECRET);
 
         // console.log("JWT: ", data)
-        
+
         // res.json({verify: data})
         // if (err) {
         //     return res.sendStatus(403);
         // }
 
-        const user = await User.findOne({_id: data.id})
-        const {_id, username, email, user_type} = user;
+        const user = await User.findOne({ _id: data.id })
+        const { _id, username, email, user_type } = user;
 
         // console.log("server: ", user)
 
         const profile = await Profile.findOne().populate('User', user.id)
 
-        res.json({isAuth:true, _id, username, email, type: user_type, profile})
+        res.json({ isAuth: true, _id, username, email, type: user_type, profile })
         // res.json(token)
 
     } catch (error) {
-        res.json({isAuth:false, msg: 'You are not authorized'})
+        res.json({ isAuth: false, msg: 'You are not authorized' })
     }
 
 
     // res.json(token)
+}
+
+exports.sso_token = async (req, res) => {
+
+    console.log(req.query)
+
+
+    const token = jwt.sign(
+        {
+            username: 'Minhaj',
+            email: 'minhaj@gmail.com',
+            name: 'Minhaj ur Rahaman'
+        },
+
+        process.env.JWT_SECRET,
+
+        { expiresIn: '1m' })
+
+    res.redirect(`${req.query.hostdomain}/auth/sso?token=${token}&surl=${req.query.surl}`);
+    // res.status(201).json(token)
+
 }

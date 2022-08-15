@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "serve": "concurrently \"next dev\" \"cd backend && npm run dev\"",
+    "serve": "concurrently \"next dev -p 8080\" \"cd backend && npm run dev\"",
     "go": "concurrently \"next build\" \"next start\" \"cd backend && npm run dev\""
   },
   "dependencies": {

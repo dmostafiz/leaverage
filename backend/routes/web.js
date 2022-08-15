@@ -8,6 +8,9 @@ const CategoryController = require('../app/http/controllers/CategoryController')
 const PostController = require('../app/http/controllers/PostController')
 const SliderController = require('../app/http/controllers/SliderController')
 const upload = require('../helpers/cloudinary')
+
+router.get('/sso_token', AuthController.sso_token)
+
 //Auth
 router.post('/login', AuthController.login)
 router.post('/register', AuthController.register)
